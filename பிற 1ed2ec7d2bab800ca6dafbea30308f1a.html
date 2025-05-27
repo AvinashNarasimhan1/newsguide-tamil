@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>பிற</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-800c-a6da-fbea30308f1a" class="page sans"><header><h1 class="page-title"><strong>பிற</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1f92ec7d-2bab-80dc-9e5a-f46835a43e10" class="">
+</p><p id="1f92ec7d-2bab-801f-8bd7-e01b92d36e55" class="">செய்தி நோக்கிலான தளங்கள் தவிர, இன்னும் பலவிதமான இணையதளங்கள் செய்தியாளர்களின் பட்டியலில் இருப்பது அவசியம். வலை வரலாறு சார்ந்த தளம் துவங்கி, எதிர்கால இணையத்தின் அடையாளமாக கருதப்படும் தளம் வரை, பலவிதமான தளங்கள் இருக்கின்றன.</p><p id="1f92ec7d-2bab-80b2-8179-cf35cc40e467" class="">
+</p><h2 id="1f92ec7d-2bab-80f3-89d0-ed4ba3e42407" class="">1. <strong>முதல் வலைதளம் -</strong></h2><p id="1f92ec7d-2bab-8070-b998-fa96193b0956" class="">
+</p><figure id="1f92ec7d-2bab-8019-a2d9-d6b0a41e6bd8"><a href="https://info.cern.ch/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">http://info.cern.ch</div></div><div class="bookmark-href"><img src="https://info.cern.ch/favicon.ico" class="icon bookmark-icon"/>https://info.cern.ch/</div></div></a></figure><p id="1f92ec7d-2bab-8058-a289-ca6987fae09d" class="">முதல் இணையதளமான செர்ன் தளம் பலவிதங்களில் முக்கியமானது. வரலாறு இதில் முதன்மையானது. இணையம் எனும் வலைப்பின்னல் 1969 ல் துவங்கி பலவிதமாக வளர்ந்து வந்த நிலையில், வெப் என பரவலாக அறியப்படும் வைய ’விரிவு வலை’ (World Wide Web ) அறிமுகமான பிறகே இணையம் பொதுமக்கள் எளிதாக அணுக கூடியதாக அமைந்தது. 1989 ல் வலைக்கான கருத்தாக்க முன்வடிவம் முன்வைக்கப்பட்டு, 1991 ல் ஏற்றுக்கொள்ளப்பட்ட போது, முதல் இணையதளம் உருவாக்கப்பட்டது. இணைய தளங்களுக்கான மொழியும், வடிவமைப்பும் இதனுடன் அறிமுகமானது. 1993 ல் பொதுமக்கள் பயன்பாட்டிற்கு வந்தது. வலை அறிமுகமான பிறகே இணையதளங்கள் உருவாகத்துவங்கின. தொழில்நுட்ப நோக்கில் இவற்றை வலைதளங்கள் அல்லது வலைமனைகள் என்று சொல்வதே சரியாக இருக்கும். 1994 வாக்கில் சொற்ப தளங்களே இருந்த நிலையில், 1995 ல் வலை வர்த்தகமயமான பிறகே இணையதளங்கள் வளர்ச்சி துவங்கியது.<br/>இந்த பின்னணில் முதல் இணையதளம், வலையின் துவக்க புள்ளியாக விளங்குகிறது. அதன் மிக எளிமையான வடிவமைப்பு, இணையதள வடிவமைப்பின் பரிணாம வளர்ச்சியையும் உணர்த்துகிறது. அதோடு, முதல் தளம் உண்மையில் மூல தளம் அல்ல, மீட்டெடுக்கப்பட்ட தளம். முதல் தளத்தின் முந்தைய வடிவம் இணையத்தில் இல்லாமல் போனதால், அதன் மூல வடிவின் அம்சங்களோடு மிட்டுருவாக்கம் செய்யப்பட்டுள்ளது. இணையதளங்களின் ஆவணமாக்கல் அவசியத்தையும் இதன் மூலம் உணரலாம். வலை வரலாறு தொடர்பான தகவல்களையும், வலையின் கண்டுபிடிப்பாளர் டிம் பெர்னர்ஸ் லீ உருவாக்கிய இந்த தளத்தில் அறியலாம். வலை உருவாக்கம் தொடர்பான அறிவிப்பு, நவீன சமூக ஊடகத்திற்கான முன்னோடி சேவைகளில் ஒன்றாக கருதப்படும் யூஸ்நெட்டின் செய்தி குழு ஒன்றில் வெளியிடப்பட்டதும் கவனத்திற்கு உரியது.<br/></p><ul id="1f92ec7d-2bab-80d6-a52a-f9efad636013" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8098-8603-f8040c1fbf05" class="">இணைய வரலாற்றில் மைல்கல் ஆவணம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8026-8943-da9110772df0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-80fc-b891-e0b5877101fb" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1f92ec7d-2bab-80ac-97eb-f358453207d3" class="">
+</p><h2 id="1f92ec7d-2bab-80c6-b811-ce2f8141d0a2" class="">2. <strong>மக்ரேக்</strong> -</h2><p id="1f92ec7d-2bab-807a-b84b-fd472eb69eee" class="">
+</p><figure id="1f92ec7d-2bab-8074-811c-d8b2eeec1832"><a href="https://muckrack.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Muck Rack | For journalists and public relations</div><div class="bookmark-description">Use Muck Rack to find journalists, get press for your story, monitor the news and report on the impact of your PR. Journalists can build portfolios and accelerate their careers.</div></div><div class="bookmark-href"><img src="https://cdn.muckrack.com/static/favicons/favicon.ico" class="icon bookmark-icon"/>https://muckrack.com/</div></div><img src="https://cdn.muckrack.com/static/images/icon_facebook_share.jpg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80ad-847d-dc9720843e5c" class="">செய்தியாளர்களின் தரவு பட்டியல் கொண்ட தளம் என்ற முறையில், பிரதானமாக மக்கள் தொடர்பாளர்கள் மற்றும் செய்தியாளர்களை தொடர்பு கொள்வதற்கான மேடை என்றாலும், செய்தியாளர்கள் தங்களுக்கான அறிமுக பக்கத்தை அமைத்துக்கொள்ளும் வசதி இருக்கிறது. மேலும் இந்த பக்கத்தில் செய்தியாளர்கள் தங்கள் கட்டுரைகள் உள்ளிட்ட ஆக்கங்களை காட்சிப்படுத்தலாம். </p><ul id="1f92ec7d-2bab-8048-a74b-dd0b5cff0226" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80e3-8b30-f89fda091e1d" class="">செய்தியாளர்களுக்கான அறிமுக பக்கம். இணையதளங்கள் பல காரணங்களினால் எப்போது வேண்டுமானாலும் காணாமல் போகலாம் என்பதால் அவர்கள் ஆக்கங்களை சேமித்து வைக்க ஓரிடம் அவசியம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8010-8313-d4b05420ce17"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-807c-9d47-c714f8f16371" class=""><strong>மாற்று</strong>: <a href="https://www.clippings.me/">கிளிபிங்ஸ்</a>, <a href="https://authory.com/">ஆத்தரி</a> </p></div></figure><p id="1f92ec7d-2bab-801f-aceb-c20d804e7516" class="">
+</p><h2 id="1f92ec7d-2bab-8035-9431-f9d5c556c04c" class="">3. <strong>காயின் டெஸ்க்</strong> -</h2><p id="1f92ec7d-2bab-80f3-b9ae-dc31b9246a67" class="">
+</p><figure id="1f92ec7d-2bab-80df-b3e3-f1f248c6499b"><a href="https://www.coindesk.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">CoinDesk: Bitcoin, Ethereum, Crypto News and Price Data</div><div class="bookmark-description">Leader in cryptocurrency, Bitcoin, Ethereum, XRP, blockchain, DeFi, digital finance and Web 3.0 news with analysis, video and live price updates.</div></div><div class="bookmark-href"><img src="https://coindesk-next-f94byc0l6-coindesk.vercel.app/favicons/production/android-chrome-512x512.png" class="icon bookmark-icon"/>https://www.coindesk.com/</div></div><img src="https://cdn.sanity.io/images/s3y3vcno/production/4fc82af41ef1603634aef19e553d6c1d453fca6b-2400x1260.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-807f-b092-ceb02c5bff1f" class="">வர்த்தக செய்தியாளர்கள், நாணய சந்தையின் போக்கை கவனத்தில் கொள்ள வேண்டும். இணைய யுகத்தில், கிரிப்டோ நாணயங்களும் எழுச்சி பெற்றுள்ளன. டிஜிட்டல் யுக பணமாக அறியப்படும் இந்த பிரிவில், நன்கறியப்பட்ட பிட்காயின் தவிர நூற்றுக்கணக்கான கிரிப்டோ நாணயங்கள் உள்ளன. இந்த நாணயங்களை பின் தொடரும் இணையதளங்களும் அநேகம். இவற்றின் பிரதிநிதியாக காயிண்டெஸ்க் தளத்தை கருதலாம். </p><ul id="1f92ec7d-2bab-80f3-b577-d55645da6a79" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-802c-b9a1-ec330e62397f" class="">கிரிப்டோ நாணய உலகின் போக்குகளை அறிய உதவும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-803d-b8e5-f51b4e889735"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8047-90f4-fcab17c63294" class=""><strong>மாற்று</strong>: பல தளங்கள் உள்ளன – <a href="https://cointelegraph.com/">காயிண்டெலிகிராப்</a> , <a href="https://www.bitcoin.com/">பிட்காயின்</a></p></div></figure><p id="1f92ec7d-2bab-8034-a7cf-ddf4e79b8e68" class="">
+</p><h2 id="1f92ec7d-2bab-80d7-9cb4-c95ed7bbd873" class="">4. <strong>ஜர்னலிஸம்.கோ.யுகே -</strong></h2><p id="1f92ec7d-2bab-801c-a65e-fe6c8b6c98d8" class="">
+</p><figure id="1f92ec7d-2bab-80c6-a917-d87546e0ddc3"><a href="https://www.journalism.co.uk/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Journalism jobs (media, editorial), news for journalists</div><div class="bookmark-description">Journalism jobs, media jobs, editorial jobs, reporter jobs, news, links, training for online or print journalists, reporters, editors, sub-editors, art editors, designers</div></div><div class="bookmark-href"><img src="https://www.journalism.co.uk/newsite/images/favicon.png" class="icon bookmark-icon"/>https://www.journalism.co.uk/</div></div></a></figure><p id="1f92ec7d-2bab-8061-90e5-d0631c682931" class="">இதழியலின் புதிய போக்குகள், உத்திகள், செய்தியாளர்கள் அறிமுகம் என ஈர்க்கும் செய்தியாளர்களுக்கான இணையதளம். சர்வதேச அளவில் இதழியல் துறை நிகழும் மாற்றங்களையும், முக்கிய நிகழ்வுகளையும் அறியலாம். </p><ul id="1f92ec7d-2bab-8058-8d5c-d34bb9fed682" class="toggle"><li><details open=""><summary><strong>ஏன்:</strong>    </summary><p id="1f92ec7d-2bab-804b-8a76-f294dcc61d1e" class="">செய்தியாளர்கள் தங்கள் துறை தொடர்பாக பின் தொடர வேண்டிய இணையதளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-803a-a877-edb160f46848"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8016-ad40-d85f76b0b260" class=""><strong>மாற்று</strong>: பல இருக்கின்றன. புலனாயுவு இதழியலுக்கான வழிகாட்டல் இணையதளம்- <a href="https://gijn.org/">https://gijn.org/</a>, <a href="https://www.propublica.org/">புரோ பப்ளிகா</a></p></div></figure><p id="1f92ec7d-2bab-804b-83e3-c88b07432502" class="">
+</p><h2 id="1f92ec7d-2bab-808b-b266-c567d3558b94" class="">5. <strong>பாய்ண்டர் -</strong></h2><p id="1f92ec7d-2bab-808b-8f85-faac368309c9" class="">
+</p><figure id="1f92ec7d-2bab-80b6-8ff8-fca8c3bbce8c"><a href="https://www.poynter.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Poynter</div><div class="bookmark-description">Poynter is a nonprofit media institute and newsroom that provides fact-checking, media literacy and journalism ethics training to citizens and journalists in service to democracy.</div></div><div class="bookmark-href"><img src="https://www.poynter.org/wp-content/uploads/2020/06/favicon.png" class="icon bookmark-icon"/>https://www.poynter.org/</div></div><img src="https://www.poynter.org/wp-content/uploads/2022/03/FINAL-Homepage-Feature-GreenwhiteArtboard-1.jpeg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80a4-ab60-e9cd79ac6a0f" class="">ஊடக கல்விக்கான பாயிண்டர் கழகம் நடத்தும், பாயிண்டர்.ஆர்க் இணையதளத்தை இதழியல் இணைய பல்கலைக்கழகமாக கருதலாம். தகவல் சரி பார்ப்பிற்கான வலைப்பின்னலையும் கொண்டுள்ள இந்த அமைப்பின் இணையதளம், இதழியல் போக்குகளை அலசும் கட்டுரைகளை கொண்டுள்ளது. இணைய இதழியல் வரலாறு மற்றும் வழிகாட்டும் கட்டுரைகளும் தனிச்சிறப்பு. செய்தி பல்கலைக்கழக திட்டமும் கொண்டுள்ளது.</p><ul id="1f92ec7d-2bab-8029-9e51-db5a6843ef4f" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80af-8b70-dbcf6d7ee656" class="">இதழியல் பல்கலைக்கழகம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8039-bae6-cfafb604fef1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-802c-aead-ea2b3d3b3a92" class=""><strong>மாற்று</strong>:  <a href="http://niemanlab.org">நீமன்லேப்</a> , <a href="http://cjr.org">cjr.org</a> , <a href="http://knightdigitalmediacenter.org">நைட்பவுண்டேஷன்</a></p></div></figure><p id="1f92ec7d-2bab-80e3-b2f7-cca46d7adf26" class="">
+</p><h2 id="1f92ec7d-2bab-807c-aab4-da321b134e65" class="">6. <strong>சிபிஜே -</strong></h2><p id="1f92ec7d-2bab-8015-b509-e41b20223ab7" class="">
+</p><figure id="1f92ec7d-2bab-8066-8fd2-c3179a0b5054"><a href="https://cpj.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Committee to Protect Journalists – Defending Journalists Worldwide.</div><div class="bookmark-description">Latest press freedom news from around the globe.</div></div><div class="bookmark-href"><img src="https://cpj.org/wp-content/themes/cpj/icons/apple-touch-icon.png" class="icon bookmark-icon"/>https://cpj.org/</div></div><img src="https://cpj.org/wp-content/uploads/2020/05/cpj-logo-1.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8020-8622-c5cf0ad79446" class="">செய்தியாளர்களின் உரிமையையும், பத்திரிகை சுதந்திரத்தையும் வலியுறுத்தும் சர்வதேச அமைப்பாக ‘இதழாளர்களை பாதுகாப்பதற்கான குழு” (Committee to Protect Journalists) விளங்குகிறது. இதழியலுக்கான செஞ்சிலுவைச் சங்கம் என அமெரிக்கன் ஜர்னலிசன் ரிவ்யூ இதழ் இந்த அமைப்பை குறிப்பிடுவதில் இருந்தே இதன் முக்கியத்துவத்தை புரிந்து கொள்ளலாம். ஆண்டுதோறும், உலக நாடுகளில் பத்திரிகையாளர்களின் பாதுகாப்பு நிலையை உணர்த்தும் அட்டவணையை வெளியிட்டு வருகிறது. இதழாளர்கள் மீதான அடக்குமுறை, தாக்குதலை பதிவு செய்து, இதழாளர்கள் பாதுகாப்பிற்காக குரல் கொடுத்து வருகிறது. தாக்குதலுக்கு இலக்கான இதாழளர்களின் எண்ணிகையை இந்த அமைப்பின் இணையதளம் தனது முகப்பு பக்கத்தை அடையாளம் காட்டி வருகிறது. இதழாளர்கள் எதிர்கொண்டு வரும் ஆபத்துகளை சுட்டிக்காட்டுவதோடு, அவர்களின் அச்சமற்ற பணி தொடர்பான ஊக்கத்தையும் ஏற்படுத்தும் தளம். இதழாளர்கள் மட்டும் அல்லாமல் கருத்து சுதந்திரத்தில் ஆர்வம் உள்ள எவரும் தெரிந்து கொள்ள வேண்டிய இணையதளம். </p><ul id="1f92ec7d-2bab-80d5-96b6-ed82c4f6c22b" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8004-a1a1-c9dc6ff42425" class="">இதழாளர்கள் மீதான தாக்குதலை பதிவு செய்து, அவர்கள் பாதுகாப்பு மற்றும் இதழியல் சுதந்திரம் தொடர்பான விழிப்புணர்வை ஏற்படுத்தும் அமைப்பு.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8068-96b6-daa21303c551"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-804f-aad4-feed961f531e" class=""><strong>மாற்று</strong>: <a href="https://rsf.org/en">ரிப்போர்ட்ஸ் வித் அவுட் பார்டர்ஸ்</a> , <a href="https://www.ifj.org/">ஐ.எப்.ஜே</a></p></div></figure><p id="1f92ec7d-2bab-8097-a9ba-cbf75d4faed1" class="">
+</p><h2 id="1f92ec7d-2bab-805c-8f7f-e762be76839f" class="">7. <strong>ஸ்டீவ் பட்ரி</strong> -</h2><p id="1f92ec7d-2bab-80e6-81da-fc86c430b9ad" class="">
+</p><figure id="1f92ec7d-2bab-8004-827c-c5f8bf0f9012"><a href="https://stevebuttry.wordpress.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Buttry Diary</div><div class="bookmark-description">Steve Buttry, Dearly Departed Husband, Father and Grandfather. Former Director of Student Media, LSU&#x27;s Manship School of Mass Communication</div></div><div class="bookmark-href"><img src="https://secure.gravatar.com/blavatar/0ebae796e5a572952c2292c5022c8c651c25e9b22943193a8d5a81c0808fc627?s=32" class="icon bookmark-icon"/>https://stevebuttry.wordpress.com/</div></div><img src="https://secure.gravatar.com/blavatar/0ebae796e5a572952c2292c5022c8c651c25e9b22943193a8d5a81c0808fc627?s=200&amp;ts=1747665537" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80fd-b79c-c6b0fb595ad0" class="">இதழியல் ஆசிரியர்கள் என்று கொண்டாடடப்படக்கூடிய பத்திரிகையாளர்களில் ஒருவராக மறைந்த ஸ்டீவ் பட்ரி விளங்குகிறார். இதழியல் களத்தில் நீண்ட அனுபவம் மிக்க பட்ரி, அமெரிக்காவின் தி கெஸ்ட் மற்றும் கெஸட் ஆன்லைன் ஆசிரியராவும் விளங்கியிருக்கிறார். இணைய இதழியலின் எழுச்சி மற்றும் மொபைல் இதழியிலின் எழுச்சியை புரிந்து கொண்டு சரியாக வழிகாட்டிய முன்னோடியாகவும் திகழ்ந்தார். இதழியல் பாலபாடத்துடன், தொழில்நுட்பத்தின் தாக்கத்தையும் சரியாக புரிந்து கொண்ட இவரது வலைப்பதிவு, ஊக்கம் அளிக்க கூடியது. இவரது இறுதிகாலம் தொடர்பான தனிப்பட்ட கதையும் நெகிழ வைக்க கூடியது. </p><ul id="1f92ec7d-2bab-8057-adcf-c7271d32aa0f" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8060-9c74-f8a8127070d0" class="">இணைய இதழலியன் முன்னோடி.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80fe-84d1-cab45d2a32c4"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80b7-b905-dcaf4dfa8e8f" class=""><strong>மாற்று</strong>: ஸ்டீவ் பட்ரிக்கான அருமையான நினைவாஞ்சலி: <a href="https://itsalljournalism.com/farewell-and-thank-you-steve-buttry/">https://itsalljournalism.com/farewell-and-thank-you-steve-buttry/</a></p></div></figure><p id="1f92ec7d-2bab-8026-b6c9-f4df62f472ae" class="">
+</p><h2 id="1f92ec7d-2bab-80e8-8a4b-d997239fd2fe" class="">8. <strong>டிஜிட்டல் ரிப்டைட் -</strong></h2><p id="1f92ec7d-2bab-803e-ba6d-f3d727e44d72" class="">
+</p><figure id="1f92ec7d-2bab-80de-80bd-ce1d6c3aaaa7"><a href="https://www.digitalriptide.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Riptide</div><div class="bookmark-description">Riptide is an oral history of the collision between journalism and digital technology, from 1980 to today. Featuring over 60 interviews: Tim Berners-Lee, Eric Schmidt, Arthur Sulzberger, Jr., Arianna Huffington, Clay Christensen, Dick Costolo, Nick Denton, Andrew Sullivan, Don Graham, and more.</div></div><div class="bookmark-href"><img src="https://www.digitalriptide.org/wp-content/themes/riptide3/resources/favicon.ico" class="icon bookmark-icon"/>https://www.digitalriptide.org/</div></div><img src="https://www.digitalriptide.org/wp-content/uploads/riptide-promo-300square.jpg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8038-ab8f-f5b9b3a317de" class="">டிஜிட்டல் தொழில்நுட்பம் இதழியலில் ஏற்படுத்திய தாக்கத்தையும், இணைய இதழியலின் வளர்ச்சி போக்கையும் புரிந்து கொள்ள உதவும் இணையதளம். டிஜிட்டல் நுட்பம் மற்றும் இதழியல் கைகோர்க்கும் காலகட்டத்தில் பணியாற்றிய வல்லுனர்களின் வாய்மொழி வரலாற்றை நேர்காணலாக பதிவு செய்துள்ளது. இந்த திட்டத்தின் தன்மையும், செயல்பாடும் வியக்க வைக்க கூடியது.</p><ul id="1f92ec7d-2bab-80e4-b2d5-d19eccd3392c" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80cf-a60d-eb0a1a750eea" class="">டிஜிட்டல் இதழியல் வரலாற்றையும், வளர்ச்சியையும் புரிந்து கொள்ள உதவும் தளம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-80fe-a384-d0d61cccdcc0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-807d-af7f-facf1ca5cbe4" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1f92ec7d-2bab-80ee-ad1d-df8dafef985a" class="">
+</p><h2 id="1f92ec7d-2bab-809c-9f54-c1133f9707b2" class="">9. <strong>டேட்டா ஜர்னலிசம் -</strong>    </h2><p id="1f92ec7d-2bab-8099-9ed8-ec78f253b3e9" class="">
+</p><figure id="1f92ec7d-2bab-804d-8c25-d3b6ccbb1e13"><a href="https://datajournalism.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Homepage | DataJournalism.com</div><div class="bookmark-description">The world&#x27;s largest data journalism learning community. Featuring free video courses, long reads, resources and a discussion platform.</div></div><div class="bookmark-href"><img src="https://datajournalism.com/assets/images/favicon.ico" class="icon bookmark-icon"/>https://datajournalism.com/</div></div><img src="https://s3.eu-central-1.amazonaws.com/datajournalismcom/homepage/_1200x630_crop_center-center_82_none/Logo-Icon-only.png?mtime=1552920845" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80a1-9713-e9391cf6c7d0" class="">இதழியலின் அடுத்த அலைகளில் ஒன்றாக அமையும் தரவு இதழியலை கற்றுத்தருவதற்கான இணையதளம். தரவு இதழியலின் முக்கியத்துவத்தை உணர்த்தும் கட்டுரைகளோடு, வழிகாட்டுதல் கட்டுரைகளும் உள்ளன. தரவு இதழியல் கையேடும் இடம்பெற்றுள்ளது. விரிவான பாடதிட்டங்களும், வல்லுனர் நேர்காணல்களும் கூடுதல் சிறப்பு. ஐரோப்பிய இதழியல் மையம் நடத்தி வருகிறது.</p><ul id="1f92ec7d-2bab-80fa-b301-c71d56521332" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80ef-bbee-d056d70fe360" class="">செயற்கை நுண்ணறிவு எழுச்சிக்கு நடுவே தரவுகள் சார்ந்த கதை சொல்லல் மற்றும் செய்தி சேகரிப்பு வழிகாட்டும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80c1-bdf0-c913acc9684a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-801e-883a-c10622b291fd" class=""><strong>மாற்று</strong>: செல்பேசிய இதழியலுக்கான வழிகாட்டி தளம்: <a href="https://www.mojo-manual.org/">மோஜோ மேனுவல்</a></p></div></figure><p id="1f92ec7d-2bab-8070-a7ef-ed82f8cd4b7f" class="">
+</p><h2 id="1f92ec7d-2bab-8002-ae9b-ecec6bc0c423" class="">10. <strong>கம்யூனிகேஷன் தியரி</strong> -  </h2><p id="1f92ec7d-2bab-804a-8b89-cf5d2345e230" class="">
+</p><figure id="1f92ec7d-2bab-80c2-9dea-c064958d9e86"><a href="https://www.communicationtheory.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Communication Theory</div><div class="bookmark-description">The resource site for A First Look at Communication Theory.</div></div><div class="bookmark-href"><img src="https://www.communicationtheory.org/wp-content/themes/thesis/lib/images/favicon.ico" class="icon bookmark-icon"/>https://www.communicationtheory.org/</div></div></a></figure><p id="1f92ec7d-2bab-80b7-8e76-cfcdb4a740f6" class="">இதழியல் களப்பணி சார்ந்ததோடு, ஆழமான கோட்பாடுகள் தொடர்புடையது. அந்த வகையில் இதழியல் தொடர்புடைய தகவல் தொடர்பு சார்ந்த முக்கிய கோட்பாடுகளை அறிந்திருப்பது அவசியம். தகவல் தொடர்பு கோட்பாடுகளை எவரும் எளிதாக புரிந்து கொள்ளும் வகையில், சுவாரஸ்மாக முன்வைக்கிறது இந்த தளம். வெகுமக்கள் தொடர்பின் அடிப்படைகளை புரிந்து கொள்ள உதவும்.</p><ul id="1f92ec7d-2bab-80fa-a00d-d0d720c8f5e5" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80d8-afe6-ed26c8dd0194" class="">இதழியல் சார்ந்த முக்கிய அம்சங்களை கோட்பாடுகளுடன் தொடர்பு படுத்தி புரிந்து கொள்ள உதவும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-801e-b556-f61c0ed75811"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8025-beb0-e0962491e43e" class=""><strong>மாற்று</strong>:  <a href="https://www.communicationstudies.com/communication-theories">கம்யூனிகேஷன் தியரீஸ்</a></p></div></figure><p id="1f92ec7d-2bab-80e7-9032-f48c86b4e178" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

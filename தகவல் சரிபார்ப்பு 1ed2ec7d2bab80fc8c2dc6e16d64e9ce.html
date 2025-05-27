@@ -1,0 +1,704 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>தகவல் சரிபார்ப்பு</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-80fc-8c2d-c6e16d64e9ce" class="page sans"><header><h1 class="page-title"><strong>தகவல் சரிபார்ப்பு</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1f92ec7d-2bab-8085-b338-c15678d5dffd" class="">
+</p><p id="1f92ec7d-2bab-8026-9ab1-dfd5fe9d05f6" class="">உண்மை தான் இதழியலின் அடிப்படையாக இருக்க வேண்டும் என்றாலும், வதந்திகளும், பொய்யான செய்திகளும் எப்போதும் சவாலானது. பொய்ச்செய்திகளை தவிர்ப்பது மட்டும் அல்ல, அவற்றை கண்டறிந்து வெளிப்படுத்துவதும் இதழாளர்களிடம் எதிர்பார்க்கப்படும் பொறுப்பாக அமைகிறது. ஆக, தகவல் சரிபார்ப்பு என்பது செய்தி சேகரிப்பு, உருவாக்கம், திருத்தம் ஆகியவை கொண்ட செயல்முறையில் முக்கிய பங்கு வகிக்கிறது. தகவல் சரிபார்ப்பிற்கு இதழாளர்களும், ஆசிரியர் குழுக்களும் பல்வேறு வழிகளையும், உத்திகளையும், கருவிகளையும் பயன்படுத்துகின்றனர்.</p><p id="1f92ec7d-2bab-80dc-9b8d-e3b3d92af726" class=""><br/>இணைய யுகத்தில் பொய் செய்திகள் பெரும் பிரச்சனையாக உருவெடுத்துள்ளது. அதிலும் குறிப்பாக, சமூக ஊடக சேவைகள் பரவலான பிறகு பொய் செய்திகளும், தகவல் பிழைகளும் பல மடங்கு அதிகரித்துள்ளது. இவைத்தவிர, பிழைத்தகவல்களும், பிறழ் தகவல்களும் ( ) புதிய பிரச்சனையாக ஆட்டிப்படைக்கின்றன. இந்த பின்னணியில் இணையத்தில் வெளியாகும் செய்திகளையும், தகவல்களையும் சரி பார்க்கும் தளங்கள் முக்கியமாகின்றன.<br/></p><p id="1f92ec7d-2bab-801d-825a-e7400bbc7743" class="">
+</p><h2 id="1f92ec7d-2bab-8057-ad5d-f41f078c767a" class="">1. <strong>ஸ்னோப்ஸ் -</strong></h2><p id="1f92ec7d-2bab-80c4-9ee1-c50952a3159d" class="">
+</p><figure id="1f92ec7d-2bab-80e3-9e86-ec3132fcdf6c"><a href="https://www.snopes.com" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Snopes.com</div><div class="bookmark-description">The definitive Internet reference source for urban legends, folklore, myths, rumors, and misinformation.</div></div><div class="bookmark-href"><img src="https://www.snopes.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.snopes.com</div></div><img src="https://mediaproxy.snopes.com/width/1200/https://www.snopes.com/tachyon/2019/11/2019-snopes-open-graph-default.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8022-a083-ddeb306a519c" class="">இணையத்தின் முன்னோடி சேவைகளில் ஒன்று. இணையத்தின் பழமையான தகவல் சரி பார்ப்பு தளங்களில் ஒன்றாக விளங்குகிறது. பிழை தகவல்கள் நம்பகத்தன்மையை பாதிப்பதற்கு தீர்வாக 1994 ம் ஆண்டு ஸ்னோப்ஸ் நிறுவப்பட்டது. இணையத்தில் பரவலாக உலாவிய கட்டுக்கதைகளை அலசி ஆராய்ந்து உண்மை தகவலை வெளிப்படுத்தும் வகையில் துவங்கி, இணையத்தின் முன்னனி தகவல் சரி பார்ப்பு சேவையாக செயல்பட்டு வருகிறது. சர்வதேச தகவல் சரிபார்ப்பு வலைப்பின்னல் அமைப்பின் உறுப்பினராகவும் உள்ளது. ஏஐ யுகத்தில், செய்யறிவு திறனோடு, சாட்பாட் மூலம் தகவல் சரி பார்க்கும் சேவையை அறிமுகம் செய்துள்ளது. இதன் நிறுவனர் டேவிட் மிக்கல்சன். </p><ul id="1f92ec7d-2bab-8054-ba1f-e088e091cbce" class="toggle"><li><details open=""><summary>    <strong>ஏன்?</strong></summary><p id="1f92ec7d-2bab-8029-a215-cd214b3b4916" class="">இணையத்தில் உலாவும் நம்ப இயலாத கதைகள் பல ஸ்னோப்ஸ் மூலம் தெளிவுபடுத்தப்பட்டிருக்கிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8027-b506-ddd9417bcaaf"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-805f-ad52-e88c3a244662" class=""><strong>மாற்று</strong>: <a href="https://www.truthorfiction.com/">ட்ரூத் ஆர் பிக்‌ஷன்</a></p></div></figure><p id="1f92ec7d-2bab-80f6-a440-f804e574ff85" class="">
+</p><h2 id="1f92ec7d-2bab-809e-8980-fe69a0193e32" class="">2. <strong>ஃபேக்ட்செக் -</strong></h2><p id="1f92ec7d-2bab-80be-93dc-dced87d85f42" class="">
+</p><figure id="1f92ec7d-2bab-8089-8495-e1e4627fab34"><a href="https://www.factcheck.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FactCheck.org</div><div class="bookmark-description">President Trump has repeatedly touted the value of announced financial investments in the U.S. and taken credit for attracting them. He started out citing $3 trillion in investments and, four months later, was claiming totals of more than $10 trillion. It’s unclear where, exactly, he’s getting these totals. But they appear to be an exaggeration of pledges to invest made by various companies and countries.</div></div><div class="bookmark-href"><img src="https://www.factcheck.org/android-icon-192x192.png" class="icon bookmark-icon"/>https://www.factcheck.org/</div></div><img src="https://cdn.factcheck.org/UploadedFiles/FactCheck-200x200.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8054-b895-e7e26a7f2668" class="">அமெரிக்க அரசியலில், வதந்திகள் மற்றும் பொய் செய்திகளை தெளிவாக்கும் வகையில் மூல ஆய்வின் அடிப்படையிலான தகவல்களை அளிக்கும் தளம். ஆனன்பெர்க் அறக்கட்டளை ஆதரவுடன் செயல்படுகிறது. அரசியல் தலைவர்களின் கருத்துகளையும் சரி பார்க்க உதவுகிறது. அமெரிக்க பத்திரிகையாளர் புரூக் ஜேக்சனால் நிறுவப்பட்டது. பயனாளிகள் கேள்வி கேட்டு தெளிவு பெறும் வசதியும் இருக்கிறது. அறிவியல் சார்ந்த பிரிவும் உள்ளது. </p><ul id="1f92ec7d-2bab-80e6-bc10-c2becf40281a" class="toggle"><li><details open=""><summary>    <strong>ஏன்?</strong>   </summary><p id="1f92ec7d-2bab-806d-b21f-f9525091b4e5" class="">தகவல் சரி பார்ப்பு தளங்களில் முன்னோடி சேவைகளில் ஒன்று.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8015-b20a-e696060d4125"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-805b-baeb-c6d6ef6e3b86" class=""><strong>மாற்று:</strong> பாயிண்டர் கழகத்தின் பொலிடிபேக்ட்- <a href="https://www.politifact.com/">https://www.politifact.com/</a>  ஆப்பிரிக்கா சார்ந்து செயல்படும் தகவல் சரி பார்ப்பு தளம்: <a href="https://africacheck.org/">ஆப்ரிக்கா செக்</a></p></div></figure><p id="1f92ec7d-2bab-80df-84f7-e79232c28536" class="">
+</p><h2 id="1f92ec7d-2bab-80b5-959d-fb5272f809b6" class="">3. <strong>கிரவுண்ட் நியூஸ் -</strong></h2><p id="1f92ec7d-2bab-805f-84b8-de00585bdb82" class="">
+</p><figure id="1f92ec7d-2bab-8077-80b6-c8dd480e350e"><a href="https://ground.news/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ground News</div><div class="bookmark-description">The biggest source for breaking news around the world. Compare headlines across the political spectrum using media bias ratings driven by data.</div></div><div class="bookmark-href">https://ground.news/</div></div><img src="https://groundnews.b-cdn.net/assets/web/images/Twitter-Meta-2.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-807b-8cd0-ed0baeab9799" class="">செய்திகளில் உள்ள சார்பை சுட்டிக்காட்டும் வகையில் புதுமையான முறையில் செய்திகளை வழங்கும் தளம். செய்தி நிறுவனங்களுக்கு கொள்கை நோக்கிலான சாய்வு உள்ளிட்ட பலவித சாய்வுகள் இருக்கலாம். பொதுவாக, இடதுசாரி பார்வை, வலதுசாரி பார்வை மற்றும் மத்திய பார்வை என இந்த சாய்வுகளை வகைப்படுத்தலாம். இதே நோக்கில் செய்திகளை இந்த தளம் பட்டியலிடுகிறது. குறிப்பிட்ட தலைப்பில், இடதுசாரி ஊடகம் மற்றும் வலதுசாரி ஊடகம், மத்திய ஊடகம் ஆகியவை வெளியிட்ட செய்திகளை வழங்குகிறது. இவற்றின் தன்மையை ஒப்பிட்டு பார்ப்பதன் மூலம் பயனாளிகள் உண்மை நிலவரத்தை தீர்மானித்துக்கொள்ளலாம்.</p><ul id="1f92ec7d-2bab-803e-9ed1-d987cfc3a799" class="toggle"><li><details open=""><summary><strong>ஏன்? </strong></summary><p id="1f92ec7d-2bab-8010-aec7-d156d15a65dd" class="">செய்தி சார்புகளை அழகாக உணர்த்தும் தளம். ஒவ்வொரு நாட்டிற்கும் இதே போன்ற செய்தி தொகுப்பு தளம் இருப்பது நல்லது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80b1-a933-d5d690c5ab55"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80d7-a28e-eeea7b44e192" class=""><strong>மாற்று: </strong><a href="https://www.allsides.com/unbiased-balanced-news">ஆல்சைடுஸ்</a></p></div></figure><p id="1f92ec7d-2bab-80d5-a9ec-c2f6b9f69f9b" class="">
+</p><h2 id="1f92ec7d-2bab-802c-a765-e256df0cd326" class="">4. <strong>ஹோக்ஸி</strong> -</h2><p id="1f92ec7d-2bab-8010-aa71-d18f87b7229b" class="">
+</p><figure id="1f92ec7d-2bab-80d7-bb23-ef5829e74ab0"><a href="https://hoaxy.osome.iu.edu/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Hoaxy: How claims spread online</div><div class="bookmark-description">Visualize the spread of information on social media.</div></div><div class="bookmark-href"><img src="https://hoaxy.osome.iu.edu/assets/safari-pinned-tab.c04b0169.svg" class="icon bookmark-icon"/>https://hoaxy.osome.iu.edu/</div></div><img src="https://hoaxy.osome.iu.edu/assets/images/t_network_square.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80ae-ba96-d93a111f3fa7" class="">பொய்ச்செய்திகளுக்கான தேடியந்திரம் என கருதக்கூடிய ஹோக்ஸி, செய்தி கட்டுரைகளை இணையத்தில் பரவும் விதத்தை காட்சிமயமாக்கி, சமூக ஊடக பரப்பில் பொய் செய்திகள் எப்படி பரவுகின்றன என்பதை உணர்த்துகிறது. ஆய்வு நோக்கில் துவங்கிய தளம், இப்போது புளுஸ்கை மற்றும் டிவிட்டர் சார்ந்து செயல்படுகிறது.</p><ul id="1f92ec7d-2bab-80b4-b927-ccb35eb5ca4e" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong></summary><p id="1f92ec7d-2bab-802a-8314-c0e0a2e1d3bd" class="">பொய்செய்தி பரவும் விதத்தை காட்சி படுத்தும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-802b-932b-efed06d47719"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80f7-8a24-de885be77d96" class=""><strong>மாற்று</strong>: தகவல் சரி பார்த்தலை கற்றுத்தர வழிகாட்டும் தளம்: <a href="https://get.checkology.org/">https://get.checkology.org/</a> , <a href="https://www.newsguardtech.com/">https://www.newsguardtech.com/</a>   </p></div></figure><p id="1f92ec7d-2bab-8027-a7d4-c3474fa13927" class=""> </p><h2 id="1f92ec7d-2bab-809c-afcd-fe71e60ad271" class="">5. <strong>ஃபேக்ட்செக்கர் -</strong></h2><p id="1f92ec7d-2bab-8038-95fb-fbfe4088aec4" class="">
+</p><figure id="1f92ec7d-2bab-8098-b9ff-cfc949275bbc"><a href="https://www.factchecker.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">FactChecker.in is India&#x27;s first dedicated Fact Check initiative.</div></div><div class="bookmark-href"><img src="https://www.factchecker.in/images/ico/favicon.ico?v=1" class="icon bookmark-icon"/>https://www.factchecker.in/</div></div><img src="https://www.factchecker.in/images/logo.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80ea-8ef8-d117133e3b90" class="">இந்தியாவுக்கான முதல் தகவல் சரி பார்ப்பு தளங்களில் ஒன்று. 2013 ம் ஆண்டு முதல் பொதுவெளியில் வெளியாகும் தகவல்களை அலசி ஆராய்ந்து சரி பார்த்து வருகிறது. தரவுகள் சார்ந்து செயல்படுகிறது. பொய் செய்திகளை அலசி ஆராய்ந்து, அதன் உண்மை தன்மையை வெளிப்படுத்துகிறது. தரவுகள் சார்ந்து செயல்படுகிறது. வல்லுனர்கள் கருத்துக்களையும் அளிக்கிறது. </p><ul id="1f92ec7d-2bab-8042-bf6b-c0af929ca169" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-800f-9588-fcc2a47416d0" class="">இந்திய பரப்பில் பொய் செய்திகளை கண்காணிக்கும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8045-bbef-ce760c4a8788"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8074-9d62-f661bfa4c8ca" class=""><strong>மாற்று</strong>: <a href="https://www.boomlive.in/">பூம்லைவ்</a> </p></div></figure><p id="1f92ec7d-2bab-8081-8005-d0984b43bffe" class="">
+</p><h2 id="1f92ec7d-2bab-8009-8960-ffc8d2acaad2" class="">6. <strong>கிரிடிபிலிட்டி கோலிஷன்</strong> -</h2><p id="1f92ec7d-2bab-80f8-bc16-fbdaebd6b837" class="">
+</p><figure id="1f92ec7d-2bab-805c-bf0a-c06e3a64c437"><a href="https://credibilitycoalition.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Our goal: to understand the veracity, quality and credibility of online information</div><div class="bookmark-description">The Credibility Coalition brings people together to develop common standards for information credibility.</div></div><div class="bookmark-href"><img src="https://credibilitycoalition.org/apple-touch-icon.png" class="icon bookmark-icon"/>https://credibilitycoalition.org/</div></div><img src="https://images.ctfassets.net/tlowcqj4pb76/2gK6iWsUfEG4pvpXZNeXJy/1b5097e4eac34cbb7e95d9d5df913661/tile.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80af-8603-e70cc5e6acdb" class="">உள்நாட்டிலும் உலக அளவிலும் தகவல் சரி பார்ப்பு சேவைகள் பல இருக்கின்றன. இந்த சேவைகளை ஒரே இடத்தில் தொகுத்தளிப்பதோடு அவற்றின் செயல்பாடு மற்றும் நம்பகத்தன்மை தொடர்பான தகவல்களை அறியவும் உதவுகிறது. தகவல்களின் நம்பகத்தன்மையை அதிகரிக்கும் நோக்கத்தில் இதழாளர்கள், ஆய்வாளர்கள், தொழில்நுட்ப வல்லுனர்கள், அதிகாரிகள் உள்ளிட்ட பல தரப்பினர் ஒன்று சேர்ந்து உருவாக்கிய கிரிடிபிலிட்டி கோலிஷன் சார்பில் நடத்தப்படும் தளம். </p><ul id="1f92ec7d-2bab-8069-b932-de1ecf9bce93" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-804d-bb72-d8cef20b1bfd" class="">தகவல் சரி பார்ப்பு தளங்கள் பற்றி விரிவாக அறியலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8082-a761-d198d901f4b6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8097-8748-ddfd5f8dff0c" class=""><strong>மாற்று:</strong> அமெரிக்காவின் டியூக் பல்கலையின் இதழியல் ஆய்வுக்கான ரிப்போட்டர்ஸ் லேப் வரைபடம் மீது அழகாக இந்த தகவலை அளிக்கிறது- <a href="https://reporterslab.org/fact-checking/">https://reporterslab.org/fact-checking/</a> பதிப்பு அறம் சார்ந்த அமைப்பு- <a href="https://publicationethics.org/">https://publicationethics.org/</a></p></div></figure><p id="1f92ec7d-2bab-80c7-aad2-f8664bde2c1c" class="">
+</p><h2 id="1f92ec7d-2bab-800c-8536-d9ff59d3b37b" class="">7. <strong>ஆல்ட் நியூஸ் -</strong></h2><p id="1f92ec7d-2bab-809e-9511-d70f1dd2d527" class="">
+</p><figure id="1f92ec7d-2bab-802e-96cd-c32f21f40a60"><a href="https://www.altnews.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home - Alt News</div><div class="bookmark-description">[vc_row][vc_column][vc_column_text][/vc_column_text][/vc_column][/vc_row][vc_row nb__predefined_bg=”white” css=”.vc_custom_1600625913214{padding-top: 15px !important;padding-bottom: 15px !important;}”][vc_column][vc_widget_sidebar sidebar_id=”ca-sidebar-76418″ title=”Search fact-checks”][/vc_column][/vc_row][vc_row nb__predefined_bg=”white” css=”.vc_custom_1600619409014{padding-top: 15px !important;padding-bottom: 15px !important;}”][vc_column][vc_widget_sidebar sidebar_id=”ca-sidebar-76411″ title=”Support Alt News”][/vc_column][/vc_row][vc_row nb__predefined_bg=”white” css=”.vc_custom_1600622496782{padding-top: 15px !important;padding-bottom: 15px !important;}”][vc_column width=”2/3″][vc_column_text][/vc_column_text][/vc_column][vc_column width=”1/3″][vc_column_text][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][vc_widget_sidebar title=”Latest Videos”...</div></div><div class="bookmark-href"><img src="https://www.altnews.in/wp-content/uploads/2017/11/cropped-alt-logo-cropped-512x512-192x192.jpg" class="icon bookmark-icon"/>https://www.altnews.in/</div></div></a></figure><p id="1f92ec7d-2bab-803f-a70a-c5fe834d423f" class="">இந்தியாவுக்கான பொய்ச்செய்தி சரி பார்ப்பு இணையதளம். பிரதிக் சின்ஹா மற்றும் முகமது ஜுபைர் ஆகியோரால் 2017 ம் ஆண்டு துவக்கப்பட்டது. சமூக ஊடக பரப்பில் வலதுசாரி ஆதரவாளர்களால் பரப்பப்பட்ட பல பொய்செய்திகளை இந்த தளம் தெளிவுபடுத்தியது. 2022 ல், மத உணர்வுகளை புண்படுத்தியதான புகாரில் இதன் இணை நிறுவனர் ஜுபைர் கைது செய்யப்பட்டார். கருத்து சுதந்திரத்திற்கான போராட்டத்தின் அடையாளமாகவும் இந்த தளம் விளங்குகிறது. பொய் செய்திகள் மற்றும் வைரல் நிகழ்வுகள் தொடர்பான விரிவான விளக்கத்தை அளிக்கிறது. </p><ul id="1f92ec7d-2bab-8019-8f0c-df1c341bd969" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-805f-9887-e25618018719" class="">இந்தியாவில் பொய்ச்செய்தி தொடர்பான விழிப்புணர்வை ஏற்படுத்திய தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-806a-80ca-ed44438cd86e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8055-89a3-e7a09df4c598" class=""><strong>மாற்று</strong>: தமிழில் யூடர்ன்  இதே போல செயல்பட்டு வருகிறது.- <a href="https://youturn.in/">https://youturn.in/</a></p></div></figure><p id="1f92ec7d-2bab-80d4-b5ae-f9c64eeb308d" class="">
+</p><h2 id="1f92ec7d-2bab-8006-9e75-fd7ce474f1bd" class="">8. <strong>ரீடிராக்‌ஷன் வாட்ச் -</strong></h2><p id="1f92ec7d-2bab-80ff-9287-fffbdc06e641" class="">
+</p><figure id="1f92ec7d-2bab-806b-b4c9-f69e21ec8ac9"><a href="https://retractionwatch.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Retraction Watch</div><div class="bookmark-description">Tracking retractions as a window into the scientific process</div></div><div class="bookmark-href"><img src="https://retractionwatch.com/wp-content/uploads/2018/02/retractionwatch31.jpg" class="icon bookmark-icon"/>https://retractionwatch.com/</div></div><img src="https://retractionwatch.com/wp-content/uploads/2018/02/retractionwatch31.jpg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80f5-9f0f-eb2adab75d1e" class="">அறிவியல் பூர்வமான அணுகுமுறையே எல்லாவற்றிலும் சிறந்ததாக கருதப்படுகிறது. முறையான ஆய்வு இதற்கு அடிப்படையாக அமைவதால், ஆய்வுலக செய்திகளும், கட்டுரைகளும் முக்கியமாகின்றன. ஆய்வுலக போக்குகளையும் முன்னேற்றங்களையும் விரிவாக வெளியிடும் பல இதழ்களும், தளங்களும் இருக்கின்றன. ஆனால் பல்வேறு காரணங்களினால் ஆய்வுக்கட்டுரைகள் திரும்ப பெறப்படுவதும் உண்டு. இந்த செய்தி மற்றும் இதற்கான காரணங்கள், தாக்கம் அதிக கவனம் பெறுவதில்லை. இப்படி திரும்ப பெறப்பட்ட ஆய்வு கட்டுரைகளை பதிவு செய்யும் தளமாக விளங்குகிறது.</p><ul id="1f92ec7d-2bab-8060-a1f6-e427b90e0650" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-802c-95a3-ea4f839a8d49" class="">ஆய்வுலகின் நிகழ்வுகளை கண்காணிக்க உதவும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-80c9-afef-d7433b46b2cd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-8005-86ce-e5ad2cf0e61f" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1f92ec7d-2bab-80ae-97fe-fc61b123cd5d" class="">
+</p><h2 id="1f92ec7d-2bab-80e4-b531-e39cca353bab" class="">9. <strong>டைனிஐ -</strong></h2><p id="1f92ec7d-2bab-8016-89c0-d1f8b1bf5da8" class="">
+</p><figure id="1f92ec7d-2bab-8006-8fb7-f861a2c33aa7"><a href="https://tineye.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">TinEye Reverse Image Search</div></div><div class="bookmark-href"><img src="https://tineye.com/assets/touch_icons/touch-icon-192x192.png" class="icon bookmark-icon"/>https://tineye.com/</div></div></a></figure><p id="1f92ec7d-2bab-80cc-b9d2-d7b2428ba77f" class="">இணையத்தில், உருவங்கள் கொண்டு தேட வழிசெய்யும் முன்னோடி தேடியந்திரம். கூகுள் உள்ளிட்ட பெரும்பாலான தேடியந்திரங்கள் எழுத்து வடிவிலான விளக்கம் சார்ந்தே தேடுகின்றன. புகைப்பட தேடலும் இவ்விதமே நிகழ்கிறது. மாறாக உருவங்கள் கொண்டே இணையத்திஒல் உள்ள உருவங்களை தேட வழி செய்யும் தேடியந்திரமாக டைனிஐ அறிமுகமாகி, தலைகீழ் உருவம் தேடல் எனும் புதிய பிரிவை உண்டாக்கியது. இதன் பிறகே கூகுளும் இதே போன்ற தேடல் வசதியை அறிமுகம் செய்தது. இணையத்தில் வெளியாகும் படங்களின் பழைய வடிவம் மற்றும் மூல படத்தை அறிய உதவுகிறது. பொய்ச்செய்தி சரி பார்ப்பில் முக்கிய ஆயுதம்.</p><ul id="1f92ec7d-2bab-8087-90d5-fcd9e0d802df" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-808f-aa82-fca00c31e4fa" class="">உருவங்களை கொண்டு உருவங்களை தேடி, புகைப்படம் சார்ந்த தெளிவை அளிக்கும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8073-a61b-db6c6a050b92"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80e7-8223-c8bb7166f81b" class=""><strong>மாற்று</strong>: <a href="https://images.google.com/?gws_rd=ssl">கூகுள் ரிவர்ஸ் இமேஜ் சர்ச்</a></p></div></figure><p id="1f92ec7d-2bab-8086-9310-f50eb69f4969" class="">
+</p><h2 id="1f92ec7d-2bab-8038-a0e3-d2c419cc6a55" class="">10. <strong>டீப்வேர் -</strong></h2><p id="1f92ec7d-2bab-809e-b16f-dd082e34b361" class="">
+</p><figure id="1f92ec7d-2bab-805d-a588-c8a01e4819da"><a href="https://deepware.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Scan &amp; Detect Deepfake Videos with a Simple Tool Online</div><div class="bookmark-description">Scan &amp; Detect Deepfake Videos Scan a suspicious video to find out if it&#x27;s synthetically manipulated.Contact Us for on-premise solutions. GO TO SCANNER Enemy at the Gates Cybersecurity faces an emerging threat generally known as deepfakes. Malicious uses of AI-generated synthetic media, the most powerful cyber-weapon in history is just around the corner.</div></div><div class="bookmark-href"><img src="https://deepware.ai/wp-content/uploads/2020/10/cropped-icon-192x192-1.png" class="icon bookmark-icon"/>https://deepware.ai/</div></div></a></figure><p id="1f92ec7d-2bab-8037-b855-c56de5b9ae4e" class="">புகைப்படங்களை திருத்த உதவும் போட்டோஷாப் மென்பொருளின் தவறான பயன்பாட்டை விட மிகப்பெரிய அச்சத்தை ஏற்படுத்தக்கூடியதாக டீப்பேக் என சொல்லப்படும் ஏஐ நுட்பம் கொண்டு உருவாக்கப்படும் ஆழ்போலி வீடியோக்கள் அமைகின்றன. மனிதர்களை பொய்யாக வீடியோக்களில் சேர்த்து, பிழையான தோற்றத்தை ஏற்படுத்தும் இந்த வகை வீடியோக்கள் பெரும் சவாலாக உருவெடுத்துள்ள நிலையில், இத்தகைய ஆழ்போலிகளை அடையாளம் காண உதவுகிறது இந்த சேவை.</p><ul id="1f92ec7d-2bab-80d6-9988-cf5a798e8997" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8042-96c5-e4a478c25d1f" class="">டீப்பேக் வீடியோ சிக்கலுக்கு தீர்வு காணும் திறன் கொண்ட கருவி.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80d2-9041-ea5e7e0c7b96"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-803f-8c8e-d33f7d8b3f3c" class=""><strong>மாற்று</strong>: பிளாக்செயின் நுட்பம் அடிப்படையில் செயல்படும் நவீன சேவை வெரிஃபேக்ட்- Verifact, பொய் செய்திகள் தொடர்பான தகவல் சமர்பிக்க வழி செய்யும் <a href="http://quod.us/">Quod.us</a> , <a href="https://logically.ai/">https://logically.ai/</a>   </p></div></figure><p id="1f92ec7d-2bab-800b-a6d0-d945b7451a41" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

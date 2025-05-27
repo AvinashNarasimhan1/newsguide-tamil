@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>வலை கருவிகள்</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-8014-a4e2-f3faf018eff8" class="page sans"><header><h1 class="page-title">வலை கருவிகள்</h1><p class="page-description"></p></header><div class="page-body"><p id="1fb2ec7d-2bab-80f7-860f-c6c7810b66be" class="">
+</p><p id="1fb2ec7d-2bab-8030-88ac-db3ed9a70885" class="">இணையதளங்கள் மட்டும் அல்ல, பயனாளிகளின் தேவைகளை நிறைவேற்றக்கூடிய பலவிதமான இணைய சேவைகள் இருக்கின்றன. செயல்திறன் மேம்பாடு துவங்கி, திட்டமிடல், நினைவூட்டல் உள்ளிட்ட பலவித பலன்களை அளிக்கும் இணைய கருவிகள் உருவாக்கப்பட்டுள்ளன. செய்தி நோக்கிலும் கைகொடுக்கும் கருவிகளும் இருக்கின்றன. செய்தியாளர்களின் பணியை எளிதாக்கும் இத்தகைய கருவிகள்:</p><p id="1fb2ec7d-2bab-8097-90bb-cafa1e8b2d06" class="">
+</p><h2 id="1fb2ec7d-2bab-800e-bb4c-d66729819d9f" class="">1. <strong>பாக்கெட் -</strong></h2><p id="1fb2ec7d-2bab-8054-a340-faa3029a265b" class="">
+</p><figure id="1fb2ec7d-2bab-800b-8b40-e49086b72c0b"><a href="https://getpocket.com/home" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Pocket</div></div><div class="bookmark-href"><img src="https://getpocket.com/i/apple-touch-icon/Pocket_AppIcon_@144.png" class="icon bookmark-icon"/>https://getpocket.com/home</div></div></a></figure><p id="1fb2ec7d-2bab-809d-b392-e21a6f94b918" class="">அவசியம் படிக்க வேண்டிய நல்ல கட்டுரை, ஆனால் இப்போது நேரம் இல்லை என உணரும் தருணங்களை இணையத்தில் அடிக்கடி உணரலாம். இந்த கட்டுரைகளை குறித்து வைத்து, நேரம் கிடைக்கும் போது தேடிப்பிடித்து படிப்பது சவாலானதாக இருக்கலாம். இதற்கான எளிய தீர்வாக அமைகிறது பாக்கெட் சேவை. இணையத்தில் நல்ல கட்டுரையை எதிர்கொள்ளும் போது, பாக்கெட் மூலம் அதை நம்முடைய பக்கத்தில் சேமித்து கொள்ளலாம். பின்னர் நேரம் கிடைக்கும் போதை அதை வாசிக்கலாம். இப்படி நமக்கான கட்டுரை நூலகத்தை உருவாக்கி கொள்ளலாம். பயனாளிகள் வாசிப்புக்கு ஏற்ற தொடர்புடைய கட்டுரைகளையும் இந்த சேவையே பரிந்துரைக்கும். வீடியோ இணைப்புகளையும் சேமிக்கலாம். கட்டுரைகளை ஒலி வடிவிலும் கேட்கலாம். இணையத்தில் நல்ல கட்டுரைகளை தவறவிடாமல் இருப்பதோடு, இணையத்தின் கவனச்சிதறல் இல்லாமலும் அதை அணுக வழி செய்கிறது இந்த சேவை. ரீட் இட் லேட்டர் எனும் வகை சேவைகளில் முதன்மையானதாக அமைகிறது. </p><ul id="1fb2ec7d-2bab-8071-a9a6-c92a80145412" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-800d-a293-cfc61fe0a301" class="">இணையத்தில் நமக்கான நூலகத்தை உருவாக்கி கொள்ள வழி செய்கிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80cb-bed5-c92f30be5c79"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-802f-a286-d5117d8ba656" class=""><strong>மாற்று:</strong> <a href="https://www.instapaper.com/">இன்ஸ்டாபேப்பர்</a> , <a href="https://feedly.com/">ஃபீட்லி</a></p></div></figure><p id="1fb2ec7d-2bab-80aa-b4dc-fa595b81e5ae" class="">
+</p><h2 id="1fb2ec7d-2bab-8024-a1c0-d0d5208a72d2" class="">2. <strong>கூகுள் டிரெண்ட்ஸ் -</strong></h2><p id="1fb2ec7d-2bab-805d-ba19-f43c128c83a1" class=""><strong> </strong>   </p><figure id="1fb2ec7d-2bab-8013-a98d-cbf7e76b6d63"><a href="https://trends.google.com/trends/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Trends</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/trends/favicon.ico" class="icon bookmark-icon"/>https://trends.google.com/trends/</div></div></a></figure><p id="1fb2ec7d-2bab-80b7-aaea-dd0939a5fecc" class="">இணையத்தின் நாடித்துடிப்பை அறிய உதவும் சேவை என கூகுள் டிரெண்ட்சை குறிப்பிடலாம். இணையத்தில் அதிகம் தேடப்படும் குறிச்சொற்களை அடிப்படையாக கொண்டு, இணையவாசிகள் ஆர்வம் கொண்டிருக்கும் புதிய போக்குகளை கண்டறிய இந்த சேவை உதவுகிறது. செய்திகள், கட்டுரைகளுகான விதையாக அமையக்கூடிய உள்ளொளியை பெறுவதோடு, தொடர்புடைய விரிவான தரவுகளையும் அறியலாம். உள்ளூர் முதல் உலக அளவிலும் போக்குகளை கண்டறியலாம். குறிப்பிட்ட குறிச்சொல்லுக்கான போக்குகளையும் அறியலாம். இதே போலவே, கூகுள் அலெர்ட்ஸ் சேவையும் பயனுள்ளது. குறிப்பிட்ட குறிச்சொல் தொடர்பாக இணையத்தில் தேடாமலே புதிய தகவல்கள் வெளியாகும் போது அது குறித்த தகவலை பெற இந்த சேவை வழி செய்கிறது.</p><ul id="1fb2ec7d-2bab-801e-bdd1-cf5e926fecec" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80ee-a1f1-c8e73d7665d3" class="">இணையத்தின் போக்குகளை அறிய உதவுகிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-804a-a2d8-f246ebaa2b24"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-803f-80dc-fdc8b1b4aac8" class=""><strong>மாற்று:</strong> <a href="https://keywordtool.io/">கீவேர்டு டூல்</a> இன்னும் பல இருக்கிறன. ’ஆன்சர் த பப்ளிக்’ கூட இதே வகையாக கருதப்படக்கூடியதே.</p></div></figure><p id="1fb2ec7d-2bab-8044-969e-dee7c32f375c" class="">
+</p><h2 id="1fb2ec7d-2bab-8024-bf26-c7079cc7760d" class="">3. <strong>எவர்நோட் -</strong></h2><p id="1fb2ec7d-2bab-8052-afaf-dfc47a5a7c08" class="">   </p><figure id="1fb2ec7d-2bab-80e7-b7a8-e8b119a00367"><a href="https://evernote.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Best Note Taking App - Organize Your Notes with Evernote</div><div class="bookmark-description">Our note taking app helps you capture and prioritize ideas, projects and to-do lists, so nothing falls through the cracks. Start your free trial today!</div></div><div class="bookmark-href"><img src="https://evernote.com/favicon.ico" class="icon bookmark-icon"/>https://evernote.com/</div></div><img src="https://images.prismic.io/evernote/509c3ac6-646c-4873-910b-38864d186ee9_og-image.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-807f-80a1-fc0f5d64913e" class="">செய்தியாளர்கள் எப்போதும் ஒரு குறிப்பேட்டை கைவசம் வைத்திருக்க வேண்டும். இணைய யுகத்தில் இந்த குறிப்பேட்டை டிஜிட்டல் வடிவிலும் கொண்டிருக்கலாம். இணைய குறிப்பேடாக செயல்படக்கூடிய இணையதளங்களும், செயலிகளும் எண்ணற்றவை இருக்கின்றன. இவற்றில் எவர்நோட் முன்னோடி சேவைகளில் ஒன்றாக அமைகிறது. குறிப்புகளை எழுதி வைத்து, பின்னர் எளிதாக கண்டறியும் வகையில் வகைப்படுத்தல் வசதியை அளிப்பதோடு, செய்ய வேண்டிய செயல்களை குறித்து வைக்கும் வசதியையும் அளிக்கிறது. செயல்திறன் மேம்பாட்டிற்கு உதவும் சேவையாக கருதப்படுகிறது.</p><ul id="1fb2ec7d-2bab-80ec-a13f-e37e7f74c186" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-803b-9b85-ea04d767fa7f" class="">உங்களுக்கான டிஜிட்டல் குறிப்பேடு.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8022-af00-c8d9ecfa78e0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80e0-8671-e0a8e78f97af" class=""><strong>மாற்று</strong>: <a href="https://simplenote.com/">சிம்பிள்நோட்</a> ( இதன் எளிமைக்காக), கூகுள் கீப். ’நோஷன்’ இந்த பிரிவில் விரிவான வசதிகளை கொண்ட சேவை. </p></div></figure><p id="1fb2ec7d-2bab-8065-a702-cc1c6d89457a" class="">
+</p><h2 id="1fb2ec7d-2bab-8052-9c83-d94fad6900ac" class="">4. <strong>புரோட்டான் மெயில் -</strong></h2><p id="1fb2ec7d-2bab-80c4-bd37-f96df8c873a7" class=""><strong> </strong>   </p><figure id="1fb2ec7d-2bab-800e-8c4b-c9f9097526fb"><a href="https://proton.me/mail" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Proton Mail: Get a free email account with privacy and encryption | Proton</div><div class="bookmark-description">Proton Mail is the world’s largest secure email service with over 100 million users. Available on Web, iOS, Android, and desktop. Protected by Swiss privacy law.</div></div><div class="bookmark-href"><img src="https://proton.me/favicons/apple-touch-icon.png" class="icon bookmark-icon"/>https://proton.me/mail</div></div><img src="https://pmecdn.protonweb.com/image-transformation/?s=s&amp;image=Zx_If_Xo_F3_Nbk_B_Xs_x_Proton_Mail_781fc7627e.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80da-b768-e087e8596d57" class="">இமெயில் தொடர்பாக செய்தியாளர்கள் அறிந்து கொள்ள வேண்டிய அம்சங்கள் பல இருக்கின்றன. இமெயில் முகவரி குறிப்பால் பல செய்திகளை சொல்லக்கூடியது. ஹாட்மெயில் அல்லது யாஹு மெயில் முகவரி கொண்டவர் எனில், மிக நீண்ட காலமாக இணையத்தை பயன்படுத்துபவர் என கருதலாம். தொழில்முறை வல்லுனர்கள் எனில் அவர்கள் பணியாற்றும் நிறுவன இமெயில் முகவரியை கொண்டிருக்கலாம். கல்வியாளர்கள் எனில், கல்வி நிறுவனத்தை இமெயில் உணர்த்தும். இமெயில்களில் இலவச சேவைகளும் உண்டு, கட்டண சேவைகளும் உண்டு. கட்டண சேவைகளில், என்கிரிப்ஷன் பூட்டு கொண்ட பாதுகாப்பான சேவைகளும் உண்டு. இமெயில் உள்ளடக்கத்தை பெறுபவர் தவிர வேறு எவரும் படிக்க முடியாத பாதுகாப்பாக என்கிர்ப்ஷன் அமைகிறது. புரோட்டான்.மீ இந்த வகையான என்கிர்ப்ஷன் பாதுகாப்பு கொண்ட மெயில் சேவையை அளிக்கிறது. நம்பகமான மற்றும் மிக முக்கிய தகவல் தொடர்பு எனில், என்கிர்ப்ஷன் பாதுகாப்பு சேவையை நாடுவது அவசியம். தனியுரிமைக்கும் இது முக்கியம். </p><ul id="1fb2ec7d-2bab-804b-9b59-cf2f63aae930" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8047-955d-e4df421cf9c4" class="">இமெயில் வாயிலான தகவல் தொடர்பு பாதுகாப்பு மிக்கதாக இருப்பது மிக அவசியம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8000-8fc6-e7fa285cd471"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80f6-8fbb-f52ae5635cd2" class=""><strong>மாற்று:</strong> <a href="https://privnote.com/">பிரிவ்நோட்</a> எனும் சேவை மறு முனையில் வாசிக்கப்பட்டதும் அழிந்துவிடக்கூடிய வகையில் மெயில் அனுப்ப உதவுகிறது.</p></div></figure><p id="1fb2ec7d-2bab-8069-899d-fe09b6d4537f" class="">
+</p><h2 id="1fb2ec7d-2bab-80fb-9493-dfc64137fc54" class="">5. <strong>பிட்லே -</strong></h2><p id="1fb2ec7d-2bab-80e9-ba6f-e66f302d37d5" class="">   </p><figure id="1fb2ec7d-2bab-80ff-a006-f07b96a0f8f6"><a href="https://bitly.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Bitly Connections Platform | Short URLs, QR Codes, and More</div><div class="bookmark-description">Bitly’s Connections Platform is more than a free URL shortener, with robust link management software, advanced QR Code features, and a landing page solution.</div></div><div class="bookmark-href"><img src="https://docrdsfx76ssb.cloudfront.net/static/1747158674/pages/wp-content/uploads/2019/02/favicon.ico" class="icon bookmark-icon"/>https://bitly.com/</div></div><img src="https://docrdsfx76ssb.cloudfront.net/static/1747158674/pages/wp-content/uploads/2024/05/hero-img_desktop@2x.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80ef-bc3e-eea8a297f2c7" class="">இணையம், அதவாது வலை என அறியப்படும் வெப், இணைப்புகளால் ஆனது. இணைப்புகள், தொடர்புடைய இணையதள முகவரிகளை அறிந்து கொள்ள உதவுகிறது. சமூக ஊடகங்களில் இணையம் சார்ந்த தகவல்களை பகிரும் போது இணைய முகவரிகள் முக்கியமாகிறது. செய்திகள், கட்டுரைகளில் பொருத்தமான இணைய முகவரிகளை குறிப்பிடுவது அவசியம். அதோடு, வலைக்காக எழுதுவது என்று வரும் போது, தனித்து அடையாளம் காட்டப்படும் இணைய இணைப்புகள் நேர்த்தியாக கோர்க்கப்பட்டு எழுதுவதும் அவசியம். இணைய முகவரிகளை பகிரும், அவற்றின் நீளம் ஒரு பிரச்சனையாகலாம். இதற்கு தீர்வாக இணைய முகவரிகளை சுருக்கித்தரும் முகவரி சுருக்க சேவைகள் அமைகின்றன. டைனியூஆர்.எல் மற்றும் பிட்லே இந்த வகையில் முன்னோடி சேவைகள். முகவரி சுருக்க சேவையாக அறிமுகமான பிட்லே, இணைய கண்காணிப்பு உள்ளிட்ட பல்வேறு தரவுகள் சார்ந்த சேவையை வழங்கும் வகையில் வளர்ச்சி அடைந்துள்ளது.</p><ul id="1fb2ec7d-2bab-803d-bfd8-dd3373a87052" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8075-86b4-cd0e9e45a58a" class="">இணைய பகிர்வை எளிதாக்கும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8022-bc72-c4c67e3d8e27"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-800e-be02-fc5cdd0694d8" class=""><strong>மாற்று</strong>: <a href="https://tinyurl.com/">டைனி.யூஆர்.எல்</a> </p></div></figure><p id="1fb2ec7d-2bab-8064-8309-f4daa0d5b99e" class="">
+</p><h2 id="1fb2ec7d-2bab-801e-98f4-c1ce92cadcde" class="">6. <strong>கேன்வா</strong> -  </h2><p id="1fb2ec7d-2bab-80d8-8aab-e04f9b1c833f" class="">
+</p><figure id="1fb2ec7d-2bab-809b-987d-eae2d15e1c32"><a href="https://www.canva.com/en_in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Canva: Visual Suite for Everyone</div><div class="bookmark-description">Canva is a free-to-use online graphic design tool. Use it to create social media posts, presentations, posters, videos, logos and more.</div></div><div class="bookmark-href"><img src="https://static.canva.com/static/images/android-192x192-2.png" class="icon bookmark-icon"/>https://www.canva.com/en_in/</div></div><img src="https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8095-b4dd-f6f358c3d8b0" class="">வரைகலை வடிவமைப்பு சாதனம் என்ற வகையில் கேன்வாவை விட சிறந்த சேவைகள் பல இருக்கின்றன. புகைப்பட திருத்தச் சேவையாக போட்டோஷாப் இருக்கிறது. காட்சி விளக்கங்களை வடிவமைக்க பவர்பாயிண்ட் உள்ளிட்ட சேவைகள் இருக்கின்றன. லோகோ வடிவமைக்க ஏற்ற சேவைகள் இருக்கின்றன. இவற்றில் பெரும்பாலானவற்றை ஒரே இடத்தில் அளிக்கும் சேவையாக கேன்வா அமைகிறது. எளிதாக அணுக கூடிய தன்மையோடு, கைப்பிடித்து வழிகாட்டுவது போல உதவக்கூடிய டெம்பிளட்கள் கொண்டிருப்பது கேன்வாவின் சிறப்பு. காட்சிரீதியாகவும் தகவல்கள் சொல்வது முக்கியமாக இருக்கும் இணைய யுகத்தில் கேன்வா மிகவும் பயனுள்ளது. தகவல் வரைபடங்களை உருவாக்கவும் உதவுகிறது. </p><ul id="1fb2ec7d-2bab-8044-82e5-f898773719d3" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-805b-8795-ed512324ecdd" class="">சமூக ஊடக யுகத்தில் உள்ளடக்கத்தை காட்சி நோக்கில் பகிர்வதற்கு  உதவும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80db-8bab-dfd92859c5ed"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8043-a6bd-cd3d2a7ab9c5" class=""><strong>மாற்று</strong>: <a href="https://www.adobe.com/in/express/">அடோபி எக்ஸ்பிரஸ்</a></p></div></figure><p id="1fb2ec7d-2bab-806a-9185-fc8142e8a31f" class="">
+</p><h2 id="1fb2ec7d-2bab-80c8-a0c8-c3fb27c1a100" class="">7. <strong>டைம்லைன் ஜேஎஸ் -</strong>   </h2><p id="1fb2ec7d-2bab-8092-9ea9-cf5ccdc2817c" class="">
+</p><figure id="1fb2ec7d-2bab-8055-9a05-fc1e79eb209c"><a href="https://timeline.knightlab.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Timeline JS</div><div class="bookmark-description">Easy-to-make, beautiful timelines.</div></div><div class="bookmark-href"><img src="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/apple-touch-icon.png" class="icon bookmark-icon"/>https://timeline.knightlab.com/</div></div><img src="https://cdn.knightlab.com/libs/orangeline/latest/assets/screenshot-timeline.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80ad-882b-eacf6038ccb4" class="">வரலாறு தொடர்புடைய கட்டுரைகளில் நிகழ்வுகளின் காலவரிசை முக்கியமானது. சில சூழல்களில் காலவரிசை மட்டுமே கூட தனி கட்டுரை போல கவனத்தை ஈர்க்கலாம். வரலாற்று நிகழ்வுகளை அவை நிகழ்ந்த ஆண்டு வரிசையில் பட்டியலிடுவதைவிட, இணைய யுகத்திற்கு ஏற்ப காட்சிரீதியான தன்மையோடு, பயனாளிகள் தொடர்பு கொள்ளும் வகையில் உருவாக்குவதே ஏற்றது. இணையதளங்களில் அணுக இத்தகைய நவீன காலவரிசைகளே உகந்தது. இணைய வடிவமைப்பாளரின் திறன் தேவைப்படும் இத்தகைய காட்சி நோக்கிலான காலவரிசையை உருவாக்க வழி செய்கிறது டைம்லைன்.ஜே.எஸ் கருவி. இதழியல் ஆய்வு தொடர்பான செயல்பாடுகளில் ஈடுபட்டு வரும் அமெரிக்காவின் நைட்லேப் அமைப்பு உருவாக்கியுள்ளது.</p><ul id="1fb2ec7d-2bab-8020-a3d2-f31491beb942" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8041-947a-def15e33e54a" class="">இணைய யுகத்திற்கு ஏற்ற காலவரிசைகளை உருவாக்கும் திறன் அளிக்கிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-804c-b27f-f531b806a345"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8086-b5ab-f4377ee4184c" class=""><strong>மாற்று:</strong> இதே திறனை ஏஐ துணையோடு அளிப்பதாக சொல்கிறது மைலென்ஸ்.</p></div></figure><p id="1fb2ec7d-2bab-8002-8369-d72217f7a741" class="">
+</p><h2 id="1fb2ec7d-2bab-80c9-9392-e24bef2fa2b7" class="">8. <strong>லீப்லெட் -</strong>    </h2><p id="1fb2ec7d-2bab-8018-972b-e54e4ecd7b39" class="">
+</p><figure id="1fb2ec7d-2bab-80ec-a881-ebd5049a155d"><a href="https://leafletjs.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Leaflet — an open-source JavaScript library for interactive maps</div><div class="bookmark-description">Leaflet is a modern, lightweight open-source JavaScript library for mobile-friendly interactive maps.</div></div><div class="bookmark-href"><img src="https://leafletjs.com/docs/images/favicon.ico" class="icon bookmark-icon"/>https://leafletjs.com/</div></div><img src="https://leafletjs.com/docs/images/logo.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80cf-aa88-e0ec184c36c6" class="">இணைய இதழியலின் தனிப்பிரிவாக தரவு இதழியல் உருவாகியிருக்கிறது. தரவுகளுக்கு பின் ஒளிந்துள்ள உண்மைகளை, செய்திகளை கண்டறிந்து, அதிக தாக்கத்தை ஏற்படுத்தும் வகையில் காட்சி நோக்கில் வெளிப்படுத்துவதை அடிப்படையாக கொண்டுள்ளது. புள்ளிவிவரங்களை, வரைபடமாகவும், அட்டவணையாகவும் செய்திகளில் வழங்கியதன் அடுத்த கட்டமாக, தரவுகள் தொகுப்புகளில் மூலம் பெறக்கூடிய புரிதலை இணைய அம்சங்கள் கொண்ட செய்தி வடிவமாக்குவது தரவு இதழியலின் தனித்தன்மை. இதற்கு செய்தியாளர்களுக்கு நிரல் உருவாக்க திறன் அவசியம். எனினும், தரவுகள் தொகுப்பில் இருந்து, செய்திகளை உருவாக்க உதவும் இணைய கருவுகளும் பல உருவாக்கப்பட்டுள்ளன. இவற்றில் வரைப்படங்களை அடிப்படையாக கொண்டு செய்திகளை நவீன முறையில் வழங்க வழி செய்கிறது லீப்லெட்.ஜே.எஸ் சேவை.</p><ul id="1fb2ec7d-2bab-8096-989f-eaa2946c65e2" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80f1-8617-ec4a8a203a06" class="">வரைபடம் சார்ந்து செய்தி வெளியிடுவதை அடுத்த கட்டத்திற்கு கொண்டு செல்லும் சேவை. நவீன இதழயலுக்கு எடுத்துக்காட்டு. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-80b3-a3e2-c9fb7a97e274"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-80ba-b03e-f59e8ec5e73b" class=""><strong>மாற்று:</strong> ——</p></div></figure><p id="1fb2ec7d-2bab-808d-8aa5-c01fe58cfaac" class="">
+</p><h2 id="1fb2ec7d-2bab-804d-a7de-fcd616117d8d" class="">9. <strong>டார் பிரவுசர் -</strong></h2><p id="1fb2ec7d-2bab-80ca-9868-d8c2e83cd033" class=""><strong> </strong>   </p><figure id="1fb2ec7d-2bab-809f-82b8-d10a5cf4a149"><a href="https://www.torproject.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Tor Project | Privacy &amp; Freedom Online</div><div class="bookmark-description">Defend yourself against tracking and surveillance. Circumvent censorship.</div></div><div class="bookmark-href"><img src="https://www.torproject.org/static/images/favicon/favicon.ico" class="icon bookmark-icon"/>https://www.torproject.org/</div></div><img src="https://www.torproject.org/static/images/tor-project-logo-onions.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80c2-8bde-ea6b31605d7c" class="">செய்தியாளர்களுக்கு பிரவுசர் அறிவும் வேண்டும். அதாவது, பிரவுசர்களின் தன்மை, வகைகள், செயல்பாடு உள்ளிட்டவற்றை அறிந்திருக்க வேண்டும். பரவலாக பயன்படுத்தப்படும் முன்னணி பிரவுசர்களை அறிந்திருப்பதோடு, ’டார்’ போன்ற பிரத்யேக பிரவுசர்களையும் அறிந்திருக்க வேண்டும். இணையத்தில் உலாவும் போது, எண்ணற்ற முறையில் பயனாளிகளின் இணைய பயன்பாடு தொடர்பான தரவுகள் சேகரிக்கப்படுகின்றன. இணைய நிறுவனங்கள், சேவை நிறுவனங்கள், அரசு அமைப்புகள் உள்ளிட்டவை இப்படி தகவல்களை சேகரிக்கின்றன. விளம்பர நோக்கம் முதல் கண்காணிப்பு, உளவு பார்த்தல் என பலவித நோக்கங்களோடு பயனாளிகள் தகவல்கள் திரட்டப்படலாம். எனவே, இணைய சுவடுகளை பின் தொடர முடியாத வகையில் தனிப்பட்ட தரவுகளை அளிக்காமல் இணையத்தில் உலாவும் தேவை உண்டாகலாம். டார் பிரவுசர் அமைப்பு, இணைய உலாவலை என்கிப்ஷன் செய்வது மூலம் இதை சாத்தியமாக்குகிறது. இதே காரணத்திற்காக, மெசேஜிங் சேவைகளில், தனியுரிமை பாதுகாப்பு கொண்ட ’சிகனல்’ போன்ற சேவைகளை அறிந்திருக்க வேண்டும். </p><ul id="1fb2ec7d-2bab-8064-8443-e77e220e30be" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80d1-83d8-e6dc74c2cab3" class="">பாதுகாப்பு காரணங்களுக்காக பயன்படுத்த வேண்டியிருப்பதோடு, இத்தகைய பிரவுசரின் தேவை மற்றும் செயல்பாடுகள் குறித்த விழிப்புணர்வும் அவசியம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80b2-a4f2-c53a07610bc1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80b1-b5f9-fb897b37765d" class=""><strong>மாற்று:</strong> <a href="https://brave.com/">பிரேவ்</a> , <a href="https://freenet.org/">பிரிநெட்</a> உள்ள்ளிட்ட பல பிரவுசர்கள் இந்த பிரிவில் வருகின்றன.</p></div></figure><p id="1fb2ec7d-2bab-80d8-abaf-e57c27894821" class="">
+</p><h2 id="1fb2ec7d-2bab-8060-8ab9-f8a7481f5507" class="">10. <strong>லைட்ஷாட் -</strong>   </h2><p id="1fb2ec7d-2bab-80f5-aea3-eaf75b16bd56" class="">
+</p><figure id="1fb2ec7d-2bab-80e2-afc8-cffbb985033a"><a href="https://app.prntscr.com/en/index.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Lightshot — screenshot tool for Mac &amp; Win</div></div><div class="bookmark-href"><img src="https://app.prntscr.com/favicon.ico" class="icon bookmark-icon"/>https://app.prntscr.com/en/index.html</div></div></a></figure><p id="1fb2ec7d-2bab-805d-a259-c5a097650cc1" class="">ஒரு காலத்தில் எப்படி செய்திகளுக்கு துணையாக புகைப்படங்கள் தேவைப்பட்டதோ, அதே போல இணைய யுகத்தில் ஸ்கிரீன்ஷாட் எனப்படும் திரைப்பிடிப்பு தேவை. குறிப்பிட்ட செய்திகளுடன் தொடர்புடைய ஸ்கீரீன்ஷாட்களை இணைப்பது, புரிதலுக்கு உதவுவதோடு பல நேரங்களில் முக்கிய ஆதாரமாகவும் விளங்கும். லைட்ஷாட் சேவை இதற்கு உதவுகிறது.</p><ul id="1fb2ec7d-2bab-8093-9e6c-c468a92a8116" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-805c-ab45-dae0b7960ccf" class="">இணைய யுகத்தில் ஸ்கிரீன்ஷாட் முக்கியம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8088-bc80-c5325262c595"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8098-b2dd-d195774c1d89" class=""><strong>மாற்று:</strong> <a href="https://getgreenshot.org/">கிரீன்ஷாட்</a></p></div></figure><p id="1ff2ec7d-2bab-8035-bc36-c228926adfd1" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

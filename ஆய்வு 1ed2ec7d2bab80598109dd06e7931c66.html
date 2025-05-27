@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>ஆய்வு</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-8059-8109-dd06e7931c66" class="page sans"><header><h1 class="page-title">ஆய்வு</h1><p class="page-description"></p></header><div class="page-body"><p id="1fb2ec7d-2bab-8075-bf71-ceff82c959cf" class="">
+</p><p id="1fb2ec7d-2bab-80da-a2d0-f70a702a4c68" class="">இதழாளர்கள் செய்தி சேகரிப்பு பணியில் பல நேரங்களில் ஆழமான ஆய்விலும் ஈடுபட வேண்டும். இதழியலுக்கான ஆய்வு பணி என்பது கல்வி புலன் சார்ந்த ஆய்வில் இருந்து வேறுபட்டது என்றாலும், அடிப்படை நோக்கம் ஒன்று தான். இணையத்தில் ஆய்வு நோக்கில் இதழாளர்கள் அறிந்திருக்க வேண்டிய தளங்கள்: </p><p id="1fb2ec7d-2bab-807c-9c56-f6131630bb25" class="">
+</p><h2 id="1fb2ec7d-2bab-8078-9c0b-d73164ed4b1d" class="">1. <strong>வேபேக்மிஷின் -</strong></h2><p id="1fb2ec7d-2bab-8039-96e5-e7e1cc9cbd1d" class=""><strong> </strong>   </p><figure id="1fb2ec7d-2bab-80cb-b5d5-c97e58b929f4"><a href="http://web.archive.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wayback Machine</div><div class="bookmark-description">Search the history of over __WB_PAGES_ARCHIVED__
+                          web pages
+                          on the Internet.</div></div><div class="bookmark-href"><img src="https://web-static.archive.org/_static/images/archive.ico" class="icon bookmark-icon"/>http://web.archive.org/</div></div></a></figure><p id="1fb2ec7d-2bab-8087-96e7-d8f2e4a99687" class="">இணைய காப்பகமாக அறியப்படும், இண்டர்நெட் ஆர்க்கீவ் தளத்தின் வலை காப்பகமாக விளங்குகிறது வேபேக்மிஷின். இணையதளங்களின் கடந்த கால பக்கங்களை திரும்பி பார்க்க வழி செய்வது இதன் தனிச்சிறப்பு. இணையத்தை பொதுமக்கள் அணுக வழி செய்த வலை அறிமுகமான ஆரம்ப ஆண்டுகளில், சில நூறு தளங்களே இருந்த நிலை மாறி, கோடிக்கணக்கான இணையதளங்கள் கொண்டதாக இணையம் வளர்ந்து விரிந்துள்ளது. இடைப்பட்ட காலத்தில் எத்தனையோ இணையதளங்கள் வெவ்வேறு காரணங்களுக்காக காணாமல் போயிருக்கின்றன. அவற்றில் பல இணையத்தில் இருந்த சுவடே தெரியாமல் மறைந்திருக்கின்றன. இந்த தளங்களை எல்லாம் திரும்பி பார்க்க நினைத்தால், வேபேக்மிஷின் அதற்கு உதவுகிறது.<br/>இணையதளங்களை ஆவணப்படுத்தி வைப்பது அவசியம் என்பதை உணர்த்து, இணைய பக்கங்களை குறிப்பிட்ட இடைவெளியில், கால முத்திரையுடன் இந்த தளம் சேமித்து வைக்கிறது. இந்த பக்கங்களில் இணையதளங்களை மீண்டும் அணுகலாம் என்பதோடு, உருமாறிய இணையதளங்களின் பழைய வடிவங்களையும் காணலாம்.<br/></p><ul id="1fb2ec7d-2bab-80bf-8c51-ff9de7976f05" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80f1-ae8b-e8fc2245c79e" class="">செய்தியாளர்களுக்கு இணைய ஆய்வில் இதைவிட பயனுள்ள, வலுவான சேவை இருக்க வாய்ப்பில்லை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8038-863e-c1cc138f3bd9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8026-b620-ef8634b99e41" class=""><strong>மாற்று:</strong>  <a href="http://archivebox.io/">ஆர்கேவ் பாக்ஸ்</a> , <a href="https://archive.ph/">ஆர்கேவ்.டுடே</a></p></div></figure><p id="1fb2ec7d-2bab-80cc-a367-ee837a3c261c" class="">
+</p><h2 id="1fb2ec7d-2bab-802b-9218-e1de9593bae5" class="">2. <strong>டக்டக்கோ -</strong></h2><p id="1fb2ec7d-2bab-8034-815b-ff19ce1ba9f7" class="">    </p><figure id="1fb2ec7d-2bab-806b-a95f-c1ad15e83fcb"><a href="https://duckduckgo.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DuckDuckGo - Protection. Privacy. Peace of mind.</div><div class="bookmark-description">The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs.</div></div><div class="bookmark-href"><img src="https://duckduckgo.com/static-assets/favicons/DDG-iOS-icon_152x152.png" class="icon bookmark-icon"/>https://duckduckgo.com/</div></div><img src="https://duckduckgo.com/assets/logo_social-media.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8023-9827-db143ee6c7cc" class="">கூகுள் சிறந்த தேடியந்திரமாக கருதப்படலாம். ஆனால் இணைய தேடல் என்றால் கூகுள் மட்டுமே என்று கருதுவதற்கில்லை. குறிப்பாக செய்தியாளர்கள் இவ்விதம் கருத கூடாது என்பதால் மாற்று தேடியந்திரங்களை அறிந்திருப்பது அவசியம். கூகுளுக்கு மாற்றாக விளங்கும் தேடியந்திரங்களில் டக்டக்கோ ஆகச்சிறந்தது இல்லை என்றாலும், மாற்று தேடியந்திரங்களில் தனியுரிமையை முன்னிறுத்தியதற்காக முன்னோடி சேவையாக விளங்குகிறது. கூகுள் வர்த்தக நோக்கில், பயனாளிகள் தகவல்களை அறுவடை செய்து பயன்படுத்தும் போக்கிற்கு எதிராக, பயனாளிகள் தனியுரிமைக்கு மதிப்பளிக்கும் வகையில் டக்டக்கோ செயல்பட்டு வருகிறது. பிரவுசர் சேவையும் இருப்பதோடு ஏஐ யுகத்திற்கு ஏற்ப சாட்பாட் வசதியும் கொண்டிருக்கிறது.</p><ul id="1fb2ec7d-2bab-80d8-9b5b-d47dad79772c" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-806c-a00a-da75e70a15a5" class="">மாற்று தேடியந்திரங்களின் பிரதிநிதியாக அறிந்திருக்க வேண்டிய தேடல் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80d8-9307-e56427b9cb36"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80ce-88bd-f1597f830b5b" class=""><strong>மாற்று:</strong>  <a href="https://www.startpage.com/">ஸ்டார்ட்பேஜ்</a></p></div></figure><p id="1fb2ec7d-2bab-801d-9f11-fafc5139ad4c" class="">
+</p><h2 id="1fb2ec7d-2bab-808a-a981-e73956d39b76" class="">3. <strong>வால்பிராம் ஆல்பா -</strong></h2><p id="1fb2ec7d-2bab-8058-9c87-c31e4341a01d" class="">
+</p><figure id="1fb2ec7d-2bab-80f7-be05-f3b0d5860e05"><a href="https://www.wolframalpha.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wolfram|Alpha: Making the world’s knowledge computable</div><div class="bookmark-description">Wolfram|Alpha brings expert-level knowledge and capabilities to the broadest possible range of people—spanning all professions and education levels.</div></div><div class="bookmark-href"><img src="https://www.wolframalpha.com/_next/static/images/favicon_1zbE9hjk.ico" class="icon bookmark-icon"/>https://www.wolframalpha.com/</div></div><img src="https://www.wolframalpha.com/_next/static/images/share_3eSzXbxb.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80d4-83be-c8143cdf4e13" class="">இணையத் தேடலை கூகுளுடன் தான் ஒப்பிட வேண்டுமா என்ன? கூகுளுக்கு முற்றிலும் வெளியே இருக்கும் புதுமையான தேடல் சேவையாக வால்பிராம் ஆல்பா அமைகிறது. கம்ப்யூட்டர் திறன் பொறி என வர்ணிக்கப்படும் இந்த தேடியந்திரம், வழக்கமான தேடியந்திரங்கள் போல, இணையத்தில் தேடல் தகவல்களை பட்டியலிடலாமல், தன்வசம் உள்ள உலகத்தரவுகள் சார்ந்த தொகுப்பில் இருந்து, மேத்தமேடியாக எனும் கணிதவியல் முறையில் தகவல்களை தேடித்தருகிறது. தேடல் முடிவுகள் பட்டியலுக்கு மாறாக, தகவல்களை வரைபடங்கள் சார்ந்து அணுகலாம். இதன் செயல்பாட்டு நுணுக்கங்களை அறியவே மெனக்கெட வேண்டும். </p><ul id="1fb2ec7d-2bab-80cc-a318-c44c3dfd7396" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8066-8826-ddc8a3c8ebe7" class="">தேடியந்திரம் தொடர்பான தோற்றங்களையும், புரிதலையும் தகர்க்கும் காரணத்திற்காகவே அறிந்திருக்க வேண்டிய சேவை. சாட்ஜிபிடி யுகத்திலும் இதன் முக்கியத்துவம் வலுவாகவே உள்ளது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8000-80f7-fc41ac535b71"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-807f-8e53-cf163e9b8a69" class=""><strong>மாற்று:</strong>  ——</p></div></figure><p id="1fb2ec7d-2bab-8047-86f0-e234c9895a7c" class="">
+</p><h2 id="1fb2ec7d-2bab-80fc-8aea-f10a0647cde4" class="">4. <strong>சிமிலர் சைட்ஸ் -</strong></h2><p id="1fb2ec7d-2bab-809e-b1ec-ef9befc86380" class="">    </p><figure id="1fb2ec7d-2bab-806b-845f-e82d0b2ec6b9"><a href="https://www.similarsites.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Similarsites.com - Easily Explore alternative websites</div><div class="bookmark-description">Discover the best websites and explore competitor and related sites with Similarsites.com, the extension that enables you to browse associated content.</div></div><div class="bookmark-href"><img src="https://www.similarsites.com/static/favicon.png" class="icon bookmark-icon"/>https://www.similarsites.com/</div></div></a></figure><p id="1fb2ec7d-2bab-80d5-b40a-c71678d7a9d9" class="">கூகுள் போன்ற பொது தேடியந்திரங்கள் தவிர வேறு வகை தேடியந்திரங்களும் தேவை என உணர வைக்கும் சேவைகளில் ஒன்று சிமிலர் சைட்ஸ். குறிப்பிட்ட எந்த ஒரு இணையதளம் என்றாலும், அது போலவே தன்மை கொண்ட மற்ற இணையதளங்களை தேடி கண்டறிய வழி செய்கிறது. ஒரே மாதிரி தளங்களை கண்டறிய விரும்பும் பயனாளிகளுக்கும், போட்டி தளங்களை அறிய விரும்பும் நபர்களுக்கும் பயனுள்ளது. ஆய்வு நோக்கில், தளங்களை ஒப்பிட்டு பார்க்க செய்தியாளர்களுக்கும் கைகொடுக்கும். ’சிமிலர் வெப்’ எனும் இஸ்ரேல் நிறுவனம் வழங்கும் சேவை.<br/>இதே போல மென்பொருள்கள் மற்றும் இணையதளங்களுக்கான மாற்று சேவைகளை சுட்டிக்காட்டும் ’அல்டர்னேடிவ்டு’ (<br/><a href="https://alternativeto.net/">https://alternativeto.net/</a>) தளத்தையும் கவனத்தில் கொள்ள வேண்டும்.</p><ul id="1fb2ec7d-2bab-80ad-9f25-dce7f95c977a" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80f3-a983-cf0ac78abd4f" class="">இணைய கண்டறிதலை சுவாரஸ்யமாகவும், விரிவாக்கவும் கூடிய சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8010-b4a5-e3e233004d0f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-804f-b1f2-f72c9e53bbde" class=""><strong>மாற்று:</strong>  <a href="http://www.moreofit.com/">மோர் ஆப் இட்</a></p></div></figure><p id="1fb2ec7d-2bab-80ef-a7ec-e8625c1fcf47" class="">
+</p><h2 id="1fb2ec7d-2bab-80f4-9ac9-c82174f54551" class="">5. <strong>நாளிதழ் தேடல் -</strong></h2><p id="1fb2ec7d-2bab-8023-958d-f97aec404b8a" class="">    </p><figure id="1fb2ec7d-2bab-803f-ab08-f65edfe73b3b"><a href="https://www.newspapers.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Historical Newspapers from the 1700&#x27;s-2000s</div><div class="bookmark-description">The largest online newspaper archive. Used by millions every month for historical research, family history, crime investigations, journalism, and more.</div></div><div class="bookmark-href"><img src="https://www.newspapers.com/apple-touch-icon-144x144-precomposed.png" class="icon bookmark-icon"/>https://www.newspapers.com/</div></div><img src="https://www.newspapers.com/nextstatic/images/fsnp.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80b9-88f1-c75e79ad123f" class="">செய்திகளை பொருத்தவரை பழைய இதழ்கள் என்பவை பொக்கிஷம். தகவல் நோக்கில் மதிப்பு மிக்கவை என்பதோடு, பழைய நாளிதழ் பக்கங்களை தேடி அடைவதும் கடினமானது. பெரும்பாலான நாடுகளில் பழைய நாளிதழ்கள் நூலகங்கள், ஆவண காப்பகங்களில் பாதுகாக்கப்பட்டு வருகின்றன. இணைய யுகத்தில் இவற்றில் பல டிஜிட்டல்மயமாக்கப்பட்டு இணையம் வழியே அணுகுக்கூடியவையாக இருக்கின்றன. இந்தியாவில் தேசிய டிஜிட்டல் நூலகத்தில் பழைய நாளிதழ்களை அணுகலாம். தமிழை பொருத்தவரை, தமிழ்டிஜிட்டல் நூலகம் பழங்கால புத்தகங்கள் உள்ளிட்டவற்றை டிஜிட்டல் வடிவில் வழங்குகிறது. மதுரை திட்டம் எனப்படும் பிராஜெக்ட் மதுரை தளமும், இலக்கியங்களை டிஜிட்டல் வடிவில் வழங்குகிறது. உலக அளவில் இத்தகைய பல டிஜிட்டல் நூலகங்களும், ஆவண காப்பகங்களும் இருக்கின்றன. இணைய காப்பக தளத்தில் கூட நாளிதழ் தொகுப்புகளை அணுகலாம்.<br/>வரலாற்று நோக்கில் பழைய கால செய்திகள் தேவைப்படும் போது இந்த தளங்களை அணுகலாம். வர்த்தக நோக்கிலானது என்றாலும், நியூஸ்பேப்பர்ஸ்.காம் தளம், பழைய நாளிதழ் பக்கங்களை எளிதாக தேடி கண்டறிய வழி செய்கிறது. அமெரிக்கா மற்றும் ஐரோப்பிய நாடுகளை மையமாக கொண்டது என்றாலும் பழைய செய்திகள் தொடர்பான இதன் வலைப்பதிவும் சுவாரஸ்யமானது.<br/></p><ul id="1fb2ec7d-2bab-805c-9f15-eb079188a2b8" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80da-8ab9-c3c1140fffd0" class="">வரலாற்று செய்தி பதிவுகளை அணுகுவதன் அவசியத்தை எளிதாக புரிந்து கொள்ளலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-807a-9e24-d395f2483f24"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8098-897b-ed8a0009231c" class=""><strong>மாற்று:</strong> பெரிய பட்டியலே இருக்கிறது. ( இதே போல அமெரிக்க தொலைக்காட்சி செய்தி ஒளிபரப்பின் ஆவண பதிப்புகளை அணுக வழி செய்கின்றன: <a href="https://tvnews.vanderbilt.edu/">https://tvnews.vanderbilt.edu/</a> , <a href="https://americanarchive.org/">https://americanarchive.org/</a> ( வானொலி நிகழ்ச்சிகள் பதிவுகளும் அடக்கம்)</p></div></figure><p id="1fb2ec7d-2bab-8011-bb1a-fa31f6b94802" class="">
+</p><h2 id="1fb2ec7d-2bab-8009-812b-e6f335a687da" class="">6. <strong>ஆன்சர் தி பப்ளிக் -</strong></h2><p id="1fb2ec7d-2bab-80ef-bc38-e8a8d3bdd7b6" class="">
+</p><figure id="1fb2ec7d-2bab-8093-b8b7-e1276d3692dd"><a href="https://answerthepublic.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Search listening tool for market, customer &amp; content research - AnswerThePublic</div><div class="bookmark-description">Use our free tool to get instant, raw search insights, direct from the minds of your customers. Upgrade to a paid plan to monitor for new ways that people talk &amp; ask questions about your brand, product or topic.</div></div><div class="bookmark-href"><img src="https://answerthepublic.com/assets/favicon-3bb5af95113cb2624ab3955ba255a769f6e7b020d3dd0e66352c09c354943ef0.ico" class="icon bookmark-icon"/>https://answerthepublic.com/</div></div></a></figure><p id="1fb2ec7d-2bab-80df-99f4-da5c377487e8" class="">உள்ளடக்க உருவாக்குனர்கள் மற்றும் இணைய சந்தைப்படுத்தலில் ஆர்வம் கொண்டவர்களுக்கான சேவை என்றாலும், இணையவாசிகள் என்ன தேடுகின்றனர் என்பதை அடிப்படையாக கொண்டு, மக்கள் மனதில் என்ன இருக்கிறது என்பதை அறிய உதவும் சேவை என்பதால் செய்தியாளர்களும் அறிந்திருக்க வேண்டியது அவசியம். கூகுள், மைக்ரோசாப்ட் பிங் உள்ளிட்ட தேடியந்திரங்கள், யூடியூப், டிக்டாக் மற்றும் இன்ஸ்டாகிராமில பயனாளிகள் தேடும் கேள்விகள் அடிப்படையில் தொடர்புடைய கேள்விகள் அல்லது வாசகங்களை பரிந்துரைக்கிறது. வர்த்தக நோக்கிலானது என்றாலும் பயனுள்ளது.   </p><ul id="1fb2ec7d-2bab-80c1-8c6b-c11afdeeaf44" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-806b-a33f-d9642fe24411" class="">இணைய யுகத்தில் எஸ்.இ.ஓ எனும் தேடியந்திர முன்னுரிமையாக உத்தியை அலட்சியம் செய்வதற்கில்லை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8023-a3e1-dabff151483a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8076-85a3-c49509e74d1b" class=""><strong>மாற்று</strong>:  <a href="https://buzzsumo.com/">பஸ்சுமோ</a></p></div></figure><p id="1fb2ec7d-2bab-8033-81cc-c52c9f0d8e32" class="">
+</p><h2 id="1fb2ec7d-2bab-808b-811d-f57a8fffd755" class="">7. <strong>நோ யுவர் மீம் -</strong></h2><p id="1fb2ec7d-2bab-8006-9a92-d261661f8e54" class="">   </p><figure id="1fb2ec7d-2bab-80f6-995a-d94f9b3a13c1"><a href="https://knowyourmeme.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Know Your Meme</div></div><div class="bookmark-href"><img src="https://knowyourmeme.com/assets/favicon/apple-touch-icon.png" class="icon bookmark-icon"/>https://knowyourmeme.com/</div></div><img src="https://a.kym-cdn.com/assets/kym-logo-large-2be3f3818691470a0369e154647ca0f0.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8009-b8b9-f6855dc42505" class="">இணையம் இதழிலையை மாற்றியிருக்கிறது, தொடர்ந்து தாக்கம் செலுத்தி வருகிறது. மீம்கள், வைரல் வீடியோக்கள்- படங்கள், இணைய பிரபலங்கள் என கவனத்திற்கு உரிய நிகழ்வுகள் செய்தி பரப்புக்கு வெளியே நிகழ்கின்றன. பயனாளிகள் செய்திகளை விவாதிக்கும், வடிவமாகவும் மீம்கள் உருவெடுத்துள்ளன. இந்த பின்னணியில் மீம்களின் வரலாற்றை பதிவு செய்யும் தளமாக நோ யுவர் மீம் அமைகிறது. மிக பொருத்தமாக விக்கி பாணியில் அமைந்த இந்த தளம் பயனாளிகள் பங்களிப்போடு மீம்கள் உருவாகி வளர்ந்த விதத்தை ஆதாரங்களுடன் பதிவு செய்கிறது. திடிரென வைரலாக பரவிய ஒரு மீம், முதலில் எங்கிருந்து உருவானது என்பதை அறிவதற்கு சிறந்த இடமாகவும் விளங்குகிறது. இணைய கலாச்சாரம் தொடர்பான புரிதலை அளிக்கும் தகவல்களையும் கொண்டிருக்கிறது. யூடியூப்பின் ஆரம்ப காலத்தில் இந்த மேடையின் மூலம் புகழ் பெற்ற ராக்கெட் பூம் சேனலை துவக்கியவர்கள் தான் இந்த தளத்தையும் உருவாக்கியுள்ளனர்.  </p><ul id="1fb2ec7d-2bab-806f-9510-f6a02689c162" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80ac-bf86-dbb18e61fc0d" class="">மீம்களின் தோற்றத்தையும், வளர்ச்சியையும் விவரிப்பதால் முக்கிய இணைய ஆவணமாகிறது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80d5-a439-fc45b46c22bb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8050-a055-e67b2c417d91" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1fb2ec7d-2bab-80fe-9d2b-d1ccf8ea6b8f" class="">
+</p><h2 id="1fb2ec7d-2bab-801f-8d4d-c3ccea55f85a" class="">8. <strong>டிஜிட்டல் நூலகம் -</strong></h2><p id="1fb2ec7d-2bab-80e6-80ba-d448fdf71d7b" class="">  </p><figure id="1fb2ec7d-2bab-80e4-8698-feec5b0ab338"><a href="https://www.jstor.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">JSTOR Home</div><div class="bookmark-description">JSTOR is a digital library of academic journals, books, and primary sources.</div></div><div class="bookmark-href"><img src="https://www.jstor.org/assets/global_20250123T141934/build/images/favicons/android-chrome-512x512.png" class="icon bookmark-icon"/>https://www.jstor.org/</div></div></a></figure><p id="1fb2ec7d-2bab-8090-a3b0-d9fbd7ff613c" class="">செய்தியாளர்களை பொருத்தவரை ஆவணங்களும், மூல தரவுகளும் முக்கியமானவை. ஆய்வாளர்களுக்கான டிஜிட்டல் நூலகமான ஜேஎஸ்டிஓஆர் தளம் இதற்கான வழியாக அமைகிறது. இந்த தளம் ஆய்விதழ்கள், புத்தகங்கள், மூல ஆவணங்கள் உள்ளிட்ட தகவல்களை பட்டியலிடுகிறது. லட்சக்கணக்கான இதழ்கள், சஞ்சிகைகளை அணுகலாம் என்பது சிறப்பு. தேடல் வசதியும் இருக்கிறது. </p><ul id="1fb2ec7d-2bab-80ec-bdc4-dc328f2abc24" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-802c-bc7f-ce9ccc931eb4" class="">மூல ஆவணங்கள், வரலாற்று தகவல்களை பல வடிவங்களில் அணுக உதவுகிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8084-86d2-c205ac1b6db1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80f7-a574-d94185c0827b" class=""><strong>மாற்று:</strong>  <a href="https://books.google.co.in/">கூகுள் புக்ஸ்</a> , <a href="https://www.openculture.com/">ஓபன் கல்சர்</a></p></div></figure><p id="1fb2ec7d-2bab-809d-8ec5-c72487df8ba6" class="">
+</p><h2 id="1fb2ec7d-2bab-80ad-829d-caf8f55262ab" class="">9. <strong>இமோஜிபீடியா -</strong></h2><p id="1fb2ec7d-2bab-8012-9947-e6594d796830" class=""><strong>  </strong>   </p><figure id="1fb2ec7d-2bab-80fb-8eaf-f194ac4b632d"><a href="https://emojipedia.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍</div><div class="bookmark-description">Samsung&#x27;s latest version of its One UI 7.0 introduces support for Emoji 16.0 within Samsung&#x27;s own native emoji design set.</div></div><div class="bookmark-href"><img src="https://emojipedia.org/images/android-chrome-192x192.png" class="icon bookmark-icon"/>https://emojipedia.org/</div></div></a></figure><p id="1fb2ec7d-2bab-802c-b46d-d9ab4af47e6f" class="">உருவ எழுத்துக்கள் என கருதக்கூடிய இமோஜிகள் இணைய யுகத்தின் புது மொழியாக உருவெடுத்துள்ளன. சமூக ஊடக கருத்து பரிமாற்றத்தில் சுருக்கெழுத்தாக பகிரப்படும் இமோஜிகளின் எண்ணிக்கை அதிகரித்து வருவதோடு, புதிய இமோஜிகள் அறிமுகமே கூட செய்திகளாகி விவாதிக்கப்படுவதும் உண்டு. இமோஜி உருவாக்கத்தில் சமத்துவம் தொடர்பான வலியுறுத்தலையும் காணலாம். இமோஜி எழுத்துக்கள் பின்னே அரசியலும் இருக்கிறது, இணைய கலாச்சாரத்தின் தாக்கமும் இருக்கிறது. இமோஜிகளின் அர்த்தம், அவை உருவான விதம், தொடர்புடைய தகவல்கள் என நவீன கால களஞ்சியமாக விளங்குகிறது இமோஜிபீடியா. இதே பிரிவில் ஜிப்களுக்கான ’ஜிஃபி’ தேடியந்திரத்தையும் (<a href="https://giphy.com/">https://giphy.com/</a>) கவனத்தில் கொள்ள வேண்டும். </p><ul id="1fb2ec7d-2bab-80ea-8185-c02f300fc3f8" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8059-8afc-fd7e741119bc" class="">இணைய யுகத்தின் மொழிக்கான களஞ்சியம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8082-81ce-cb6a7dd78739"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-8033-958b-f7b19e7870b0" class=""><strong>மாற்று:</strong>  ——</p></div></figure><p id="1fb2ec7d-2bab-80e5-97b0-cb9602282dac" class="">
+</p><h2 id="1fb2ec7d-2bab-805a-a063-c5389bcc2f69" class="">10. <strong>விக்கிபீடியா -</strong></h2><p id="1fb2ec7d-2bab-80d0-aeaf-fb10230e4fc8" class="">   </p><figure id="1fb2ec7d-2bab-808a-86ff-cefbb1ea062b"><a href="https://www.wikipedia.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Wikipedia, the free encyclopedia</div><div class="bookmark-description">Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation.</div></div><div class="bookmark-href"><img src="https://www.wikipedia.org/static/apple-touch/wikipedia.png" class="icon bookmark-icon"/>https://www.wikipedia.org/</div></div><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/2244px-Wikipedia-logo-v2.svg.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80b4-b41c-c2dc6c60cea6" class="">இணையத்தின் எந்த பட்டியலில் தவறாமல் இடம்பெறக்கூடிய விக்கிபீடியாவை செய்தியாளர்கள் அலட்சியம் செய்வதற்கில்லை. எவரும் தகவல்களை பதிவேற்றலாம், எவரும் திருத்தலாம் எனும் கோட்பாடு கொண்டிருப்பதால், இதன் நம்பகத்தன்மை கேள்விக்குள்ளாக்கப்பட்டாலும், பயனாளிகள் பங்களிப்பே இந்த தளத்தின் தனிச்சிறப்பாக அமைகிறது. மூல தகவலகால் விக்கிகட்டுரைகளை கருத முடியாது என்றாலும், இதில் இடம் பெறும் தகவல்கள் மூல ஆதாரம் கொண்டவை. மேலும், மேற்கொள்ளப்படும் திருத்தங்களின் பழைய சுவடுகளை அனைத்தையும் பார்க்கலாம் என்பதால், மாற்றங்களை பின் தொடரலாம். இந்த அம்சங்கள் விக்கி கட்டுரைகளின் நம்பிக்கைக்கு அடிப்படையாகின்றன. மனித தேனீக்கள் உழைப்பால் உருவாகும் இக்கட்டுரைகளில் சுட்டிக்காட்டப்படும் ஆதாரங்கள் மற்றும் இணைப்புகளை பின் தொடர்ந்து சென்றால், மேலதிக தகவல்களையும், மூல விவரங்களையும் திரட்டிக்கொள்ளலாம். தகவல்களுக்கான ஆதாரங்களை சுட்டிக்காட்டுவதோடு, விக்கி சார்ந்த மாற்றங்களே கூட செய்தியாகலாம்.<br/>விக்கிபீடியா ஆங்கிலம், தமிழ் உள்ளிட்ட பல மொழி பதிப்புகள் கொண்டுள்ளது. இதன் தாய் அமைப்பான விக்கிமீடியா கீழ் வரும் எண்ணற்ற சகோதார தளங்களும் உள்ளன. உதாரணம் : விக்கிநியூஸ்.- <br/><a href="https://www.wikinews.org/">https://www.wikinews.org/</a></p><ul id="1fb2ec7d-2bab-80be-9e12-cedb7a115f88" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8018-9c38-f0be8e8f9e74" class="">இணைய யுகத்திற்கான தகவல் சுரங்கம் என்பதால் புறக்கணிக்க முடியாது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-805a-ae02-f2eaabf75eac"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-80d5-9b73-f57e633af7b9" class=""><strong>மாற்று:</strong>  ——</p></div></figure><p id="1fb2ec7d-2bab-8092-96a2-dc658bbf0bf5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

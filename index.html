@@ -1,0 +1,710 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>News Guide-in Tamil</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1e82ec7d-2bab-807a-9425-cb70fb46759e" class="page sans"><header><img class="page-cover-image" src="Colorful_Photo_Rainbow_Facebook_Cover.png" style="object-position:center 34.17%"/><h1 class="page-title">Tamil-News-Guide</h1><p class="page-description"></p></header><div class="page-body"><div id="1ff2ec7d-2bab-8027-b51a-c4f4c140568f" class="column-list"><div id="1ff2ec7d-2bab-80eb-aba9-fee5e6cbba24" style="width:12.5%" class="column"><p id="1ff2ec7d-2bab-805f-960f-c30b02a508ad" class="">
+</p></div><div id="1ff2ec7d-2bab-800a-becc-e25cbbd1531c" style="width:74.99999999999997%" class="column"><p id="1ff2ec7d-2bab-804f-b90b-ebbfdb665161" class=""><strong>இதழாளர்களுக்கும், செய்தி ஆர்வம் கொண்டவர்களுக்குமான இணைய செய்தி கையேடு.</strong></p></div><div id="1ff2ec7d-2bab-800a-a103-cc538def7822" style="width:12.500000000000014%" class="column"><p id="1e92ec7d-2bab-8076-92a7-e1383d22a3f2" class="">
+</p></div></div><div id="1fb2ec7d-2bab-80fc-9bc0-c4b40d8e152b" class="column-list"><div id="1fb2ec7d-2bab-80e3-80b1-cabf37925d29" style="width:20%" class="column"><figure id="1ed2ec7d-2bab-806d-a430-fde2e00baa56" class="link-to-page"><a href="%E0%AE%9A%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab806da430fde2e00baa56.html">செய்திகள்</a></figure></div><div id="1fb2ec7d-2bab-8067-9bb8-c881f4353d30" style="width:17.5%" class="column"><figure id="1ed2ec7d-2bab-8059-8109-dd06e7931c66" class="link-to-page"><a href="%E0%AE%86%E0%AE%AF%E0%AF%8D%E0%AE%B5%E0%AF%81%201ed2ec7d2bab80598109dd06e7931c66.html">ஆய்வு</a></figure></div><div id="1fb2ec7d-2bab-80c6-b49f-f958b8668348" style="width:25%" class="column"><figure id="1ed2ec7d-2bab-807e-911c-f1e70d651bf6" class="link-to-page"><a href="%E0%AE%9A%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%BE%E0%AE%A9%20%E0%AE%B5%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab807e911cf1e70d651bf6.html">செய்திக்கான வளங்கள்</a></figure></div><div id="1fb2ec7d-2bab-8054-9ecf-fb07a04d7998" style="width:20%" class="column"><figure id="1ed2ec7d-2bab-8014-a4e2-f3faf018eff8" class="link-to-page"><a href="%E0%AE%B5%E0%AE%B2%E0%AF%88%20%E0%AE%95%E0%AE%B0%E0%AF%81%E0%AE%B5%E0%AE%BF%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab8014a4e2f3faf018eff8.html">வலை கருவிகள்</a></figure></div><div id="1fb2ec7d-2bab-80c6-8c91-c171083e3fad" style="width:17.500000000000014%" class="column"><figure id="1ed2ec7d-2bab-808c-bd8e-c60d0b84f3bb" class="link-to-page"><a href="%E0%AE%8F%E0%AE%90%20%E0%AE%95%E0%AE%B0%E0%AF%81%E0%AE%B5%E0%AE%BF%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab808cbd8ec60d0b84f3bb.html">ஏஐ கருவிகள்</a></figure></div></div><div id="1fb2ec7d-2bab-80c4-8472-f80aa61cb707" class="column-list"><div id="1fb2ec7d-2bab-80e6-b9e5-f873ca21be2f" style="width:20%" class="column"><figure id="1ed2ec7d-2bab-80fc-8c2d-c6e16d64e9ce" class="link-to-page"><a href="%E0%AE%A4%E0%AE%95%E0%AE%B5%E0%AE%B2%E0%AF%8D%20%E0%AE%9A%E0%AE%B0%E0%AE%BF%E0%AE%AA%E0%AE%BE%E0%AE%B0%E0%AF%8D%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AF%81%201ed2ec7d2bab80fc8c2dc6e16d64e9ce.html">தகவல் சரிபார்ப்பு</a></figure></div><div id="1fb2ec7d-2bab-8068-a84b-c7749a60d514" style="width:17.500000000000004%" class="column"><figure id="1ed2ec7d-2bab-80bd-8407-e8602178a2d3" class="link-to-page"><a href="%E0%AE%B5%E0%AE%B2%E0%AF%88%E0%AE%AA%E0%AF%8D%E0%AE%AA%E0%AE%A4%E0%AE%BF%E0%AE%B5%E0%AF%81%201ed2ec7d2bab80bd8407e8602178a2d3.html">வலைப்பதிவு</a></figure></div><div id="1fb2ec7d-2bab-80cd-bb03-e5e7dd9ee8a8" style="width:25%" class="column"><figure id="1ed2ec7d-2bab-8033-b4d4-c2a1e7d09f8c" class="link-to-page"><a href="%E0%AE%A4%E0%AF%86%E0%AE%BE%E0%AE%B4%E0%AE%BF%E0%AE%B2%E0%AF%8D%E0%AE%A8%E0%AF%81%E0%AE%9F%E0%AF%8D%E0%AE%AA%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab8033b4d4c2a1e7d09f8c.html">தொழில்நுட்பங்கள்   </a></figure></div><div id="1fb2ec7d-2bab-8026-9660-c607668ea119" style="width:20.000000000000004%" class="column"><figure id="1ed2ec7d-2bab-80a6-916e-c64acc17f529" class="link-to-page"><a href="%E0%AE%9A%E0%AE%AE%E0%AF%82%E0%AE%95%20%E0%AE%8A%E0%AE%9F%E0%AE%95%20%E0%AE%A4%E0%AE%B3%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%B3%E0%AF%8D%201ed2ec7d2bab80a6916ec64acc17f529.html">சமூக ஊடக தளங்கள்</a></figure></div><div id="1fb2ec7d-2bab-8089-83bf-db8dfe3eb52d" style="width:17.5%" class="column"><figure id="1ed2ec7d-2bab-800c-a6da-fbea30308f1a" class="link-to-page"><a href="%E0%AE%AA%E0%AE%BF%E0%AE%B1%201ed2ec7d2bab800ca6dafbea30308f1a.html">பிற</a></figure></div></div><p id="1ff2ec7d-2bab-8072-97bd-d6a116e3f452" class="">
+</p><p id="1ff2ec7d-2bab-80da-9202-e0133d0123f4" class="">இதழியல் துறையில் ஆர்வம் உள்ளவர்கள் செய்திகளை பின் தொடரவும் கூடுதல் தகவல்களை தெரிந்து கொள்ளவும் அவசியம் அறிந்திருக்க வேண்டிய செய்தி தளங்களையும், வளங்களையும், கருவிகளையும் விரிவாக அறிமுகம் செய்யும் இணைய கையேடு இது. இதழாளர்கள் மட்டும் அல்ல, செய்திகளில் ஆர்வம் உள்ள எவருக்கும் இந்த கையேடு பயனுள்ளதாக அமையும். அதோடு, செய்திகளில் கவனம் செலுத்துவதன் அவசியத்தையும் உணர்த்தக்கூடியது.</p><p id="1ff2ec7d-2bab-80fb-bb10-ef175bbed699" class="">
+</p><p id="1fb2ec7d-2bab-8093-bcb4-cdcdcb4880ac" class=""><strong><span style="border-bottom:0.05em solid">இணைய செய்தி கையேடு</span></strong></p><p id="1ff2ec7d-2bab-8019-be2c-ff9d305be1a2" class=""><strong>என்ன?</strong></p><ul id="1ff2ec7d-2bab-80bc-b404-d50d82229297" class="bulleted-list"><li style="list-style-type:disc">இணையத்தில் செய்திகளை தெரிந்து கொள்ளவும், செய்தி நோக்கில் செய்தியாளர்கள் அறிந்திருக்க வேண்டிய இணையதளங்களையும் அறிமுகம் செய்யும் கையேடு.</li></ul><p id="1ff2ec7d-2bab-8094-96c2-f188762de952" class=""><strong>ஏன்?</strong></p><ul id="1ff2ec7d-2bab-80d3-b171-fd223e206dfb" class="bulleted-list"><li style="list-style-type:disc">இணைய பெருங்கடலில் நமக்குத் தேவையான தளங்களை அறிந்திருப்பது அவசியம். தானியங்கி உலகில் கவனமாக தேர்ந்தெடுக்கப்பட்ட பயனுள்ள இணையதளங்கள்.</li></ul><p id="1ff2ec7d-2bab-8027-86b6-f5a5c6202a2f" class=""><strong>யாருக்கு?</strong></p><ul id="1ff2ec7d-2bab-8096-967f-dfbba7e34b9d" class="bulleted-list"><li style="list-style-type:disc">செய்தியாளர்கள் என்றில்லை, செய்தி அறிதலில் ஆர்வம் கொண்ட எவருக்கும் பயனுள்ள வழிகாட்டி.</li></ul><p id="1ff2ec7d-2bab-80b1-8ca6-e6bc2bfeacb1" class=""><strong>என்ன பயன்?</strong></p><ul id="1ff2ec7d-2bab-8063-a09d-c37dcb81d73e" class="bulleted-list"><li style="list-style-type:disc">பேஸ்புக்கிலும், இன்ஸ்டாவிலும் செய்திகளை தெரிந்து கொள்ளும் நிலையில், சரியான செய்திகளை அறிந்து கொள்வதற்கான மூல வளங்களை சுட்டிக்காட்டுகிறது.</li></ul><p id="1ff2ec7d-2bab-8086-9a67-c63eec283e02" class="">
+</p><p id="1ff2ec7d-2bab-80ad-981b-d73b7c629cb9" class=""><strong>மேலும்</strong>: இணையத்தில் தகவல்களை தெரிந்து கொள்ள கூகுள் மட்டுமே போதும் என்பது மாயை, இப்போது சாட்ஜிபிடி இந்த இடத்திற்கு வந்திருப்பதாக நினைப்பதும் பிழை. தகவல்களை கண்டறிவதற்கான மூல ஆதாரங்கள் நம் வசம் இருப்பது அவசியம்.</p><p id="1ff2ec7d-2bab-80fd-807d-def690d41cd8" class="">
+</p><p id="1ff2ec7d-2bab-807d-8d04-eb353a8addb0" class="">
+</p><figure id="1ff2ec7d-2bab-8083-bb82-e3c10ca1bf0f" class="image"><a href="10.jpg"><img style="width:816px" src="10.jpg"/></a></figure><p id="1ff2ec7d-2bab-805e-b6a1-d27394466e8a" class="">
+</p><h1 id="1ff2ec7d-2bab-80cd-b839-e4298d6f375a" class=""><span style="border-bottom:0.05em solid">மூல பட்டியலும், இணைய செய்தி கையேடும்!</span></h1><p id="1ff2ec7d-2bab-803f-9bf8-c75854fbdeef" class="">இந்த இணைய செய்தி கையேடு உண்மையில், 8 ஆண்டுகளுக்கு முன், டிஜிட்டல் இதழியல் வகுப்பில் முதுகலை மாணவர்களுக்கான பரிந்துரையாக உருவாக்கப்பட்ட பட்டியல். செய்திகளுக்கான இணையதளங்கள் மட்டும் அல்லாமல், செய்தி சேகரிப்பு நோக்கில் ஆய்வு நோக்கில் பயன்படக்கூடிய தளங்கள், வளங்கள் மற்றும் கருவிகளாக இருக்க கூடிய தளங்களும் பட்டியலிடப்பட்டன. தகவல் சரிபார்ப்பிற்கு உதவும் தளங்களும் இடம்பெற்றன.<br/>8 ஆண்டுகள் ஆகிவிட்ட நிலையில், இந்த பட்டியலை புதுப்பிக்க வேண்டிய தேவை மற்றும் புதிய தளங்களையும், வளங்களையும் சேர்க்க வேண்டியதன் தேவை உணர்ந்ததோடு, இந்த பட்டியலை முழு வீச்சிலான கையேடாக உருவாக்கும் நோக்கத்துடன் இந்த தளம் அமைக்கப்பட்டுள்ளது.<br/>முதலில் உருவாக்கப்பட்ட மூல பட்டியலை கீழே காணலாம். இணைய செய்தி கையேட்டில் இடம்பெறும் தளங்களை மேலே உள்ள பகுதிகளில் அணுகலாம்<br/></p><p id="1ff2ec7d-2bab-80d8-ae5e-c0bfb92bdbc1" class="">
+</p><table id="1ff2ec7d-2bab-8006-aa2d-cab8f02776d5" class="simple-table"><tbody><tr id="1ff2ec7d-2bab-80d9-ba5a-d0ca2aace2c7"><td id="^`?d" class="" style="width:85px"><strong>S.NO</strong></td><td id="&lt;lLK" class="" style="width:198px"><strong>செய்தி</strong></td><td id="d_pL" class="" style="width:232px"><strong>ஆய்வு</strong></td><td id="kjpV" class="" style="width:205px"><strong>கருவிகள்</strong></td><td id="CPkj" class="" style="width:239px"><strong>செய்தி வளங்கள்</strong></td><td id="r@oB" class="" style="width:199px"><strong>தகவல் சரி பார்ப்பு</strong></td></tr><tr id="1ff2ec7d-2bab-807e-8ec0-d49dc68adf21"><td id="^`?d" class="" style="width:85px">1.</td><td id="&lt;lLK" class="" style="width:198px"><a href="https://www.bbc.com/">பிபிசி</a></td><td id="d_pL" class="" style="width:232px"><a href="https://www.quora.com/">குவோரா</a></td><td id="kjpV" class="" style="width:205px"><a href="https://getpocket.com/home">பாக்கெட்.காம்</a></td><td id="CPkj" class="" style="width:239px"><a href="https://googlemapsmania.blogspot.com/">கூகுள்மேப்ஸ்மேனியா</a></td><td id="r@oB" class="" style="width:199px"><a href="https://www.snopes.com/">ஸ்னோப்ஸ்</a></td></tr><tr id="1ff2ec7d-2bab-8079-89a3-ecc82fe35bc6"><td id="^`?d" class="" style="width:85px">2.</td><td id="&lt;lLK" class="" style="width:198px"><a href="https://www.theguardian.com/international">கார்டியன்</a><br/><br/></td><td id="d_pL" class="" style="width:232px"><a href="https://duckduckgo.com/">டக்டக்கோ</a></td><td id="kjpV" class="" style="width:205px"><a href="https://www.google.co.in/alerts">கூகுள் அலெடர்ட்ஸ்</a></td><td id="CPkj" class="" style="width:239px"><a href="https://www.change.org/">சேஞ்.ஆர்க்</a></td><td id="r@oB" class="" style="width:199px"><a href="https://knowyourmeme.com/">நோயுவர்மீம்</a></td></tr><tr id="1ff2ec7d-2bab-8068-bcfe-ef72d570db1c"><td id="^`?d" class="" style="width:85px">3.</td><td id="&lt;lLK" class="" style="width:198px"><a href="https://www.buzzfeed.com/in">பஸ்ஃபீட்</a></td><td id="d_pL" class="" style="width:232px"><a href="http://web.archive.org/">வேபேக்மிஷின்</a></td><td id="kjpV" class="" style="width:205px"><a href="https://www.canva.com/">கேன்வா</a></td><td id="CPkj" class="" style="width:239px"><a href="https://www.producthunt.com/">பிராடக்ட் ஹண்ட்</a></td><td id="r@oB" class="" style="width:199px"><a href="https://tineye.com/">டைனிஐ</a></td></tr><tr id="1ff2ec7d-2bab-8047-a316-fd7abeeaaff3"><td id="^`?d" class="" style="width:85px">4.</td><td id="&lt;lLK" class="" style="width:198px"><a href="https://news.ycombinator.com/">ஹேக்கர் நியூஸ்</a></td><td id="d_pL" class="" style="width:232px"><a href="https://www.reddit.com/">ரெட்டிட்</a></td><td id="kjpV" class="" style="width:205px"><del>பெரிஸ்கோப்</del></td><td id="CPkj" class="" style="width:239px"><del><a href="https://wikileaks.org/">https://wikileaks.org/</a></del></td><td id="r@oB" class="" style="width:199px"><a href="https://www.factchecker.in/">பேக்ட்செக்கர்</a></td></tr><tr id="1ff2ec7d-2bab-801d-bbd3-c9d6dcfbaf5e"><td id="^`?d" class="" style="width:85px">5.</td><td id="&lt;lLK" class="" style="width:198px"><del><a href="http://bitofnews.com/">பிட் ஆப் நியூஸ்</a></del></td><td id="d_pL" class="" style="width:232px"><a href="https://www.similarsites.com/">சிமிலர் சைட்ஸ்</a></td><td id="kjpV" class="" style="width:205px"><a href="https://bitly.com/">பிட்.லை</a></td><td id="CPkj" class="" style="width:239px"><a href="https://www.indiaspend.com/">இந்தியா ஸ்பெண்ட்</a></td><td id="r@oB" class="" style="width:199px"><a href="https://www.truthorfiction.com/">ட்ரூத் ஆர் பிக்ஷன்</a></td></tr></tbody></table><p id="1ff2ec7d-2bab-80cd-b0da-f5879ff77e15" class="">
+</p><ul id="1ff2ec7d-2bab-8073-9742-cdd6d67e8492" class="toggle"><li><details open=""><summary><strong><span style="border-bottom:0.05em solid">இணைய செய்தி கையேட்டிற்கான விளக்கம -</span></strong></summary><figure id="1ff2ec7d-2bab-8028-a1c8-cc26770cd108" class="link-to-page"><a href="%E0%AE%87%E0%AE%A3%E0%AF%88%E0%AE%AF%20%E0%AE%9A%E0%AF%86%E0%AE%AF%E0%AF%8D%E0%AE%A4%E0%AE%BF%20%E0%AE%95%E0%AF%88%E0%AE%AF%E0%AF%87%E0%AE%9F%E0%AF%81%201ff2ec7d2bab8028a1c8cc26770cd108.html">இணைய செய்தி கையேடு</a></figure></details></li></ul><p id="1e92ec7d-2bab-8083-b055-cf362d9f94c0" class="">
+</p><div id="1ff2ec7d-2bab-803c-8aef-c15714f4dcb8" class="column-list"><div id="1ff2ec7d-2bab-805f-bfd8-c2e1f4bffd51" style="width:33.333333333333336%" class="column"><figure id="1ff2ec7d-2bab-80ed-834a-c2d586b94032" class="link-to-page"><a href="Profile%201ff2ec7d2bab80ed834ac2d586b94032.html">Profile</a></figure></div><div id="1ff2ec7d-2bab-80d6-b6ad-d2cc8bff3890" style="width:33.333333333333336%" class="column"><figure id="1ff2ec7d-2bab-80e6-ba94-c105337d84c8" class="link-to-page"><a href="About%20Me%201ff2ec7d2bab80e6ba94c105337d84c8.html">About Me</a></figure></div><div id="1ff2ec7d-2bab-8015-ad8f-f0bb24b5d057" style="width:33.33333333333333%" class="column"><figure id="1ff2ec7d-2bab-80a6-a169-f121a7d824da" class="link-to-page"><a href="Contact%20Me%201ff2ec7d2bab80a6a169f121a7d824da.html">Contact Me</a></figure></div></div><p id="1ff2ec7d-2bab-8090-808f-e30b84602cd9" class="">
+</p><p id="1ff2ec7d-2bab-8013-bb89-f8456b8f2f8f" class=""><strong>இதழியல் மாணவர்கள், இதழியல் ஆர்வம் கொண்டவர்க்ளுக்கான கையேட்டிற்கான அடிப்படை பட்டியல் இது. உங்கள் கருத்துககளை பகிரவும்.</strong></p><hr id="1ff2ec7d-2bab-80b3-846f-fecb28771d14"/><p id="1ff2ec7d-2bab-809b-8984-ec89268b9f4a" class="">
+</p><p id="1ff2ec7d-2bab-8019-8d7f-db739845158a" class="">
+</p><p id="1ed2ec7d-2bab-80e4-955a-cbb3b49ad6a1" class="">
+</p><p id="1ff2ec7d-2bab-80c3-adb8-c16b831b5273" class="">
+</p><p id="1ff2ec7d-2bab-80ff-813a-ed2ff4e4e04d" class="">
+</p><p id="1ff2ec7d-2bab-8023-b344-e7179f32cb75" class="">
+</p><p id="1ff2ec7d-2bab-8052-beef-ceb06b295aaa" class="">
+</p><p id="1ff2ec7d-2bab-8018-ab43-ff8d3ff406bc" class="">
+</p><p id="1ff2ec7d-2bab-8033-8088-d3b4de1b2bf1" class="">
+</p><p id="1ff2ec7d-2bab-80ab-a1b2-f690b8b1c32a" class="">
+</p><p id="1ff2ec7d-2bab-80a9-a04c-edaf668ac36f" class="">
+</p><p id="1ff2ec7d-2bab-8007-918d-f04490c45a48" class="">
+</p><p id="1ff2ec7d-2bab-80b4-97c1-c122c6fe7e9a" class="">
+</p><p id="1ff2ec7d-2bab-808f-aea2-d37d1f2441ce" class="">
+</p><p id="1ff2ec7d-2bab-8065-b84f-fe979bab0f49" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

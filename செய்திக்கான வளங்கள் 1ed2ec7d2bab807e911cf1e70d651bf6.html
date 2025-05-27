@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>செய்திக்கான வளங்கள்</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-807e-911c-f1e70d651bf6" class="page sans"><header><h1 class="page-title">செய்திக்கான வளங்கள்</h1><p class="page-description"></p></header><div class="page-body"><p id="1fa2ec7d-2bab-80c5-b6fe-d21053e0509a" class="">
+</p><p id="1fa2ec7d-2bab-80ca-a07f-fe97064f8f39" class="">உள்ளூரிலும், உலகளவிலும் என்ன நடக்கிறது என்பது தொடர்பான தகவல்களை தெரிந்து கொள்ள செய்தி தளங்கள் வழி செய்கின்றன. புதிய செய்திகளை கண்டறிய தேவையான செய்தி விழிப்புணர்வை இவை அளிக்கின்றன. எனினும், செய்தியாளர்களை பொருத்தவரை, செய்திகளுக்கான தோற்றுவாயை அறிந்திருப்பது அவசியம். இதற்கு உதவக்கூடிய தளங்களை பார்க்கலாம்.</p><p id="1fa2ec7d-2bab-80ae-901b-e1654bccf1ec" class="">
+</p><h2 id="1fa2ec7d-2bab-8045-aa54-eff95703f618" class="">1. <strong>குவோரா -</strong></h2><p id="1fa2ec7d-2bab-80af-b3ba-eb9ffd9bee80" class=""> </p><figure id="1fa2ec7d-2bab-80cf-952e-c4c5da645f1c"><a href="https://www.quora.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Quora</div><div class="bookmark-description">Quora is a place to gain and share knowledge. It&amp;#039;s a platform to ask questions and connect with people who contribute unique insights and quality answers. This empowers people to learn from each other and to better understand the world.</div></div><div class="bookmark-href"><img src="https://qsf.cf2.quoracdn.net/-4-images.favicon-new.ico-26-07ecf7cd341b6919.ico" class="icon bookmark-icon"/>https://www.quora.com/</div></div><img src="https://qsf.cf2.quoracdn.net/-4-images.share_default_image.png-26-2f12660e125b218f.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-803a-9a2c-ee4f9bc64855" class="">கேள்வி பதில் தளமான குவோராவை செய்தியாளர்கள் அறிந்திருப்பது அவசியம் என்பதோடு, அதன் தனித்தன்மையையும் அறிந்திருக்க வேண்டும். பயனாளிகள் பங்களிப்பினால் உருவான விக்கிபீடியா போல குவோரா தளமும் யார் கேட்கும் கேள்விகளுக்கும், யார் வேண்டுமானாலும் பதில் சொல்லும் தன்மை கொண்டது. அதே நேரத்தில் குவோரா துடிப்பான இணைய சமூகமாகவும் விளங்குகிறது. பல நேரங்களில் கேட்கப்படும் கேள்விகளுக்கு வல்லுனர்கள் அல்லது தொடர்புடைய நபர்களே பதில் அளிப்பதை காணலாம். கேள்விகளும் பலவிதமாக அமைவதை காணலாம். கேள்வி பதில்கள் சுவாரஸ்யமான மற்றும் ஆழமான விவாத சரடாக அமைவதையும் உணரலாம். இணையத்தில் ஆர்வத்துடன் விவாதிக்கப்படும் கருப்பொருளை அறிந்து கொள்ளலாம் என்பதோடு, பல நேரங்களில் குவோரா கேள்வி பதிலே கூட செய்திக்கான அடிப்படையாக அமையலாம். வல்லுனர் விளக்கம் அல்லது பதிலுக்கான பதில்களும் கூடுதல் தகவல்களை அளிக்கலாம். செய்திகளை தூண்டுகோளாக அமைவதோடு, தொடர்புடைய வல்லுனர்களை கண்டறியவும் உதவும். </p><ul id="1fa2ec7d-2bab-8022-8d75-d3b6c5886d41" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8028-ac81-e1125beabe0b" class="">எண்ணற்ற உரையாடல்கள் ஓயாமல் நிகழும் இணைய விவாத அரங்கு என்ற வகையில் செய்தியாளர்கள் எப்போதும் குவோராவில் ஒரு கண் வைத்திருக்க வேண்டும். ஏஐ யுகத்திற்கு ஏற்ப சாப்பாட் வசதியும் ஒருங்கிணைக்கப்பட்டுள்ளது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8087-ba6e-f8d007c255a0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80c4-bce9-eaff5498e827" class=""><strong>மாற்று</strong>:  <a href="https://stackoverflow.com/questions">ஸ்டாக் ஓவர்புளோ</a></p></div></figure><p id="1fa2ec7d-2bab-8075-a44b-c827974705a3" class="">
+</p><h2 id="1fa2ec7d-2bab-80eb-88a7-eed4d7fb2f58" class="">2. <strong>ரெட்டிட் -</strong></h2><p id="1fa2ec7d-2bab-8053-9c4e-d9ad4bebfbed" class="">     </p><figure id="1fa2ec7d-2bab-8013-a648-e15559f8891c"><a href="https://www.reddit.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">reddit</div><div class="bookmark-description">Reddit is where millions of people gather for conversations about the things they care about, in over 100,000 subreddit communities.</div></div><div class="bookmark-href"><img src="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" class="icon bookmark-icon"/>https://www.reddit.com/</div></div><img src="https://www.redditstatic.com/shreddit/assets/favicon/192x192.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-802c-a588-d4eb58474131" class="">சமூக செய்தி என கருதப்படும் புதிய செய்தி வகைக்கு வித்திட்ட முன்னோடி இணையதளங்களின் ரெட்டிட் முக்கியமானது. இணையத்தின் முகப்பு பக்கம் எனும் சுய வர்ணனைக்கு பொருத்தமான இணைய சமூகம். பயனாளிகள் தாங்கள் விரும்பும் இணைப்பை சமர்பித்து, அது தொடர்பான விவாதத்தை துவக்கலாம். சக உறுப்பினர்கள் அதற்கு பதில் அளித்து உரையாடலை தொடர்வார்கள். பல்வேறு தலைப்புகளுக்கு ஏற்ற விவாத குழுக்களும், அவற்றுக்குள் துணை குழுக்களும் இருக்கின்றன. ரெட்டிட் விவாதங்களில் பயனாளிகள் கருத்து தெரிவிக்கும் போது, அரிய தகவல்களை பகிர்வதையும் காணலாம். ஒரு விவாத சரட்டில் தொடர்புடைய பல புதிய பயனுள்ள தகவல்களை தெரிந்து கொள்ளலாம். ரெட்டிட் விவாத சரட்டில் இருந்து செய்திகளை நூல் பிடித்து உருவாக்கலாம். ரெட்டிட் பதிவுகள் இணையத்தில் வைரலாகி கவனத்தை ஈர்ப்பதும் வழக்கமாக நிகழ்வது. மேலும், ரெட்டிட்டில், ’என்னிடம் எதுவும் கேட்கலாம்’ (Ask Me Anything ) எனும் மேடையில் நிகழும் மக்கள் உரையாடல் முக்கியமானது. பயனாளிகள் கேள்விகளுக்கு பதில் அளிக்கும் இந்த நிகழ்வில் பிரபலங்களும், நட்சத்திரங்களும், தலைவர்களும் கூட பங்கேற்பது வழக்கம். </p><ul id="1fa2ec7d-2bab-8045-ba30-d18a003bf92e" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-80d4-a76a-ce96422deeb7" class="">சமூக ஊடக யுகத்தில் செய்தியாளர்கள் தவறுவிட முடியாத டிஜிட்டல் பரப்பாக விளங்குகிறது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-807e-8700-ca9eb3732144"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-806b-ac17-f4644505c4ce" class=""><strong>மாற்று</strong>:  <a href="https://www.metafilter.com/">மெட்டாபில்டர்</a></p></div></figure><p id="1fa2ec7d-2bab-803d-8bae-cca5becf6bee" class="">
+</p><h2 id="1fa2ec7d-2bab-8033-b146-e85a2ac67f53" class="">3. <strong>பிராடெக்ட் ஹண்ட் -</strong></h2><p id="1fa2ec7d-2bab-80cf-b39f-d532a4fa0338" class="">    </p><figure id="1fa2ec7d-2bab-802b-acec-d5591feee95d"><a href="https://www.producthunt.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Product Hunt – The best new products in tech.</div><div class="bookmark-description">Product Hunt is a curation of the best new products, every day. Discover the latest mobile apps, websites, and technology products that everyone&#x27;s talking about.</div></div><div class="bookmark-href"><img src="https://ph-static.imgix.net/ph-favicon-brand-500.ico?auto=format" class="icon bookmark-icon"/>https://www.producthunt.com/</div></div><img src="https://ph-static.imgix.net/ph-logo-1.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-80fb-b18e-eca7a59a03dd" class="">புதுமையான இணையதளங்களும், பயனுள்ள புதிய சேவைகளும் தான் இணையத்தை தொடர்ந்து வளர்த்தெடுக்கிறது. ஒரு காலத்தில் புதிய தளங்களை கண்டறிய உதவும் பிரத்யேக இணைய சேவைகள் பல இருந்தன. முன்னணி ஊடகங்களும் கூட, இதற்கான தனி பகுதியை கொண்டிருந்தன. இந்த வழக்கத்தை இன்னமும் துடிப்பாக பின்பற்றி வரும் சேவையாக பிராடக்ட் ஹண்ட் அமைகிறது. புதிய தளங்கள், செயலிகள் மற்றும் சேவைகளை அறிமுகம் செய்து கொள்வதற்கான இந்த தளத்தை பயனாளிகளே வழி நடத்துகின்றனர். உருவாக்குபவர்கள் அறிமுகம் செய்யும் புதிய சேவைகளை பயனாளிகள் வாக்களித்து முன்னிலை பெறச்செய்யலாம். இது தொடர்பான விவாதங்களில் பகிரப்படும் கருத்துக்களும் பயனுள்ளதாக இருக்கும். </p><ul id="1fa2ec7d-2bab-80e5-865b-cfa57becbee7" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8000-87f0-e0926bfd93d9" class="">புதுமையான இணையதளங்கள், செயலிகளை முதலில் அறிமுகம் செய்து கொள்ளக்கூடிய தகவல் சுரங்கம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8053-b35a-c0c5a57feccd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80d8-8dae-f9637a5a4b09" class=""><strong>மாற்று:</strong>  <a href="https://www.launchingnext.com/">லான்சிங் நெக்ஸ்ட்</a></p></div></figure><p id="1fa2ec7d-2bab-801f-9c91-d3f298ced518" class="">
+</p><h2 id="1fa2ec7d-2bab-8007-b26e-cf7f535c5f3d" class="">4. <strong>சேஞ்ச்.ஆர்க்</strong> -</h2><p id="1fa2ec7d-2bab-80f7-8540-de53670d5dcc" class="">  </p><figure id="1fa2ec7d-2bab-801d-b91c-f7791d239415"><a href="http://Change.org" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Change starts here</div><div class="bookmark-description">Join over 500,000,000 people creating real change in their communities.</div></div><div class="bookmark-href"><img src="https://static.change.org/favicons/favicon-114x114.png" class="icon bookmark-icon"/>http://Change.org</div></div><img src="https://static.change.org/favicon/favicon-400x400.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-80d5-a188-db11922c4804" class="">மாற்றத்திற்கான இணையதளமாக அறியப்படும் சேஞ்ச்.ஆர்க், இணையவாசிகள் மாற்றத்தை விரும்பும் காரணங்களுக்கான இணைய மனுவை உருவாக்கி, ஆதரவை திரட்ட வழி செய்கிறது. எல்லா மனுக்களும் பலன் அளிக்குமா என்பது கேள்விக்குறி என்றாலும், குறிப்பிட்ட கருப்பொருள் தொடர்பான விழிப்புணர்வை ஏற்படுத்த நிச்சயம் உதவும். இதில் பகிரப்படும் மனுக்களை அடிப்படையாக கொண்டு, செயல்பாட்டை முன்னெடுக்கும் செய்திக்கட்டுரைகளை உருவாக்கலாம். இந்த தளத்தில் வெளியாகி கவனத்தை ஈர்த்த பல மனுகள் உண்டு. </p><ul id="1fa2ec7d-2bab-80d9-8d10-daa9704d9903" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8040-94a6-f7e2ceb17904" class="">இணையத்தின் ஆற்றலை உணர்த்தும் தளம் என்பதால், கவனத்தில் கொள்வது அவசியம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-805b-a20e-d5965754c4ea"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80c3-be4f-c29fa3ed1cf2" class=""><strong>மாற்று</strong>: <a href="http://Avaaz.org">ஆவாஸ்</a> , <a href="https://www.care2.com/">கேர்2</a></p></div></figure><p id="1fa2ec7d-2bab-80f2-8a65-cfb210d217ca" class="">
+</p><h2 id="1fa2ec7d-2bab-8016-bf78-f4641871b212" class="">5. <strong>விண்டி.காம் -</strong></h2><p id="1fb2ec7d-2bab-80a7-b8de-cf9f36979b0a" class="">    </p><figure id="1fb2ec7d-2bab-80cb-bde5-c71513d24354"><a href="http://Windy.com" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Professional weather forecast</div><div class="bookmark-description">50+ weather layers, weather radar and satellite</div></div><div class="bookmark-href"><img src="https://img.windy.com/albums/icons/logo-full.png?w=180" class="icon bookmark-icon"/>http://Windy.com</div></div><img src="https://www.windy.com/img/socialshare4.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80c4-85dd-f35337cc127e" class="">மழைக்காலம் என்றால் நிச்சயம் விண்டி.காம் தளம் நினைவுக்கு வரும். வானிலை முன்னறிவுப்பு தளமான, விண்டி தகவல்களை காட்சி நோக்கில் அளிப்பது தனிச்சிறப்பு. பூமி வடிவத்தின் மீது காற்று வீசும் திசையை சுட்டிக்காட்டும் இந்த தளத்தின் வாயிலாக, வானிலை போக்குகளை அறிந்து கொள்ளலாம். குறிப்பாக புயல் மழை காலத்தில் செய்தியாளர்களுக்கு நிகழ் நேர வானிலை கண்காணிப்பிற்கு இந்த தளம் உதவும். வெப்பநிலை, ஈரப்பதம், காற்றழுத்தம் உள்ளிட்ட விவரங்களை தெரிந்து கொள்ளலாம். செகு குடியரசைச் சேர்ந்த நிறுவனத்தின் தளம். பயனாளிகள் உரையாடும் இந்த விவாத குழு பகுதியும் கவனத்திற்கு உரியது. </p><ul id="1fb2ec7d-2bab-8083-a476-c202387fbeaf" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80e8-bb7a-c6726da916c5" class="">வானிலை தகவல்களை தெரிந்து கொள்வதற்கான எளிய மற்றும் சிறந்த வழி.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80af-b447-f834912d667a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8052-b168-f66d47328fdc" class=""><strong>மாற்று:</strong> <a href="http://weather.com">வெதர்</a> , <a href="https://www.accuweather.com/">அக்குவெதர்</a> , <a href="https://mausam.imd.gov.in/">ஐஎம்டி</a></p></div></figure><p id="1fb2ec7d-2bab-80b7-9a9f-f7f486c6928e" class="">
+</p><h2 id="1fb2ec7d-2bab-80e1-9235-c831503f1b81" class="">6. <strong>ஸ்டேடிஸ்டா -</strong></h2><p id="1fb2ec7d-2bab-8035-87fa-d3d837b48eb4" class="">   </p><figure id="1fb2ec7d-2bab-80cd-9392-c0a48a48ba63"><a href="https://www.statista.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Statista - The Statistics Portal</div><div class="bookmark-description">Find statistics, consumer survey results and industry studies from over 22,500 sources on over 60,000 topics on the internet&#x27;s leading statistics database</div></div><div class="bookmark-href"><img src="https://www.statista.com/favicon-48x48.png" class="icon bookmark-icon"/>https://www.statista.com/</div></div><img src="https://cdn.statcdn.com/static/img/openGraph/statista.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8068-83a5-ec10df068209" class="">தரவுகளின் விக்கிபீடியா என கருதக்கூடிய ஸ்டேஸ்டா தளம், தரவுகளையும், தரவுகள் சார்ந்த காட்சிமயாக்கலையும் அளிக்கிறது. இணையத்தின் பல்வேறு இடங்களில் இருந்து சேகரிக்கப்பட்ட தரவுகளை பல்வேறு தலைப்புகளில் தொகுத்தளிக்கிறது. இவைத்தவிர, சொந்த ஆய்வு மற்றும் கருத்துக்கணிப்பு சார்ந்த தரவுகளையும் அளிக்கிறது. வரைபட வடிவில் இதன் தரவுகளை அணுக முடிவது முக்கிய அம்சம். உலகின் முக்கிய போக்குகள் தொடர்பான தகவல்களை தெரிந்து கொள்ளலாம். ஸ்டேஸ்டா தரவுகள் சார்ந்த செய்திகளை இணையத்தில் பல இடங்களில் பார்க்கலாம். தரவுகளுக்கான அடிப்படை தகவல்களை அணுக வேண்டும் என்றால் கட்டணம் செலுத்த வேண்டும். வர்த்தக நிறுவனங்கள், ஆய்வாளர்களால் அதிகம் பயன்படுத்தப்படும் இந்த சேவை செய்தியாளர்கள் பட்டியலிலும் இருக்க வேண்டும்.</p><ul id="1fb2ec7d-2bab-80f1-a48a-c9de5d06b2d7" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8056-b282-fb1ab53fc61a" class="">டிஜிட்டல் யுகத்தில் தரவுகள் தான் எல்லாம் என்பதால், தரவுகள் சார்ந்த தகவல்களை அளிக்கும் இந்த தளம் முக்கியமானது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80a9-8ace-d1152026d61c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-800f-bb10-caa0eac7bda0" class=""><strong>மாற்று:</strong> <a href="https://ourworldindata.org/">அவர் வேர்ல்டு இன் டேட்டா</a> , <a href="https://explodingtopics.com/">எக்ஸ்ப்லோடிங் டாபிக்ஸ்</a></p></div></figure><p id="1fb2ec7d-2bab-8089-bcaa-d49f63d84315" class="">
+</p><h2 id="1fb2ec7d-2bab-80a7-86d7-f1ed33cf36a8" class="">7. <strong>ஒபன் டேட்டா -</strong></h2><p id="1fb2ec7d-2bab-805c-aead-f7be64242e29" class="">   </p><figure id="1fb2ec7d-2bab-805b-bef1-cc327caf0232"><a href="https://www.data.gov.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Home</div><div class="bookmark-description">Open Government Data Platform (OGD) India is a single-point of access to Resources in an open format published by Ministries/Departments/Organizations of GoI. Get details of Open Data Events, Visualizations, Blogs, and Infographics.</div></div><div class="bookmark-href"><img src="https://www.data.gov.in/favicon.ico" class="icon bookmark-icon"/>https://www.data.gov.in/</div></div></a></figure><p id="1fb2ec7d-2bab-8066-a1e0-c928b0c8943c" class="">தரவுகள் முக்கியம்: அதைவிட அரசு தரப்பு தரவுகள் இன்னும் முக்கியம். எனவே தான் அரசு சார்ந்த தரவுகள் பொதுமக்கள் சார்பாக எளிதாக அணுக கூடிய வகையில் இருக்க வேண்டும் என வலியுறுத்தப்படுகிறது. ஓபன் டேட்டா எனும் திறவுமூல தரவு ஒரு கோட்பாடாகவே முன்வைக்கப்படுகிறது. பல நாடுகளில் அரசு தரவுகள் இணையம் வழியே பொதுவெளியில் கிடைக்கின்றன. இந்திய அரசின் சார்பில் டேட்டா.கவ்.இன் இணையதளம் அரசு சார்ந்த தரவுகளை பல்வேறு வடிவங்களில் அளிக்கிறது.</p><ul id="1fb2ec7d-2bab-804f-9486-c0489531cce9" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8069-92a9-c9c5faa7e648" class="">தரவுகள் பின்னே மறைந்துள்ள தகவல்கள் பல சொல்லாத செய்திகளை சொல்ல வல்லவை என்பதால், அரசு தரவுகளை அணுகும் வாய்ப்பு முக்கியமானது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8061-9e53-d6dc3100b0d3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80ed-b723-cfa6015e3458" class=""><strong>மாற்று</strong>: <a href="https://data.gov/">அமெரிக்க தளம்</a>,<a href="https://paperswithcode.com/">பேப்பர்ஸ்வித்கோடு</a></p></div></figure><p id="1fb2ec7d-2bab-800e-b260-f2e8468805c6" class="">
+</p><h2 id="1fb2ec7d-2bab-805a-8895-e58649aa99e9" class="">8. <strong>விக்கிலீக்ஸ் -</strong></h2><p id="1fb2ec7d-2bab-80bb-b096-f42d3849701e" class="">    </p><p id="1fb2ec7d-2bab-8094-a72b-c1ac00cba84a" class="">உண்மையை வெளிக்கொணர உதவும் விசிலூதிகள் எப்போதுமே செய்தியாளர்களுக்கு நெருக்கமானவர்கள். அந்த வகையில் விசிலூதிகளுக்கான இணையதளமாக விக்கிலீக்ஸ் விளங்கியது. ஊழல் மற்றும் ஜனநாயக முறைகேடுகள் உள்ளிட்ட ரகசிய ஆவணங்களை அனமாதயேமாக வெளியிட வழி செய்த விக்கிலீக்ஸ் பல வெடிக்கும் செய்திகளுக்கு அடிப்படையாக அமைந்தது. பல முன்னணி ஊடகங்கள் விக்கிலீக்சுடன் இணைந்து செயல்பட்டன. இந்த தளம் தொடர்ந்து செயல்படாதது வருத்தம்.</p><ul id="1fb2ec7d-2bab-80a8-9903-fb42fc7d8011" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8048-9a7c-c7d978af6e0a" class="">ஜனநாயக சமூகத்திற்கு அவசியமான இணையதளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-807f-8348-cacb5651b22f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-80e8-904e-c638472275b8" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1fb2ec7d-2bab-8062-8a30-f9d07c75e64b" class="">
+</p><h2 id="1fb2ec7d-2bab-8024-82bf-dfdf426f4add" class="">9. <strong>சயின்ஸ் டெய்லி -</strong></h2><p id="1fb2ec7d-2bab-808d-955a-fb79791d4383" class="">    </p><figure id="1fb2ec7d-2bab-800a-93d5-d22d7a93bae6"><a href="https://www.sciencedaily.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">ScienceDaily: Your source for the latest research news</div><div class="bookmark-description">Breaking science news and articles on global warming, extrasolar planets, stem cells, bird flu, autism, nanotechnology, dinosaurs, evolution -- the latest discoveries in astronomy, anthropology, biology, chemistry, climate &amp; environment, computers, engineering, health &amp; medicine, math, physics, psychology, technology, and more -- from the world&#x27;s leading universities and research organizations.</div></div><div class="bookmark-href"><img src="https://www.sciencedaily.com/favicon.ico" class="icon bookmark-icon"/>https://www.sciencedaily.com/</div></div><img src="https://www.sciencedaily.com/images/scidaily-icon.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80fa-9273-d7c71bf86d0d" class="">அறிவியல் செய்திகளுக்கான தளம். அறிவியல் உலகில் மேற்கொள்ளப்பட்ட ஆய்வுகள் அடிப்படையிலான அண்மை தகவல்களையும், கண்டுபிடிப்புகளையும் செய்திகளாக தருவதாக அமைகிறது. இதில் வெளியாகும் செய்திகள், மூல தகவல் சேகரிப்பாக அமையாமல், ஆய்வு நிறுவனங்களின் செயதி வெளியீடு சார்ந்ததாக அமைகின்றன. எனவே இதழியல் நோக்கில் மதிப்பு மிக்கதாக கருத முடியாது என்றாலும், அறிவியல் ஆய்வுலக செய்திகளை திரட்டித்தருவதால், செய்தியாளர்கள் அறிந்திருக்க வேண்டிய தளங்களில் ஒன்றாக அமைகிறது. </p><ul id="1fb2ec7d-2bab-8045-a963-c78c16697ac1" class="toggle"><li><details open=""><summary><strong>ஏன்? </strong></summary><p id="1fb2ec7d-2bab-8098-a2d2-e55f90ea0dcf" class="">செய்தி வெளியீடுகளை அப்படியே ஏற்றுகொண்டு விட முடியாது என்றாலும், பல நேரங்களில் அவற்றை அடிப்படையாக கொண்டு செய்தியாளர்கள் செய்தி சேகரிப்பை மேற்கொள்ளலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8059-9edc-d4b47f31c557"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-802e-a3f6-fd59ec81bb3a" class=""><strong>மாற்று</strong>: <a href="https://phys.org/">https://phys.org/</a> , <a href="https://www.eurekalert.org/">யுரேகா அலெர்ட்</a></p></div></figure><p id="1ff2ec7d-2bab-8078-ad7b-f2745b0ce971" class="">
+</p><h2 id="1ff2ec7d-2bab-809f-af09-e3a5ec402b55" class="">10. இமேஜர் -</h2><p id="1ff2ec7d-2bab-80e3-89e9-eb09b445a8bd" class="">
+</p><figure id="1ff2ec7d-2bab-8043-95d1-e419b41fa288"><a href="https://imgur.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Imgur: The magic of the Internet</div><div class="bookmark-description">Imgur is the easiest way to discover and enjoy the magic of the Internet. It’s where you’ll find the funniest, most informative and inspiring images, memes, GIFs, and visual stories served up in an endless stream of bite-sized fun. Powered by a passionate community of people from all around the world, anyone can join to share cool stuff and vote the best to the top. You’ll always find something on Imgur to make you smile and brighten your day.</div></div><div class="bookmark-href"><img src="https://s.imgur.com/images/favicon-96x96.png" class="icon bookmark-icon"/>https://imgur.com/</div></div><img src="https://s.imgur.com/images/logo-1200-630.png" class="bookmark-image"/></a></figure><p id="1ff2ec7d-2bab-80e4-8181-e37103e73878" class="">இமேஜர் (imgur) என உச்சரிக்கப்படும் இம்குர் தளம், உருவங்களை பதிவேற்றுவதற்கான இணையதளம். கவனிக்க புகைப்படங்கள் அல்ல, உருவங்கள். அவை எந்த வடிவில் வேண்டுமானால் இருக்கலாம். வாசகங்கள் சேர்க்கப்பட்ட உருவங்கள், ஒட்டு வேலை படங்கள், ஜிப்கள், மீம்கள் என எந்த வகையாக இருந்தாலும், அவற்றை பதிவேற்றுவதற்கும் பகிர்வதற்குமான இடமாக இருக்கிறது. ரெட்டிட் தளத்தில் பகிரப்பரும் உருவங்களை எளிதாக பகிர்வதற்கான துணை சேவையாக துவங்கப்பட்ட இந்த தளம் தன்னளவில் முழுமையான சேவையாக உருவாகி இருக்கிறது. இணையத்தில் கருத்துக்கள் பரிமாறிக்கொள்ளப்படுவதில் ஜிப்கள், மீம்கள் ஆதிக்கம் செலுத்தி வரும் நிலையில், இந்த வகை ஆக்கங்களுக்கான பிறப்பிடங்களில் ஒன்றாக இருப்பதால், இணைய போக்கை பின் தொடர விரும்பும் செய்தியாளர்களுக்கான இன்றியமையாத தளங்களில் ஒன்றாக இருக்கிறது.</p><ul id="1ff2ec7d-2bab-8048-8b0c-d3785ddf8b21" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong></summary><p id="1ff2ec7d-2bab-80bd-9b22-d7dee796bb03" class="">இணையத்தில் வரைலாக பரவும் காட்சிகளை கண்டறிய உதவும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8081-8c3f-e683dc8d3c74"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-800d-ad3a-caec280cdcc3" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1ff2ec7d-2bab-809b-bc78-ef3d7af6cbc5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

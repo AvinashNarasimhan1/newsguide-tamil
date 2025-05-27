@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>ஏஐ கருவிகள்</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-808c-bd8e-c60d0b84f3bb" class="page sans"><header><h1 class="page-title">ஏஐ கருவிகள்</h1><p class="page-description"></p></header><div class="page-body"><p id="1fb2ec7d-2bab-80de-a2dd-fbdd1897cf88" class="">
+</p><p id="1fb2ec7d-2bab-8051-bf42-e06753652053" class="">மற்ற எந்த துறைகளையும் போலவே இதழியலும் தொழில்நுட்ப தாக்கத்திற்கு உள்ளாகிறது என்பதோடு, வேறு எந்த துறையையும் விட இதழியல் தொழில்நுட்பத்தை உள்வாங்கி கொண்டு வளர்ச்சி அடையும் தன்மை கொண்டிருக்கிறது. அச்சு இயந்திரம் துவங்கி, தந்தி சேவை, கம்ப்யூட்டர்- இணையம், செல்பேசி என பலவற்றை இதற்கு உதாரணமாக சொல்லலாம். அந்த வகையில் ஏஐ எனப்படும் செயற்கை நுண்ணறிவு நுட்பமும் வருகிறது. இதழியல் துறைக்கு ஏற்ற ஏஐ கருவிகள் மற்றும் சேவைகள்:</p><p id="1fb2ec7d-2bab-802a-9356-d35017af9140" class="">
+</p><h2 id="1fb2ec7d-2bab-80c7-b58f-d4978cf2ebe8" class="">1. <strong>பிரெப்லக்சிடி ஏஐ -</strong></h2><p id="1fb2ec7d-2bab-807e-8fa2-f9beb3ca322a" class="">
+</p><figure id="1fb2ec7d-2bab-8047-b10c-de10d9539b81"><a href="https://www.perplexity.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Perplexity</div><div class="bookmark-description">Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.</div></div><div class="bookmark-href"><img src="https://www.perplexity.ai/favicon.ico" class="icon bookmark-icon"/>https://www.perplexity.ai/</div></div><img src="https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-806b-8984-c7c077c527f0" class="">இணைய தேடலுக்கான அடையாளமாகவும், அளவுகோளாகவும் கூகுள் விளங்கிய நிலை மாறத்துவங்கியிருக்கிறது. தேடல் முடிவுகளை பட்டியலியாக பெறுவதை விட, கேள்வி பதில் வடிவில் நேரடியாக தகவல்களை பெறுவது சிறந்தது என கருதப்படும் சாட்பாட்கள் யுகத்தில், ஏஐ தேடியந்திரமாக பிரெப்லக்சிடி கவனத்தை ஈர்க்கிறது. கூகுளுக்கு மாற்றாக சாட்ஜிபிடி சொல்லப்பட்டாலும், தேடல் பரப்பில் ஏஐ அலையை சாதகமாக பயன்படுத்திக்கொண்ட சேவையாக பிரெப்லக்சிடி விளங்குகிறது. கேள்வி பதில் வடிவில் தேடல் தகவல்களை அளிப்பதோடு, அதற்கு ஏற்ற ஆதாரங்களையும் சுட்டிக்காட்டுகிறது. எல்.எல்.எம் என சொல்லப்படும் மொழி மாதிரிகள் கொண்டு, பயனாளிகள் கோரிக்கைகளை புரிந்து கொண்டு, இணையத்தில் தேடி பொருத்தமான தகவல்களை ஆதாரங்களுடன் தொகுத்தளிக்கிறது.</p><ul id="1fb2ec7d-2bab-8016-b563-ff591acd9c1a" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8052-90d8-f75024282742" class="">மொழி மாதிரிகள் கொண்டு இயங்கும் ஏஐ கால தேடியந்திரம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80b6-8f15-db79f41273af"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80f6-b021-d84e854da25c" class=""><strong>மாற்று</strong>: சாட்ஜிபிடி, யூ , <a href="https://you.com/">https://you.com/</a> இன்னும் பிற.</p></div></figure><p id="1fb2ec7d-2bab-8045-b8a2-f1d6c7abb5cc" class="">
+</p><h2 id="1fb2ec7d-2bab-80e2-99ed-c4e475de74ec" class="">2. <strong>கிராமர்லி -</strong></h2><p id="1fb2ec7d-2bab-8001-a316-f04eb15bc7f1" class="">   </p><figure id="1fb2ec7d-2bab-80a3-9393-dc35698c2242"><a href="https://www.grammarly.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Grammarly: Free AI Writing Assistance</div><div class="bookmark-description">Grammarly makes AI writing convenient. Work smarter with personalized AI guidance and text generation on any app or website.</div></div><div class="bookmark-href"><img src="https://static-web.grammarly.com/cms/master/public/favicon-32x32.png" class="icon bookmark-icon"/>https://www.grammarly.com/</div></div><img src="https://static-web.grammarly.com/cms/master/public/open-graph/social-24.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80e2-b9d7-c844c3706e78" class="">ஆங்கிலத்தில் எழுதும் போது எழுத்துப்பிழை, இலக்கணப்பிழைகளை சரி பார்க்க உதவும் சேவை. எழுத்து நடை தொடர்பான ஆலோசனைகளையும் அளிக்க வல்லது. எழுத்து உதவி மென்பொருள் வரிசையில் வருகிறது. ஏஐ சார்ந்த முன்னோடி சேவைகளில் ஒன்று. மாணவர்களுக்காக உருவாக்கப்பட்ட சேவை, இப்போது பரவலாக எல்லோராலும் பயன்படுத்தப்படுகிறது. சாட்ஜிபிடி அறிமுகத்திற்கு பிறகு, ஜிபிடி மொழி மாதிரி ஒருங்கிணைப்புடன் ஆக்கத்திறன் சார்ந்த சேவையும் வழங்கி வருகிறது.</p><ul id="1fb2ec7d-2bab-808b-a312-e420a8ed392e" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8018-b88f-fa66393278d2" class="">ஏஐ துணை கொண்டு எழுத்தை மேம்படுத்தும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-803c-a2c9-c7d325463b9e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80c6-bf44-f874ce3322e3" class=""><strong>மாற்று</strong>: <a href="https://languagetool.org/">லாங்குவேஜ் டூல்</a></p></div></figure><p id="1fb2ec7d-2bab-808d-b1f2-c9d33f1802be" class="">
+</p><h2 id="1fb2ec7d-2bab-8053-975d-d77a42a88485" class="">3. <strong>குவில்பாட் -</strong></h2><p id="1fb2ec7d-2bab-80fa-80ed-d88312a788b4" class="">   </p><figure id="1fb2ec7d-2bab-801c-8f3b-db3daed8e91f"><a href="https://quillbot.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">QuillBot: Your complete writing solution</div><div class="bookmark-description">Write effortlessly and efficiently with QuillBot&#x27;s suite of AI tools. Paraphrase, check grammar, analyze tone, improve fluency, and more. Start doing your best work.</div></div><div class="bookmark-href"><img src="https://quillbot.com/favicon-144x144.png" class="icon bookmark-icon"/>https://quillbot.com/</div></div><img src="https://assets.quillbot.com/images/og-quillbot-img.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80e7-9f9c-d6a0656a09e6" class="">ஏஐ சார்ந்த மற்றொரு முன்னோடி சேவை. உங்களுக்கு பதிலாக எழுதும் சேவை அல்ல, உங்களுடன் இணைந்து எழுதும் சேவை எனும் சுய வர்ணனை இதன் தன்மையை தெளிவாக உணர்த்துகிறது. எழுத்து வடிவை, ஏஐ துணை கொண்டு மேம்படுத்தி தருகிறது. வாக்கிய அமைப்புகளை, அதே பொருள் தரும் வகையில், பொருத்தமான வேறு வார்த்தைகளை கொண்டு வாசிப்புக்கு உகந்த வகையில் மாற்றித்தருகிறது. இலக்கண பிழை திருத்த வசதியும் அளிக்கிறது. ஆங்கிலத்தில் சரளமாக எழுதுவதில் பிரச்சனைகளை எதிர்கொள்பவர்களுக்கு உதவும் சேவை. </p><ul id="1fb2ec7d-2bab-80f1-ae9b-db75e1083e68" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8076-b011-d0a9f840394d" class="">ஆங்கிலத்தில் நம்பிக்கையோடு எழுத உதவுகிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-806e-ab11-cb321f2cb83e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80ae-b69a-cbf8fa4bca50" class=""><strong>மாற்று:</strong> <a href="https://www.wordtune.com/">வேர்டுடியூன்</a> , கிராமர்லி. ஜேஸ்பரும் இதே போன்ற சேவை தான் என்றாலும், ஜிபிடி மொழி மாதிரி சார்ந்தது. ஆனால், வேர்டுடியூன் தனக்கான சொந்த மொழி மாதிரி கொண்ட சேவை என்பதை கவனத்தில் கொள்ள வேண்டும். </p></div></figure><p id="1fb2ec7d-2bab-808a-af9e-c3f4c8407442" class="">
+</p><h2 id="1fb2ec7d-2bab-80fa-883b-fe6765c708bb" class="">4. <strong>ஜிபிடி எக்செல் -</strong></h2><p id="1fb2ec7d-2bab-80f0-a216-d2b20e5cd799" class="">
+</p><figure id="1fb2ec7d-2bab-809b-82f5-c03f341af5f0"><a href="https://gptexcel.uk/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GPT Excel - AI Powered Excel formula Generator</div><div class="bookmark-description">AI-powered excel and sheets formula generator, SQL generator, vba script generator combined into one tool. formula bot, excel formulator, sheet ai, sheet plus</div></div><div class="bookmark-href"><img src="https://gptexcel.uk/favicon.ico" class="icon bookmark-icon"/>https://gptexcel.uk/</div></div><img src="https://gptexcel.uk/og/og_image.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8099-836b-ea27d855c756" class="">எந்த துறையைச் சேர்ந்தவராக இருந்தாலும், எக்செல் போன்ற ஸ்பெரெட்ஷீட் மென்பொருள் கையாளும் திறன் பெற்றிருப்பது நல்லது. அதிலும் குறிப்பாக தரவுகள் சார்ந்து இயங்கும் போது எக்செல் திறன் உதவியாக இருக்கும். ஆனால், எக்செல் மென்பொருளில் தேர்ச்சி பெறுவது என்பது எளிதல்ல. அதன் அடிப்படை அம்சங்களையும், சூத்திரங்களையும் அறிந்திருப்பதும் கூட சிக்கலானதாக தோன்றலாம். ஜிபிடி சார்ந்த இந்த சேவை எக்செல் வசதிகளை அணுகுவதை எளிதாக்குகிறது.</p><ul id="1fb2ec7d-2bab-8044-ad07-f6b80ea85dab" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80ab-908c-c844a736ca48" class="">எக்செல் மென்பொருளை ஏஐ திறனோடு அணுக உதவும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80f8-b79f-e08c1ac2c64e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80ab-98df-d0c8a3f6cd46" class=""><strong>மாற்று</strong>: <a href="https://copilot.microsoft.com/chats/oQJuq4sZCqc9biYHkKDt4">கோபைலட்</a></p></div></figure><p id="1fb2ec7d-2bab-80e5-abdc-f1d3d88bb140" class="">
+</p><h2 id="1fb2ec7d-2bab-8049-86d3-efb923650d8d" class="">5. <strong>லுத்விக் குரு -</strong></h2><p id="1fb2ec7d-2bab-80f8-867a-ccdd96930e6a" class="">
+</p><figure id="1fb2ec7d-2bab-806c-80e4-c72d3a74364d"><a href="https://ludwig.guru/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://ludwig.guru/</div></div></a></figure><p id="1fb2ec7d-2bab-809e-8f96-f82c88b2e6ce" class="">ஏஐ சார்ந்த மற்றொரு முன்னோடி சேவை. ஆங்கிலத்தை தாய்மொழியாக கொள்ளாதவர்கள், ஆங்கிலத்தில் தொழில்முறை தன்மையோடு எழுத உதவும் நோக்கம் கொண்டது. ஏஐ திறனோடு, மொழியியல் நுட்பங்களை கொண்டு, லட்சக்கணக்கான ஆங்கில ஆக்கங்களை அலசி ஆராய்ந்து அதனடிப்படையில், ஆங்கில வாசகங்களை பரிந்துரைக்கிறது. முதல் வாசகம் தேடியந்திரம் என கருதப்படுகிறது. சாட்ஜிபிடி போன்ற சேவைகள் அறிமுகம் ஆவதற்கு முன்பே உருவான ஏஐ சார்ந்த மூல சேவை என்பது குறிப்பிடத்தக்கது.</p><ul id="1fb2ec7d-2bab-805c-a258-f3c74cac41c1" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80c7-817e-e3ee4edc95de" class="">ஆக்கத்திறன் ஏஐ மிகை பரபரப்பில் இருந்து விலகி, ஏஐ சேவைகளின் தன்மையை புரிந்து கொள்ள உதவும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8009-b250-f2914107971e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80a4-8e94-c8d2974537c0" class=""><strong>மாற்று:</strong> கிராமர்லி போன்ற சேவைகளுடன் ஒப்பிட்டு புரிந்து கொள்ளலாம்.</p></div></figure><p id="1fb2ec7d-2bab-80d9-bcf1-c62cb336a426" class="">
+</p><h2 id="1fb2ec7d-2bab-80c5-8922-dac6c59c967e" class="">6. <strong>லாமாபைல் -</strong></h2><p id="1fb2ec7d-2bab-80cd-9264-cc6136cdc6fd" class="">   </p><figure id="1fb2ec7d-2bab-805e-a913-fcecc4c42397"><a href="https://www.llama.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Llama</div><div class="bookmark-description">The open-source AI models you can fine-tune, distill and deploy anywhere. Choose from our collection of models: Llama 4 Maverick and Llama 4 Scout.</div></div><div class="bookmark-href"><img src="https://static.xx.fbcdn.net/rsrc.php/y5/r/m4nf26cLQxS.ico" class="icon bookmark-icon"/>https://www.llama.com/</div></div><img src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.2365-6/490739250_3984071921832434_899336421867772992_n.png?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=aa6a2f&amp;_nc_ohc=XAP-R81jvswQ7kNvwE7Sa_4&amp;_nc_oc=AdnwbLzCAadr9zbwlr7qfUIh0DKi7L8598pgD9NOIevfBEK57bGa416cXBD_KKvkKbQ&amp;_nc_zt=14&amp;_nc_ht=scontent-iad3-2.xx&amp;_nc_gid=eOCaxOLb9QZQyRTRuRQDcg&amp;oh=00_AfJUCUIQeMQMJ8xoy6IByviut1q4qdYwCyhAfaUtomuiYQ&amp;oe=6839D63A" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80d1-883e-e278744d93cc" class="">ஏஐ சேவைகள் தொடர்பான அடிப்படை புரிதல் அவசியம். அதிலும் குறிப்பாக ஆக்கத்திறன் ஏஐ சேவைகளை அணுகும் போது அவற்றை இயக்கும் எல்.எல்.எம்., எனப்படும் மொழி மாதிரி நுட்பம் குறித்த புரிதல் தேவை. ஜிபிடி உள்ளிட்ட பல அடிப்படை மொழி மாதிரிகள் உள்ளன. பெரும்பாலான ஆக்கத்திறன் ஏஐ சேவைகள் இவற்றை சார்ந்தே இயங்குகின்றன. மொழி மாதிரிகளில் உள்ள பிரச்சனை அவை, கிளவுட்டில் இயங்குவது தான். இதில் தனியுரிமை சார்ந்த பல சிக்கல்கள் இருக்கின்றன. இந்த பின்னணியில் மொழி மாதிரி நுட்பத்தை நம்முடைய லேப்டாப் அல்லது கம்ப்யூட்டரில் தரவிறக்கம் செய்து பயன்படுத்து வகையில் மெட்டாவின் லாமா மொழி மாதிரி சார்ந்த லாமாபைல் அமைகிறது.</p><ul id="1fb2ec7d-2bab-80b1-95dd-f110a10455c8" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8074-b0ea-c7cdd64c2c6c" class="">மொழி மாதிரி நுட்பத்தை சொந்த கம்ப்யூட்டரில் பயன்படுத்தும் வாய்ப்பு அதன் மீதான முழு கட்டுப்பாட்டை அளிக்கிறது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-808d-8f61-da2e2fced613"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-804a-b62f-f40779e0a0ab" class=""><strong>மாற்று</strong>: சீனாவின் டீப்சீக் கூட இத்தகைய வாய்ப்பை அளிக்கிறது. எனினும் சீன சேவை என்பதால் அதற்கே உரிய கேள்விகளை கொண்டிருக்கிறது. </p></div></figure><p id="1fb2ec7d-2bab-802d-b4eb-c19282637846" class="">
+</p><h2 id="1fb2ec7d-2bab-8038-98c6-c85c7d6e0807" class="">7. <strong>கூகுள் டிரான்ஸ்லேட் - </strong>    </h2><p id="1fb2ec7d-2bab-80fd-8e04-d911eeb9db7b" class="">
+</p><figure id="1fb2ec7d-2bab-80f5-8021-ddb1f6843b6c"><a href="https://translate.google.co.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google Translate</div><div class="bookmark-description">Google&#x27;s service, offered free of charge, instantly translates words, phrases, and web pages between English and over 100 other languages.</div></div><div class="bookmark-href"><img src="https://www.gstatic.com/translate/favicon.ico" class="icon bookmark-icon"/>https://translate.google.co.in/</div></div></a></figure><p id="1fb2ec7d-2bab-80ef-b55a-c465bd097052" class="">ஏஐ நுட்பம் அதிக முன்னேற்றம் கண்டுள்ள பிரிவாக மொழிபெயர்ப்பு அமைகிறது. இயந்திர கற்றல் சார்ந்த இயந்திர மொழிபெயர்ப்பு கடந்த சில ஆண்டுகளில் பெரும் பாய்ச்சலை நிகழ்த்தியுள்ளது. புதிய தரவுகள் பயிற்சி மூலம் இவை தொடர்ந்து மேம்பட்டு வருகின்றன. கூகுள் டிரான்ஸ்லேட் சேவையை பல மொழிகளில் பயன்படுத்தலாம். கூகுள் டிரான்ஸ்லேட் தவிர கூகுள் ஜெமினி மொழி மாதிரி சார்ந்த மொழிபெயர்ப்பு இன்னமும் மேம்பட்டதாக இருப்பதாக கருதப்படுகிறது. இதழியலில் மொழிபெயர்ப்பு சேவை பலவிதங்களில் பயன்படும். ஏஐ மொழிபெயர்ப்பை கண்ணை மூடிக்கொண்டு முழுவதும் பயன்படுத்த முடியாது என்றாலும், பிற மொழி உள்ளட்டக்கத்தை அணுகுவதற்கான புதிய கதவுகளை திறந்து விடுகிறது. மேலும், உள்ளடக்கத்தை பிற மொழிகளில் மாற்றி திருத்தி மேம்படுத்திக்கொள்ளலாம்.</p><ul id="1fb2ec7d-2bab-8014-9912-c0cbe801f54b" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80b1-ba26-ddc93b24731a" class="">ஏஐ மொழிபெயர்ப்பு வசதியை செய்தி சேகரிப்பு பணியில் பல இடங்களில் பயன்படுத்தலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80b6-9885-d336b2e5b366"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80cc-88dc-d8ab9b405800" class=""><strong>மாற்று:</strong> சாட்ஜிபிடி , <a href="https://claude.ai/login?returnTo=%2F%3F">கிளாடு</a></p></div></figure><p id="1fb2ec7d-2bab-80c0-a231-fab40b4c0369" class="">
+</p><h2 id="1fb2ec7d-2bab-803b-857e-de3b74eb439d" class="">8. <strong>நோட்புக் எல்.எம் -</strong></h2><p id="1fb2ec7d-2bab-80d8-b974-e09672325297" class="">   </p><figure id="1fb2ec7d-2bab-8078-b841-df51cb5e75ce"><a href="https://notebooklm.google/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Google NotebookLM | Note Taking &amp; Research Assistant Powered by AI</div><div class="bookmark-description">Use the power of AI for quick summarization and note taking, NotebookLM is your powerful virtual research assistant rooted in information you can trust.</div></div><div class="bookmark-href"><img src="https://notebooklm.google/_/static/branding/v4/light_mode/favicon/apple-touch-icon.png" class="icon bookmark-icon"/>https://notebooklm.google/</div></div><img src="https://notebooklm.google/_/static/branding/v4/og/notebook_lm_share.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80c8-9133-c5188b6aeecd" class="">கூகுள் ஜெமினி சாட்பாட் சார்ந்து இயங்கும் இந்த ஏஐ சேவை, ஆய்வு உதவியாளர் என வர்ணிக்கப்படுகிறது. உள்ளடக்கத்தை பிடிஎப் வடிவில் கொடுத்து அதன் பொருளை பல விதங்களில் அணுகலாம். தொடர்புடைய உள்ளடக்கத்தை இணையத்தில் இருந்து தேடி எடுக்கலாம். உள்ளடக்கத்தை ஒலி வடிவில் கேட்கலாம். உள்ளடக்கத்தை வலையொலியாக ( பாட்காஸ்ட்) தானாக மாற்றிக்கொள்ளும் வசதியும் இருக்கிறது</p><ul id="1fb2ec7d-2bab-805d-bab8-f158b2c8f418" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80be-8ec2-d18da6333604" class="">உள்ளடக்க அலசலில் உதவும் ஆய்வு உதவியாளர்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8003-b77e-e48dfa429d5c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80e4-b2ae-c580f6bdc60e" class=""><strong>மாற்று:</strong> பல சேவைகள் இருக்கின்றன. (கூகுள் வழங்கும் மற்றொரு ஏஐ சேவையான பின்பாயிண்ட் செய்தியாளர்களுக்கான பல்வேறு பிரத்யேக அம்சங்களை கொண்டிருப்பது குறிப்பிடத்தக்கது. - <a href="https://journaliststudio.google.com/pinpoint/mobile">https://journaliststudio.google.com/pinpoint/mobile</a>)</p></div></figure><p id="1fb2ec7d-2bab-80a6-b9a8-d153c20e4cd7" class="">
+</p><h2 id="1fb2ec7d-2bab-8076-b0c0-d2194f663159" class="">9. <strong>ஆட்டர்.ஏஐ -</strong></h2><p id="1fb2ec7d-2bab-80a3-81b5-c36d312ae3b1" class="">   </p><figure id="1fb2ec7d-2bab-80cf-8880-e2410e83944a"><a href="https://otter.ai/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Otter Meeting Agent - AI Notetaker, Transcription, Insights</div><div class="bookmark-description">Otter AI Meeting Agent supports real-time transcription, live chat, automated summaries, insights, and action items.</div></div><div class="bookmark-href"><img src="https://cdn.prod.website-files.com/618e9316785b3582a5178502/618e943a80919a98b5e9bf69_apple-icon.png" class="icon bookmark-icon"/>https://otter.ai/</div></div><img src="https://cdn.prod.website-files.com/618e9316785b3582a5178502/620d386acf1b61fec39b06c6_otter-og-image-02.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80a7-8464-f36a5257d0d1" class="">செய்திக்கட்டுரைகளை எழுதித்தர ஏஐ திறனை நம்புவது எண்ணற்ற அபாயங்களும், போதாமைகளும் கொண்டது. ஆக்கத்திறன் ஏஐ நுட்பத்தை செய்தி செயல்பாட்டில் பயன்படுத்துவதில் இன்னும் பல சிக்கல்கள் இருக்கின்றன. ஆனால், பேச்சு வடிவை எழுத்து வடிவாக மாற்றித்தருவது போன்ற தேவைக்கு ஏஐ நுட்பத்தை பயன்படுத்தலாம். ஸ்பீச் டூ டெக்ஸ்ட் என சொல்லப்படும், பேச்சை எழுத்தாக்கும் நுட்பம் இதற்கு வழி செய்கிறது. இந்த பிரிவில் பல சேவைகள் இருக்கின்றன. ஆட்டர்.ஏஐ நிகழ்நேரத்தில் நேர்காணல் உள்ளிட்டவற்றை எழுத்து வடிவாக்கத்தருவதாக சொல்கிறது.<br/>இதே போலவே, எழுத்தை பேச்சாக்காமும் நுட்பத்தையும் பல இடங்களில் பயன்படுத்தலாம். கட்டுரைகளை சுருக்கித்தரும் சேவைகளையும் இந்த பிரிவில் கருதலாம்.<br/></p><ul id="1fb2ec7d-2bab-8045-ae85-ffc19b2288e5" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1fb2ec7d-2bab-80d3-81fa-c99c95c1fcfd" class="">பேச்சை எழுத்தாக்குவதில் ஏஐ நுட்பம் உண்மையான உதவியாளர் போல அமையும்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8044-8aa9-d28717ab13fd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8081-8699-c996db8dcc20" class=""><strong>மாற்று:</strong> பல சேவைகள் இருக்கின்றன. ஜிபிடி உதவியுடன் வீடியோக்களின் சாரம்சத்தை சுருக்கித்தரும் சேவைகளும் இருக்கின்றன. </p></div></figure><p id="1fb2ec7d-2bab-804c-9f31-f10917ec3d9f" class="">
+</p><h2 id="1fb2ec7d-2bab-8024-b097-eb5492e869e1" class="">10. தேர் ஈஸ் ஏன் ஏஐ பார் தட் -</h2><p id="1fb2ec7d-2bab-80a0-8f53-f8f59bd34ec1" class="">
+</p><figure id="1fb2ec7d-2bab-802e-98d9-f981f0525b62"><a href="https://theresanaiforthat.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://theresanaiforthat.com/</div></div></a></figure><p id="1fb2ec7d-2bab-80d4-9ee2-cc4e610566dd" class="">ஏஐ சார்ந்த இன்னும் எண்ணற்ற சேவைகள் இருக்கின்றன. இவற்றில் மூல சேவைகளையும் தனித்தன்மை வாய்ந்த சேவைகளையும் கண்டறிவது கடினம். ஒன்று போலவே தோற்றம் அளிக்கும் பல சேவைகள் குழப்பத்தை ஏற்படுத்தலாம். இந்த பின்னணியில் அனைத்து வகை ஏஐ சேவைகள், கருவிகளை விரிவான விளக்கத்துடன் பட்டியலிட்டு அறிமுகம் செய்யும் தளமாக இது விளங்குகிறது. புதிய ஏஐ சேவைகளை அறிவதோடு, அவற்றை ஒப்பிட்டும் பார்க்கலாம்.</p><ul id="1fb2ec7d-2bab-8032-9af0-d432e0fe60f6" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-809a-8349-c3c1d293e908" class="">ஏஐ யுகத்திற்கான இணைய கையேடு.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80ff-8f27-e41123b48dbb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80b2-915a-ef54ee6a1d8c" class=""><strong>மாற்று:</strong> <a href="https://wondertools.substack.com/">வொண்டர்டூல்ஸ்</a> உள்ளிட்ட பல கையேடுகள் உள்ளன.</p></div></figure><p id="1fb2ec7d-2bab-805f-950c-fe4408e03a75" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>தொழில்நுட்பங்கள்   </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-8033-b4d4-c2a1e7d09f8c" class="page sans"><header><h1 class="page-title"><strong>தொழில்நுட்பங்கள்</strong>   </h1><p class="page-description"></p></header><div class="page-body"><p id="1f92ec7d-2bab-80c0-a1ac-e9ae35538df9" class="">
+</p><p id="1f92ec7d-2bab-8054-938e-c89c6062d8d4" class="">நவீன செய்தியாளர்களும் சரி, செய்திகளில் ஆர்வம் உள்ளவர்களும் சரி, சிறந்த செய்தி தளங்களையும், வழிகளையும் மட்டும் அறிந்திருந்தால் போதாது. இணையம் மீது தாக்கம் செலுத்தும் நவீன தொழில்நுட்பங்களையும் அறிந்திருக்க வேண்டும். அந்த வகையில், இணைய யுகத்தில் கவனத்தில் கொள்ள வேண்டிய முக்கிய தொழில்நுட்பங்கள் சார்ந்த இணையதளங்கள்:</p><p id="1f92ec7d-2bab-8061-a431-f9193732f097" class="">
+</p><h2 id="1f92ec7d-2bab-80ba-8287-c437db50e77f" class="">1. <strong>கிளவுட்பிளேர் -</strong></h2><p id="1f92ec7d-2bab-80a6-8fd3-d576f105a69b" class="">
+</p><figure id="1f92ec7d-2bab-80e1-a1d3-f6114f383db1"><a href="https://www.cloudflare.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Connect, protect, and build everywhere</div><div class="bookmark-description">Make employees, applications and networks faster and more secure everywhere, while reducing complexity and cost.</div></div><div class="bookmark-href"><img src="https://www.cloudflare.com/favicon.ico" class="icon bookmark-icon"/>https://www.cloudflare.com/</div></div><img src="https://cf-assets.www.cloudflare.com/dzlvafdwdttg/5hEMO0prBW3wDvchZU0iBZ/8e05bb4c55f8906e58d09dbc861c0f22/CF_logo_horizontal_singlecolor_wht.svg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80b8-aa43-d9f3ff5e02a5" class="">உள்ளடக்க வழங்கல் வலைப்பின்னல் சேவை என குறிப்பிடப்பும் வசதியை அளிக்கும் நிறுவனங்களில் ஒன்றாக கிளவுட்பிளேர் விளங்குகிறது. இணையதளத்தை அமைக்க, வடிவமைப்பாளர், சர்வர் இன்னும் பிற அம்சங்கள் தேவை. இப்படி கோடிக்கணக்கான தளங்கள் இருக்கின்றன. இந்த தளங்களின் செயல்பாடும், வேகமும் பல அம்சங்களால் தீர்மானிக்கப்படுகின்றன. மேலும், இவை தாக்காளர்களின் தாக்குதலுக்கு உள்ளாகும் அபாயமும் இருக்கிறது. இந்த பின்னணியில், இணையதளங்கள் பயனாளிகள் வேகமாக அணுக கூடிய வகையில் செயல்படவும், தாக்குதலுக்கு எதிரான பாதுகாப்பு அளிக்கும் சேவையாகவும், உள்ளடக்க வழங்கல் வலைப்பின்னல் நுட்பம் அமைகிறது. இந்த சேவையை வழங்கும் நிறுவனங்கள் உலகம் முழுவதும் சர்வர்கள் அமைத்து, பயனாளிகளுக்கு அவர்கள் அருகாமை பகுதி சர்வரில் இருந்து அணுகல் வசதியை அளிப்பதன் மூலம் வேகமான சேவையை அளிக்கிறது. அதே போல பலவகை தாக்காளர்களுக்கு எதிரான பாதுகாப்பும் அளிக்கிறது. இணையத்திற்குள் ஒரு இணையம் என்றும் இந்த சேவையை புரிந்து கொள்ளலாம்.</p><ul id="1f92ec7d-2bab-80da-9492-cf3e84d22d07" class="toggle"><li><details open=""><summary><strong>ஏன்?  </strong>   </summary><p id="1f92ec7d-2bab-8078-ae42-c99460660f79" class="">நவீன இணைய உள்கட்டமைப்பின் முக்கிய நுட்பங்களில் ஒன்று. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8050-8d66-c55c21b19110"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-809e-a648-e70e18b3d1e3" class=""><strong>மாற்று:</strong> ——</p></div></figure><p id="1f92ec7d-2bab-800a-b7a2-e4ebe2445922" class="">
+</p><h2 id="1f92ec7d-2bab-80d7-9389-e392f5bf465d" class="">2. <strong>டவுன் டிடெக்டர்</strong> -</h2><p id="1f92ec7d-2bab-801f-9be3-eba6b0e8ac62" class="">
+</p><figure id="1f92ec7d-2bab-8058-a9ac-cfe9f25ba3d7"><a href="https://downdetector.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Status overview</div><div class="bookmark-description">Realtime overview of issues and outages with all kinds of services. Having issues? We help you find out what is wrong.</div></div><div class="bookmark-href"><img src="https://cdn2.downdetector.com/5d7eacd2324a423/icons/favicon.png" class="icon bookmark-icon"/>https://downdetector.in/</div></div><img src="https://cdn2.downdetector.com/5d7eacd2324a423/images/Downdetector-OG.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-800d-990d-ec0e2c4d9335" class="">கூகுள், பேஸ்புக் அல்லது சாட்ஜிபிடி போன்ற முன்னணி இணைய சேவைகள் சில நிமிடங்கள் முடங்கினால் கூட, உலகமே ஸ்தம்பித்து போவதாக உணரும் நிலை உள்ளது. அதிலும், அரை மணி நேரத்திற்கு மேல் இந்த முடக்கம் நீடித்தால் இணைய உலகமே அது பற்றி தான் பேசிக்கொண்டிருக்கும். இதற்கான காரணங்கள், பாதிப்புகள், தீர்வுகள் உள்ளிட்ட அலசல் ஒரு பக்கம் இருக்க, முதலில் இந்த முடக்கம் உலகலாவியதா? அல்லது பயனாளிகள் தரபில்லானதா? என்பதை உறுதி செய்து கொள்வது அவசியம். டவுண்டிடகெர் தளம் இந்த கேள்விக்கான பதிலை அளிக்கும் சேவையாக இருக்கிறது. பயனாளிகள், இணையதள முடக்கம் தொடர்பாக தெரிவிக்கும் தகவல்களை கொண்டு இணையதளங்களின் செயல்பாட்டை கண்காணித்து பதிவு செய்யும் இந்த தளம், குறிப்பிட்ட தளங்களின் சேவையில் பிரச்சனையா என்பதை அறிவதற்கான இடமாக இருக்கிறது. நெதர்லாந்தைச் சேர்ந்த செய்தியாளர் டாம் சாண்டர்சால் துவக்கப்பட்ட இந்த தளம், டிஜிட்டல் உலகின் வானிலை மையமாக வர்ணிக்கப்படுகிறது. இணைய வேக சோதனை சேவை அளிக்கும் ஓக்லா நிறுவனத்தால் கையகப்படுத்தப்பட்டு அதன் கிழ் செயல்பட்டு வருகிறது.</p><ul id="1f92ec7d-2bab-8000-aeb3-ff2e3cff4deb" class="toggle"><li><details open=""><summary>    <strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8078-8a3f-d146a727ed5e" class="">இணையத்தில் என்ன பிரச்சனை என அறிய உதவும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-809f-8c5b-e20d6cca7076"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80a7-a19c-c27f5a8d45dc" class=""><strong>மாற்று:</strong> பல இருக்கின்றன. உதாரணம்: <a href="https://www.isitdownrightnow.com/">https://www.isitdownrightnow.com/</a></p></div></figure><p id="1f92ec7d-2bab-8079-b7b7-c9423f271e6f" class="">
+</p><h2 id="1f92ec7d-2bab-80ba-9962-d7b565056ba5" class="">3. <strong>ஹூ ஈஸ் -</strong></h2><p id="1f92ec7d-2bab-80cc-8ea6-c31477dda835" class="">
+</p><figure id="1f92ec7d-2bab-808d-a1e9-f8275551b2bb"><a href="https://who.is/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WHOIS Search, Domain Name, Website, and IP Tools - Who.is</div><div class="bookmark-description">Find information on any domain name or website. Large database of whois information, RDAP, DNS, domain names, name servers, IPs, and tools for searching and monitoring domain names.</div></div><div class="bookmark-href"><img src="https://who.is/favicon.ico" class="icon bookmark-icon"/>https://who.is/</div></div></a></figure><p id="1f92ec7d-2bab-80aa-be18-eafe3792a2cb" class="">இணையம் எனும் வலைப்பின்னல்களின் வலைப்பின்னலில், கோடிக்கணக்கான இணையதளங்கள் இருக்கின்றன. இந்த தளங்களை அவற்றின் வலை முகவரி கொண்டு அணுக முடிந்தாலும், அவற்றின் பின்னணி தகவல்கள் முக்கியமானவை. குறிப்பிட்ட இணைய முகவரியின் பதிவு விவரம், தொடர்பு எண் உள்ளிட்ட தகவல்கள் ஒரு தளத்தின் நம்பகத்தன்மையை உறுதி செய்வதில் முக்கியம். இணைய படிமுறையில் இத்தகைய தகவல்கள் பராமரிக்கப்பட்டு வருகின்றன. இந்த தகவல்களை எளிதாக தேட வழி செய்யும் தளங்களும் இருக்கின்றன.</p><ul id="1f92ec7d-2bab-80b9-b5f8-e020801ff975" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1f92ec7d-2bab-80be-a46e-f1dc62b41947" class="">இணைய தளங்களின் பின்னணியை ஆராயும் தேவை ஏற்பட்டால் உதவும் தளம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8050-93c8-d1765f101ebd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8061-a233-fe7cfe25c02b" class=""><strong>மாற்று</strong>: ஐபி முகவரி தேடலுக்கு: <a href="https://www.whatismyip.com/">https://www.whatismyip.com/</a>, டொமைன் பெயர்களை தேட: <a href="https://www.domain.com/domains">https://www.domain.com/domains</a></p></div></figure><p id="1f92ec7d-2bab-80b8-93d3-eaf909f3a933" class="">
+</p><h2 id="1f92ec7d-2bab-806e-8538-e0166d2c1639" class="">4. <strong>இண்டெர்நெட் லைவ் ஸ்டாட்ஸ்</strong> -   </h2><p id="1f92ec7d-2bab-804d-9fcc-ff3925a44649" class="">
+</p><figure id="1f92ec7d-2bab-80ce-bcd8-cd68a5efc025"><a href="https://www.internetlivestats.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Internet Live Stats - Internet Usage &amp; Social Media Statistics</div><div class="bookmark-description">Watch the Internet as it grows in real time and monitor social media usage: Internet users, websites, blog posts, Facebook, Google+, Twitter, and Pinterest users. Visualize the total number of emails, Google searches, YouTube videos, Tumblr posts, Instagram photos, in 1 second. Historical trends, statistics, infographics and live data visualization</div></div><div class="bookmark-href"><img src="https://www.internetlivestats.com/favicon.ico" class="icon bookmark-icon"/>https://www.internetlivestats.com/</div></div><img src="https://www.internetlivestats.com/internet-live-stats.gif" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8086-97d3-c9c7f3e65c17" class="">இணையம் தொடர்பான நிகழ்நேர தகவல்களை தெரிந்து கொள்ள உதவும் தளம். மொத்த இணைய தளங்களின் எண்ணிக்கை, இணைய பயனாளிகள் எண்ணிக்கை, தேடல்களின் எண்ணிக்கை என இணைய பயன்பாடு தொடர்பான தகவல்களை கண்காணித்து நிகழ் நேர தகவல்களாக வழங்குகிறது. இணையத்தில் ஒரு நொடியில் என்ன நடக்கிறது என தெரிந்து கொள்ளும் பகுதியும் இருக்கிறது. </p><ul id="1f92ec7d-2bab-806f-9995-f635880b3f40" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1f92ec7d-2bab-804a-8147-d8a6e4ee5963" class="">இணையத்தின் புள்ளிவிவர வரைபடம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8043-acff-e16b50a88ab5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8079-97f6-e0f7cfe1b3ed" class=""><strong>மாற்று</strong>: <a href="https://thenetmonitor.org/">https://thenetmonitor.org/</a> ( பழைய தளம்)</p></div></figure><p id="1f92ec7d-2bab-8078-a55b-e19278165302" class="">
+</p><h2 id="1f92ec7d-2bab-80c8-adeb-f0f08ede142f" class="">5. <strong>அப்டைம்ரோபாட் -</strong></h2><p id="1f92ec7d-2bab-8050-bdba-ec14b8336c17" class="">
+</p><figure id="1f92ec7d-2bab-801b-9bdb-e56625f32e08"><a href="https://uptimerobot.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">UptimeRobot: Free Website Monitoring Service</div><div class="bookmark-description">Start monitoring in 30 seconds. Use advanced SSL, keyword and cron monitoring. Get notified by email, SMS, Slack and more. Get 50 monitors for FREE!</div></div><div class="bookmark-href"><img src="https://uptimerobot.com/favicon.ico" class="icon bookmark-icon"/>https://uptimerobot.com/</div></div><img src="https://uptimerobot.com/assets/images/ogimage.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8072-b9af-fc973830d823" class="">இணையதளம் தொடர்பான பல்வேறு கண்காணிப்பு சேவைகளை அளிக்கும் தளம். செய்தியாளர்கள் முதல் வர்த்தக நிறுவனங்கள் வரை பல தரப்பினருக்கு பயனுள்ள சேவை. இணையதளங்களின் முகவரி பதிவுக்காலம் முடிகிறதா? என்பது உள்ளிட்டவற்றை அறியலாம். செயலி வடிவிலும் இருக்கிறது. இலவச சேவை மற்றும் விரிவான அறிக்கை தரும் கட்டணச்சேவைகளை வழங்குகிறது. </p><ul id="1f92ec7d-2bab-8072-bc5d-cf498a48accd" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8008-87a6-c563d18626c9" class="">இணையதளங்களின் நிலை அறிய உதவும் தளம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-80ab-a319-d09385182465"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-8010-aedc-f53257c09c00" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1f92ec7d-2bab-807e-9c07-d6a28f382158" class="">
+</p><h2 id="1f92ec7d-2bab-802d-9a86-e69239939151" class="">6. <strong>12பீட் -</strong></h2><p id="1f92ec7d-2bab-80a2-8d27-da596ab7d7d7" class="">
+</p><figure id="1f92ec7d-2bab-8051-8b83-d4a8a23933c3"><a href="https://12ft.io/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">12ft</div><div class="bookmark-description">Prepend 12ft.io/
+    to the URL webpage, and we&#x27;ll try our best to remove the popups, ads, and other visual distractions.</div></div><div class="bookmark-href"><img src="https://12ft.io/favicon.ico" class="icon bookmark-icon"/>https://12ft.io/</div></div></a></figure><p id="1f92ec7d-2bab-8040-8cd4-d1fe27e9442b" class="">இணையத்தில் தகவல்களை தேடும் போது சில நேரங்களில் கட்டணச் சுவர்களை எதிர்கொள்ள நேரிடலாம். அதாவது, கட்டணம் செலுத்தியவர்கள் மட்டுமே அந்த உள்ளடக்கத்தை அணுக முடியும். கட்டணச்சேவை தேவை தான் என்றாலும், சில நேரங்களில் கட்டணச்சுவரை ஏறி குதிக்க வேண்டிய நிலை வரலாம். இந்த தளம் இதற்கு உதவுகிறது.</p><ul id="1f92ec7d-2bab-80a1-93e1-fc1722e586bc" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8079-8171-d234c3a07cb0" class="">கட்டணச்சுவருக்கு பின்னே உள்ள தகவல்களை அணுக வழி செய்யும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80fb-8dc2-ded431f68566"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-804d-89e2-e0ffea860b95" class=""><strong>மாற்று:</strong> இத்தகைய பல்வேறு சேவைகளை ஒருங்கிணைக்கிறது <a href="https://byebyepaywall.com/en/">https://byebyepaywall.com/en/</a> , <a href="https://www.archivebuttons.com/">https://www.archivebuttons.com/</a></p></div></figure><p id="1f92ec7d-2bab-80c9-b491-fad2b7b33cc6" class="">
+</p><h2 id="1f92ec7d-2bab-8089-9552-ed82709323c2" class="">7. <strong>யூபிளாக் ஆரிஜின்</strong> -</h2><p id="1f92ec7d-2bab-80db-828d-f4c2d10cc5bc" class="">
+</p><figure id="1f92ec7d-2bab-8025-a4e4-c31abc769d5b"><a href="https://ublockorigin.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">uBlock Origin - Free, open-source ad content blocker.</div><div class="bookmark-description">uBlock Origin is not just an “ad blocker“, it&#x27;s a wide-spectrum content blocker with CPU and memory efficiency as a primary feature. Developed by Raymond Hill.</div></div><div class="bookmark-href"><img src="https://ublockorigin.com/img/favicons/apple-touch-icon.png" class="icon bookmark-icon"/>https://ublockorigin.com/</div></div><img src="https://ublockorigin.com/img/favicons/opengraph.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-80fe-902c-c0e68c540280" class="">அச்சு, வானொலி உள்ளிட்ட பாரம்பரிய ஊடகங்களில் இருந்து இணையம் வேறுபட்டதாக கருதப்படுகிறது. பயனாளிகளுக்கு அதிக வாய்ப்பையும், தேர்வுகளையும் வழங்குவது இணையத்தின் தனி சிறப்பாக அமைகிறது. இந்த அம்சங்கள் புதிய ஊடகத்தின் தன்மையாகவும் கருதப்படுகிறது. இணையத்தில் விளம்பரங்கள் தொல்லை தருவதாக கருதினால் பயனாளிகள் விளம்பரங்கள் தங்கள் பார்வையில் இருந்து நீக்க முடியும் அல்லது வடிகட்ட முடியும். முதல் பிரவுசர்களில் ஒன்றாக கருதப்படும் நெட்ஸ்கேப் காலத்திலேயே இத்தகைய விளம்பர நீக்க நீட்டிப்பு சேவை பாஸ்ட் பார்வர்டு எனும் பெயரில் அறிமுகமானது. 2014 ல் யூபிளாக் அறிமுகமானது. திறவு மூல தன்மை கொண்டது. </p><ul id="1f92ec7d-2bab-80f6-a651-cbfd4f97701e" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8084-a445-d261cd72a318" class="">இணையத்தில் தேவையில்லாத விளம்பரங்களை வடிகட்ட உதவுகிறது.</p><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-807f-90dd-e3870cf62f68"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-805a-8037-d29b90e68ac9" class=""><strong>மாற்று:</strong> ——</p></div></figure></details></li></ul><p id="1f92ec7d-2bab-80a6-9d8b-d3962b877fe5" class="">
+</p><h2 id="1f92ec7d-2bab-80b1-b663-f8aa34ae65fa" class="">8. ஹமியா -</h2><p id="1f92ec7d-2bab-8038-ba00-ec601e3bfb09" class="">
+</p><figure id="1f92ec7d-2bab-807d-adda-cfe6b095b041"><a href="https://ahmia.fi/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Ahmia —<br/>      Search Tor Hidden Services<br/></div><div class="bookmark-description">A search engine for services accessible on the Tor network.</div></div><div class="bookmark-href"><img src="https://ahmia.fi/static/images/favicon.ico" class="icon bookmark-icon"/>https://ahmia.fi/</div></div></a></figure><p id="1f92ec7d-2bab-8098-b5e0-f6ace9da5cb4" class="">இணையத்தில் உள்ள எல்லா தகவல்களையும் கூகுள் மூலம் தேடிவிடலாம் எனும் ஒரு மயக்கம் பெரும்பாலானோரிடம் இருக்கிறது. கூகுள் அடிப்படையில் ஒரு பொது தேடியந்திரம், பிரத்யேக தேடலுக்கு சிறப்பு தேடியந்திரங்களை நாட வேண்டும். அதோடு, கூகுள் போன்ற பொது தேடியந்திரங்கள் இணையத்தின் மேற்பரப்பை தான் தேடுகின்றன. இந்த தேடியந்திரங்களால் அணுக முடியாத பெரும் இணைய பகுதி இருக்கிறது. கண்ணுக்குத்தெரியாத வலை என குறிப்பிடப்படும் இந்த இணைய பகுதி, டீப் வெப் எனும் ஆழ் வலையாகவும் அறியப்படுகிறது. நிழல் உலக செயல்பாடுகளுக்காக அறியப்படும் இருள் வலை – டார்க் வெப் இதன் ஒரு அங்கம். இருள் வலை முழுவதும் சட்ட விரோதமானது இல்லை. தனியுரிமை பாதுகாப்பு நாடுவோருக்கான இடமாகவும் விளங்கிறது. ஆழ் வலை எனும் கருத்தாக்கத்தை செய்தியாளர்கள் புரிந்து கொள்வதோடு, இதற்கான பிரத்யேக தேடியந்திரங்களையும் அறிந்திருக்க வேண்டும்.</p><ul id="1f92ec7d-2bab-80b4-a0c5-f40d6e1c16c4" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-8075-8572-c5e246121dda" class="">ஆழ் வலைக்கு என தனி தேடியந்திரங்கள் உள்ளன.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80b3-ae70-c729ae19bf0b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80ad-8757-c0bb1e9c89f1" class=""><strong>மாற்று</strong>: <a href="https://torchbrowser.com/">டார்ச்</a></p></div></figure><p id="1f92ec7d-2bab-8018-9dc4-d16184a81385" class="">
+</p><h2 id="1f92ec7d-2bab-80b2-8a5c-e1da3e96e812" class="">9. <strong>ஹேவ் ஐ பீன் பாண்ட் -</strong></h2><p id="1f92ec7d-2bab-8063-95bb-fc163e9e94ea" class="">
+</p><figure id="1f92ec7d-2bab-8036-aa04-cc77cd0bbc53"><a href="https://haveibeenpwned.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Have I Been Pwned: Check if your email address has been exposed in a data breach</div><div class="bookmark-description">Have I Been Pwned allows you to check whether your email address has been exposed in a data breach.</div></div><div class="bookmark-href"><img src="https://haveibeenpwned.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://haveibeenpwned.com/</div></div><img src="https://haveibeenpwned.com/Images/OpenGraphPreview.jpg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8051-af72-cf00bc50e545" class="">இணையம் தாக்காளர்கள் நிறைந்த இடமாகவும் இருக்கிறது. தாக்காளர்கள், ( ஹேக்கர்) நல்ல நோக்கம் கொண்டவர்களும் உண்டு, தீய நோக்கம் கொண்டவர்களும் உண்டு. தீய தாக்காளர்கள் பாஸ்வேர்டு களவு, தரவுகள் திரட்டு உள்ளிட்ட பலவித தாக்குதல்களில் ஈடுபடுகின்றனர். இப்படி களவாடப்படும் பாஸ்வேர்டுகள் கள்ள சந்தையில் விற்கப்படுகின்றன. இதற்கு காரணமாக அமையும் தரவு மீறல்களை கண்காணித்து அவை பற்றிய தகவல்களை அளிக்கிறது இந்த தளம், பயனாளிகள் தங்கள் பாஸ்வேர்டு களவாடப்பட்ட பட்டியலில் இருக்கிறதா என்பதை தெரிந்து கொள்ளலாம்.</p><ul id="1f92ec7d-2bab-8018-a327-ee9516bc2dca" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1f92ec7d-2bab-80ff-b148-dbd3e80e5437" class="">இணைய பாதுகாப்பு தொடர்பான விழிப்புணர்வை ஏற்படுத்தும் தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8058-95a4-e1c5b7ba17e8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8082-bf96-c0622bb0abc1" class=""><strong>மாற்று</strong>: <a href="http://DataBreach.com">டேட்டா பிரீச்</a> , <a href="https://monitor.mozilla.org/">மோசில்லா மானிட்டர்</a> </p></div></figure><p id="1f92ec7d-2bab-8011-98d7-c7ebb98f799e" class="">
+</p><h2 id="1f92ec7d-2bab-80fd-8d5f-f33dd011db03" class="">10. <strong>ஏபிஐ லிஸ்ட் -</strong> </h2><p id="1f92ec7d-2bab-8055-b70d-cc1d801bb61c" class="">
+</p><figure id="1f92ec7d-2bab-80ec-a704-fe16d3b00627"><a href="https://apilist.fun/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">A collective list of APIs. Build.</div><div class="bookmark-description">A collective list of APIs, Go Build Something.</div></div><div class="bookmark-href"><img src="https://apilist.fun/images/favicon.png" class="icon bookmark-icon"/>https://apilist.fun/</div></div><img src="https://apilist.fun/images/social/static/home.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8027-9580-fdb27e3cf68d" class="">ஏபிஐ என்பது இணையதளங்களின் தரவுகளை பிற தளங்கள் நேரடியாக அணுகுவதற்கான வசதி. நவீன இணையத்தில் பல சேவைகள் இந்த வசதியை சார்ந்திருக்கின்றன. அதோடு, தரவுகளுக்கான ஏபிஐ அணுகல் வசதியை அளிப்பதும் முக்கியம். குறிப்பாக பொது சேவைகளுக்கு மிகவும் அவசியம். ஏபிஐ அணுகல் வசதி தொடர்பான தகவல்களை அளிக்கிறது இந்த தளம். </p><ul id="1f92ec7d-2bab-80c2-9a6d-edf975746ddb" class="toggle"><li><details open=""><summary><strong>ஏன்</strong>?    </summary><p id="1f92ec7d-2bab-80b4-9ce6-d15fc833e487" class="">இணைய தரவுகளை அணுகு தொடர்புடைய சேவைகளை உருவாக்க உதவும் நுட்பம் பற்றி அறிய உதவும் சேவை. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8048-b625-d6d7f2a1ffab"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80fe-a289-ca626cc074d3" class="">மாற்று:  செய்திகளுக்கான ஏபிஐ. <a href="https://worldnewsapi.com/">https://worldnewsapi.com/</a>, <a href="https://newsapi.org/">https://newsapi.org/</a>, அரசு தகவல்கள் ஏபிஐ <a href="https://www.apisetu.gov.in/">https://www.apisetu.gov.in/</a> </p></div></figure><p id="1f92ec7d-2bab-80e2-969b-cadaec69f6d2" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

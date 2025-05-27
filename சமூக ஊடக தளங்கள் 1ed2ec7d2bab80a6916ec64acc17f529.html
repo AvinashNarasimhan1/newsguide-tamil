@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>சமூக ஊடக தளங்கள்</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-80a6-916e-c64acc17f529" class="page sans"><header><h1 class="page-title"><strong>சமூக ஊடக தளங்கள்</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1f92ec7d-2bab-804b-b422-dfa3b5dd960b" class="">
+</p><p id="1f92ec7d-2bab-803a-a179-ec60d6af00dd" class="">சமூக ஊடகங்கள் என குறிப்பிடும் போது, பெரும்பாலும் சமூக வலைப்பின்னல் தளங்களே மனதில் கொள்ளப்படுகிறது. பேஸ்புக், டிவிட்டர், யூடியூப் போன்ற பிரபலமான வலைப்பின்னல் தளங்கள் தவிர, சமூக ஊடகம் பரந்து விரிந்தது. அதே போல சமூக ஊடகமும், வலைப்பதிவுகளும் தனித்தனியே குறிப்பிடப்பட்டாலும், வலைப்பதிவுகள் சமூக ஊடகம் எனும் குடையின் கீழ் தான் வருகிறது. நேரலை தளங்கள் டிவிட்ச், பாட்காஸ்டிங் எனும் வலையொலி, விவாத குழு தளங்கள், விக்கி சேவைகள், மக்கள் விமர்சன தளங்கள், மெய்நிகர் சமூகங்கள் உள்ளிட்டவையும் சமூக ஊடகம் கீழ் தான் வருகின்றன. இணைய உலகிலும், செய்தி உலகிலும் சமூக ஊடகத்தின் தாக்கம் அதிகமாகவே உள்ள சூழலில், பல நேரங்களில் சமூக ஊடகமே, பாரம்பரிய பொருளில்  ஊடகமாகவும் மாறி நிற்கும் நிலையில், சமூக ஊடக உலக போக்குகளையும், நிகழ்வுகளையும் தெரிந்து கொள்வது அவசியமாகிறது. இதற்கு வழிகாட்டும் புதுயுக இணையதளங்கள்: </p><p id="1f92ec7d-2bab-806e-ab6d-d17fc214f912" class="">
+</p><h2 id="1f92ec7d-2bab-8073-a2cb-dc2ef5b2b17b" class="">1. <strong>ஸ்மார்ட் மாப்ஸ்</strong> -</h2><p id="1f92ec7d-2bab-8014-b3b9-de26abce89f0" class="">
+</p><figure id="1f92ec7d-2bab-80d9-928c-ca969dd682dc"><a href="https://web.archive.org/web/20190416155751/http://www.smartmobs.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Smart Mobs</div><div class="bookmark-description">Just another WordPress weblog</div></div><div class="bookmark-href">https://web.archive.org/web/20190416155751/http://www.smartmobs.com/</div></div></a></figure><p id="1f92ec7d-2bab-8067-aa3a-ce3c7b64f186" class="">ஸ்மார்ட் மாப்ஸ் தளத்தை இங்கு குறிப்பிடுவது குழப்பத்தையும், ஏமாற்றத்தையும் ஏற்படுத்தலாம். ஏனெனில், ஸ்மார்ட் மாப்ஸ் தளம் அதன் பழைய வடிவில் இணையத்தில் இல்லை என்பதும், அதன் முகவரி வேறு ஒரு தொடர்பில்லா தளத்திற்கு அழைத்துச்செல்வதுமே காரணம். மேலும் பலருக்கு ஸ்மார்ட் மாப்ஸ் எனும் பெயரில் ஒரு சமூக ஊடகம் சார்ந்த தளம் இருந்ததே தெரியாமல் போகலாம். இந்த காரணத்தினாலேயே இந்த தளத்தை சுட்டிக்காட்டுவது அவசியமாகிறது. சமூக ஊடகம் தொடர்பாக எண்ணற்ற புத்தகங்கள் வெளிவந்திருந்தாலும், ஸ்மார்ட் மாப்ஸ் சமூக ஊடகம் தொடர்பாக முதல் வெளிவந்த புத்தகங்களில் ஒன்று. மேலும் சமூக ஊடகம் பரபரப்பை ஏற்படுத்திக்கொண்டிருந்தாலும், அதன் ஆற்றல் தொடர்பாக பரவலான விழிப்புணர்வு இல்லாத காலத்தில், சாமானிய மக்களை ஆற்றலி மிக்க குழுவாக இணைத்து செயல்பட வைக்கும் இந்த ஊடகத்தின் தன்மை பற்றி விரிவாக அலசி எழுதியிருந்தார் ஹாவர்டு ரெயின்கோல்ட். ( ). சமூக ஊடகம் வளர்ச்சி மற்றும் வரலாறு குறித்து நன்கறிந்த வல்லுனர்களில் ஒருவரான ரெயின்கோல்ட், நவீன சமூக ஊடகங்களுக்கு முந்தைய சமூக ஊடக சேவைகளில் ஒன்றான வெல் இணைய சமூகத்தின் முக்கிய உறுப்பினர்களில் ஒருவர். இணைய குழுக்களில் இயங்கும் மெய்நிகர் சமூகம் பற்றியும் இவர் புத்தகம் எழுதியிருக்கிறார். இணைய சமூகங்களை பயன்படுத்தும் வழிகளையும் விவரித்திருக்கிறார். இவரது தளம், சமூக ஊடக உலகிற்கான துடிப்பான வலைப்பதிவாக விளங்கியது. சில ஆண்டுகளாக புதுப்பிக்கப்படாமல் இருந்த தளம், அதன் பிறகு காணாமல் போய்விட்டது. இந்த முன்னோடி தளத்தை அதன் பழைய வடிவில் இணைய காப்பகமான வேபேக்மிஷின் மூலம் மட்டுமே அணுக முடியும். அந்த வகையில் வேபேக்மிஷின் அருமையை உணர்த்தும் உதாரணமாகவும் விளங்குகிறது. </p><ul id="1f92ec7d-2bab-80d5-b139-eef25a63cf2d" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1f92ec7d-2bab-801e-a3e3-cfb2c7f00e94" class="">சமூக ஊடகம் தொடர்பான முன்னோடி தளம். இப்போது இணையத்தில் இல்லாதது பல்வேறு கேள்விகளை எழுப்பி, பாடங்களையும் உணர்த்துவது.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80db-92dd-e90ec3278319"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-805c-8395-c9e89e2f5210" class=""><strong>மாற்று</strong>: பல முக்கிய சமூக ஊடக வலைப்பதிவுகளை இந்த தளத்தின் பழைய வடிவின் பதிவுபட்டியலில் பார்க்கலாம். </p></div></figure><p id="1f92ec7d-2bab-8079-b6d0-fb451cc73f30" class="">
+</p><h2 id="1f92ec7d-2bab-8076-95cf-dea7faa925de" class="">2. <strong>டியூப்பில்டர் -</strong></h2><p id="1f92ec7d-2bab-8085-96c0-cf11adb71740" class="">
+</p><figure id="1f92ec7d-2bab-80fd-886a-d45d6304dcd2"><a href="https://www.tubefilter.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">News for the Creator Economy, Creators, YouTube, TikTok, Twitch, Instagram, and More | Tubefilter.com</div><div class="bookmark-description">The latest from the creator economy, creators, YouTube, TikTok, Twitch, Instagram and more, including breaking news, interviews, and insight.</div></div><div class="bookmark-href"><img src="https://www.tubefilter.com/wp-content/uploads/2021/01/cropped-favicon_180x180.png" class="icon bookmark-icon"/>https://www.tubefilter.com/</div></div><img src="https://www.tubefilter.com/wp-content/uploads/2021/06/fb_share_new.jpg" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-803a-acfd-ee21b97f3c47" class="">தொலைக்காட்சி யுகத்தில், டிவி நிகழ்ச்சிகளில் கவனம் செலுத்துவதற்கென்றே பிரத்யேக ஊடகங்கள் இருந்தன. அதே போல, ஆன்லைன் வீடியோவுக்கு என்று பிரத்யேகமாக துவங்கப்பட்ட இணையதளங்களில் ஒன்றாக ’டியூப்பில்டர்’ விளங்குகிறது. இணைய வீடியோ பகிர்வு சேவையான யூடியூப் அறிமுகமான மூன்று ஆண்டுகளில் உருவாக்கப்பட்ட டியூப்பில்டர், இணைய வீடியோக்களின் முக்கியத்துவத்தை, குறிப்பாக அதன் அடையாளமான யூடியூப்பின் எழுச்சியை உணர்த்துவதாக அமைந்தது. யூடியூப் கவனத்தை ஈர்த்திருந்தாலும், பெரும்பாலும் வைரல் வீடியோக்களுக்காக அறியப்பட்ட நிலையில், இது முக்கிய மேடையாக உருவாகி கொண்டிருப்பதையும், அலட்சியப்படுத்த முடியாத திறமையாளர்களை தன் பக்கம் ஈர்த்து வருவதையும் உணர்த்தியது. இந்த திறமையாளர்கள் இப்போது கிரியேட்டர்கள் என்று அடையாளம் காணப்படுகின்றனர். யூடியூப் சார்ந்த வீடியோக்களில் தனி கவனம் தேவை எனும் எண்ணத்துடன்,யூடியூப் வீடியோக்கள் சார்ந்த செய்திகள், நிகழ்வுகள் தொடர்பான தகவல்களை பகிரும் வலைப்பதிவாக ட்ரூ பால்ட்வின் மற்றும் இணை நிறுவனர்களால் 2008 ம் ஆண்டு இந்த தளம் துவங்கப்பட்டது. யூடியூப்பில் கவனம் பெற்று வந்த கிரியேட்டர்களை அடையாளம் காட்டி, இந்த மேடையின் புள்ளிவிவரங்கள் சார்ந்த முன்னிலை வீடியோ பட்டியலை வெளியிடத்துவங்கிய டியூப்பில்டர் சமூக ஊடக உலகின் பிரத்யேக செய்தி தளங்களில் ஒன்றாக வளர்ந்தது. ஸ்டிரீமிங் துறைக்கான விருதுகளையும் வழங்கி வருகிறது.</p><ul id="1f92ec7d-2bab-80c5-a3f4-d680c793ed83" class="toggle"><li><details open=""><summary><strong>ஏன்? </strong></summary><p id="1f92ec7d-2bab-80b5-8401-f8acd61ec0c1" class="">இணைய வீடியோ யுகத்தின் குரலாக விளங்கும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8012-ae65-d13abdc135d7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80f2-8186-d52f195c01c8" class="">மாற்று; யூடியூப் சேனல் வளர்ச்சிக்கு வழிகாட்டும் - <a href="https://www.tubebuddy.com/">டியூப்பட்டி</a> இதன் தாக்கத்தில் உருவானதாக கருதலாம்.</p></div></figure><p id="1f92ec7d-2bab-80a4-9788-ff9372226ce9" class="">
+</p><h2 id="1f92ec7d-2bab-8084-bce4-e8d4ff3c2c68" class="">3. <strong>சோஷியல் பிளேடு -</strong></h2><p id="1f92ec7d-2bab-8087-8d27-cd20e878019d" class="">
+</p><figure id="1f92ec7d-2bab-80b1-840a-f2101d62a361"><a href="https://socialblade.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://socialblade.com/</div></div></a></figure><p id="1f92ec7d-2bab-80ce-a8ba-fbf77c4b6176" class="">சமூக ஊடக செல்வாக்கின் அளவுகோளாக விளங்கும் இன்னொரு முக்கிய தளம். யூடியூப் மேடையில் செல்வாக்குடன் விளங்கும் சேனல்களை அடையாளம் காட்டி, அதற்கு ஆதாரமான புள்ளிவிவரங்களை வழங்கும் இந்த தளம் இப்போது, டிக்டாக், இன்ஸ்டாகிராம், டிவிட்ச்,பேஸ்புக் உள்ளிட்ட சேவைகளின் செல்வாக்காளர்கள் தொடர்பான தகவல்கள், முன்னிலை விவரங்களையும் அளிக்கிறது. சமூக ஊடக பரப்பில் செயல்படுபவர்கள் கவனிக்க வேண்டிய தளமாக உருவாகி இருக்கிறது. ஜேசன் அர்கோ என்பவரால் துவக்கப்பட்ட இந்த தளம், 2008 ம் ஆண்டில், அப்போது பிரபலமாக இருந்த சமூக ஊடக சேவை டிக் (Digg) தொடர்பான புள்ளிவிவரங்களை பின் தொடர்வதற்காக உருவாக்கப்பட்டது. பின்னர் யூடியூப் செல்வாக்கை பின் தொடர்வதில் கவனம் செலுத்த துவங்கியது. யூடியூப் சேனல் தொடர்பான அதிகாரப்பூர்வ புள்ளிவிவரங்களை பெறும் ஏபிஐ வசதியை கொண்டு, முன்னணி யூடியூப் சேனல்களை அடையாளம் காட்டி இந்த சேவை பிரபலமாகியது.</p><ul id="1f92ec7d-2bab-80fe-91e9-d2b3a3bfe99d" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-809d-9fcf-c9963fcd3e4d" class="">சமூகம் ஊடக செல்வாக்கு அலசலில் உதவும் முக்கிய அளவுகோள்களில் ஒன்று.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-80a0-a60c-d8b1c9979d0d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-80ea-9cf9-f977dc9427f4" class=""><strong>மாற்று</strong>: <a href="https://social-tracker.com/">சோஷியல் டிராக்கர்</a></p></div></figure><p id="1f92ec7d-2bab-80ec-8aab-f1eee9cbccf4" class="">
+</p><h2 id="1f92ec7d-2bab-8092-b058-d7727aa4fc5f" class="">4. <strong>ஜேபியர் -</strong></h2><p id="1f92ec7d-2bab-8049-b18a-d5264ab4c047" class="">
+</p><figure id="1f92ec7d-2bab-800d-864b-c7631d4b00f2"><a href="https://zapier.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Zapier: Automate AI Workflows, Agents, and Apps</div><div class="bookmark-description">Build and scale AI workflows and agents across 8,000+ apps with Zapier—the most connected AI orchestration platform. Trusted by 3 million+ businesses.</div></div><div class="bookmark-href"><img src="https://zapier.com/l/favicon-180.png?v=1" class="icon bookmark-icon"/>https://zapier.com/</div></div><img src="https://res.cloudinary.com/zapier-media/image/upload/v1745941190/Homepage/og-homepage_zls2qi.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8046-9c14-e7af4fc8c9dc" class="">ஏஐ அலைக்கு முந்தைய ஏஐ சேவை என்று சமூக ஊடக தானியங்கி மேடையானன் ஜேபியரை வர்ணிக்கலாம். இணையவாசிகள் பலரும், பலவிதமான செயலிகளை பயன்படுத்தும் நிலையில், இந்த செயலிகளுக்கு இடையிலான பயன்பாட்டை ஒருங்கிணைத்து தானியங்கிமயமாக்கும் சேவையாக ஜேபியர் அறிமுகமானது. இதன் மூலம் ஒவ்வொரு சேவைக்கும் ஒரு செயலிக்கு செல்ல வேண்டியதை தவிர்த்து, ஒரே இடத்தில் இருந்து தேவையான பணிகளை மேற்கொள்ள வழி செய்தது. துவக்கத்தில் மெயில்சிம்ப் செய்திமடல் சேவை உள்ளிட்டவற்றின் ஒருங்கிணைப்புடன் துவங்கிய ஜேபியர், பின்னர் சமூக ஊடக பதிவுகளை திட்டமிட்டு தானாக மேற்கொள்ளும் நிர்வாக வசதியையும் வழங்கியது. பதிவுகளின் வீச்சு தொடர்பான அலசலுடன் இந்த வசதியை திறம்பட வழங்கியது. கட்டணச் சேவையாக துவங்கி வளர்ந்தது குறிப்பிடத்தக்கது. இன்று ஏஐ திறனை முன்னிறுத்தும் தானியங்கி சேவையாக உருமாறியிருக்கிறது.</p><ul id="1f92ec7d-2bab-8057-b18a-df77deb92e53" class="toggle"><li><details open=""><summary><strong>ஏன்</strong>?    </summary><p id="1f92ec7d-2bab-8047-a5c5-ca5367c83f52" class="">சமூக ஊடக யுகத்திற்கான தானியங்கி சமூக ஊடக நிர்வாக சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-8027-8c17-f445eba50a1d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-8064-921a-fc193a4da906" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1f92ec7d-2bab-80e7-9525-c1667d4fa30f" class="">
+</p><h2 id="1f92ec7d-2bab-8049-b3c2-ef9d5b8742bc" class="">5. <strong>பஃபர் -</strong></h2><p id="1f92ec7d-2bab-8026-aaad-c5f6b9dca37a" class="">
+</p><figure id="1f92ec7d-2bab-8030-9c90-e8569dc120c2"><a href="https://buffer.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Buffer: Social media management for everyone</div><div class="bookmark-description">Use Buffer to manage your social media so that you can create and share your content everywhere, consistently. Try our forever free plan or upgrade for more.</div></div><div class="bookmark-href"><img src="https://buffer.com/static/icons/apple-touch-icon.png" class="icon bookmark-icon"/>https://buffer.com/</div></div><img src="https://buffer.com/static/ogImages/homepage-og.png" class="bookmark-image"/></a></figure><p id="1f92ec7d-2bab-8050-a2f3-c524d2c761e8" class="">சமூக ஊடகம் மாறிக்கொண்டிருக்கிறது என்பதற்கான குறிப்புகளை உணர்த்திய சேவைகளில் ஒன்றாக பஃபர் அமைகிறது. அதாவது, சமூக ஊடக பரப்பு வர்த்தகமயமாகி கொண்டிருப்பதை உணர்த்திய சேவைகளில் ஒன்றாக விளங்குகிறது. பயனாளிகள் பலரும் ஒன்றுக்கு மேற்பட்ட சமூக ஊடக சேவைகளை பயன்படுத்த துவங்கிய நிலையில், ஒரே இடத்தில் இருந்து சமூக ஊடக பதிவுகளை திட்டமிட்டு மேற்கொள்ளும் சேவைகளில் ஒன்றாக பஃபர் அறிமுகமானது. அதிலும் குறிப்பாக வர்த்தக நிறுவனங்கள் விளம்பர நோக்குடன் சமூக ஊடக சேவைகளை பயன்படுத்த முற்பட்ட போது அவற்றுக்கான உத்திகளை வகுக்க இந்த சேவைகள் உதவின.</p><ul id="1f92ec7d-2bab-8005-98b6-d161ec5c781d" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1f92ec7d-2bab-80d1-8f63-edd6514390b9" class="">சமூக ஊடக வளர்ச்சியின் வர்த்தகமயமாக்கலை உணர்த்தும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1f92ec7d-2bab-8053-8cb8-d1ed248ad0b8"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1f92ec7d-2bab-8060-803d-c8b4d4b1e096" class=""><strong>மாற்று</strong>: <a href="https://www.hootsuite.com/">ஹூட்சூட்</a>, சமூக ஊடக உத்திகளுக்கு வழிகாட்டும் <a href="https://www.socialmediaexaminer.com/">https://www.socialmediaexaminer.com/</a></p></div></figure><p id="1f92ec7d-2bab-8002-b8f5-cf1223c6dfdf" class="">
+</p><h2 id="1f92ec7d-2bab-80ef-84e4-d502d462ca48" class="">6. <strong>சோஷியல் மீடியா டுடே -</strong></h2><p id="1fa2ec7d-2bab-8020-a769-ecf45cfd216c" class="">    </p><figure id="1fa2ec7d-2bab-809c-8c0e-ff8b9deb00f0"><a href="https://www.socialmediatoday.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Social Media News | Social Media Today</div><div class="bookmark-description">The latest news, trends, and tips in social media.</div></div><div class="bookmark-href"><img src="https://www.socialmediatoday.com/apple-touch-icon.png?v=3" class="icon bookmark-icon"/>https://www.socialmediatoday.com/</div></div></a></figure><p id="1fa2ec7d-2bab-809e-a9e1-eca14a22c4b1" class="">பிரதான ஊடகங்களும் சரி, பொதுமக்களும் சரி புறக்கணிக்க முடியாத வகையில் சமூக ஊடக சேவைகள் செல்வாக்கு பெற்ற நிலையில், சமூக ஊடகம் சார்ந்த செய்திகள், போக்குகளை வழங்கும் தளமாக சோஷியல் மீடியா டுடே உருவாகி வளர்ந்தது. இன்று முன்னணி சமூக ஊடக சேவைகளின் செய்திகளை தெரிந்து கொள்ள விளங்கும் சேவையாக விளங்குகிறது.</p><ul id="1fa2ec7d-2bab-80b2-8d92-fa3026f0712c" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1fa2ec7d-2bab-80d2-a412-ddc8c5b65a36" class="">சமூக ஊடகங்களுக்கான செய்தி தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-801a-b89c-ef2c9dbd2da0"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-805b-852e-c913efa96f5b" class=""><strong>மாற்று</strong>: <a href="https://www.socialsamosa.com/">சோஷியல் சமோசா</a></p></div></figure><p id="1fa2ec7d-2bab-80c0-8966-c3be34275a8f" class="">
+</p><h2 id="1fa2ec7d-2bab-8070-9fa7-df6bb52ebb4a" class="">7. <strong>லிஸ்ன்நோட்ஸ்</strong> -</h2><p id="1fa2ec7d-2bab-80ec-8444-f16682b8226e" class="">  </p><figure id="1fa2ec7d-2bab-800e-a7b3-c3cd77400b7b"><a href="http://www.listennotes.com" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Listen Notes: The best podcast search engine</div><div class="bookmark-description">The most comprehensive podcast database online. Discover best podcasts. Search podcast show notes and audio transcripts by people, places, or topics.</div></div><div class="bookmark-href"><img src="https://www.listennotes.com/static/v4/img/logo/apple-touch-icon.png" class="icon bookmark-icon"/>http://www.listennotes.com</div></div><img src="https://production.listennotes.com/web/image/839fea0f5e284b62a83b291031676e4b.jpg" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-8044-80d7-f6d9ddcf0329" class="">சமூக ஊடக வளர்ச்சியையும், வரலாற்றையும் விவாதிக்கும் போது, டெக்னோரட்டியை (technorati ) நினைவில் கொள்வது அவசியம். வலைப்பதிவுகளுக்காக உருவான முதல் தேடியந்திரங்களில் ஒன்று என்பதோடு, ஒரு கட்டத்தில் கூகுளுக்கே உண்மையான சவாலாக விளங்கி வலைப்பதிவுகளின் எழுச்சிக்கு அடையாளமாகவும் விளங்கிய சேவை. புத்தாயிரமாண்டு துவக்கத்தில் வலைப்பதிவு அலை வலுவாக வீசத்துவங்கியது. தனிநபர்களுக்கான பதிப்பு வசதி என அறியப்பட்ட வலைப்பதிவு மேடை பரவலாக கவனத்தை ஈர்த்து, பாரம்பரிய ஊடகங்களுக்கும் சவாலாக விளங்கியது. வலைப்பதிவாளர்களை இதழாளராக கருத முடியுமா எனும் கேள்வியும், விவாதமும் தீவிரமாக மேற்கொள்ளப்பட்டது. வலைப்பதிவு சேவையான பிளாகரை கூகுள் விலைக்கு வாங்கியிருந்தாலும், வலைப்பதிவுகளின் முக்கியத்துவத்தை கணிக்க தவறியது என சொல்லலாம். அல்லது வலைப்பதிவுகளுக்கு என தேடியந்திரம் தேவை என்பதை உணரவில்லை என கருதலாம். இந்த சூழ்நிலையில் வலைப்பதிவுகளுக்கான பிரத்யேக தேடியந்திரமாக 2002 ம் ஆண்டில் டெக்னோரட்டி அறிமுகமாகி பெரும் வெற்றி பெற்றது. வலைப்பதிவு வெளி தனித்து குறிப்பிப்படும் அளவுக்கு வலைப்பதிவு உலகம் வளர்ச்சி பெற்ற நிலையில், வலைப்பதிவுகளில் மட்டும் தேடவும், முன்னணி வலைப்பதிவுகளை அடையாளம் காணவும் டெக்னோரட்டி உதவியது. டெக்னோடரட்டியில் பட்டிலிடப்படுவது என்பது வலைப்பதிவு உலகின் செல்வாக்கின் அடையாளமாக கருதப்பட்டது. பிளாக்லைன்ஸ் (Bloglines ) உள்ளிட்ட போட்டி தேடியந்திரங்களும் அறிமுகமானதோடு, கூகுளும் வலைப்பதிவு தேடலை அறிமுகம் செய்தது. இருப்பினும் வலைப்பதிவுகளுக்கான முன்னணி தேடியந்திரமாக டெக்னோரட்டி தொடர்ந்தது. பின்னர் இதன் செல்வாக்கு சர்ந்து, பின்னுக்குத்தள்ளப்பட்டு விட்டாலும், வலைப்பதிவுகளின் எழுச்சியை உணர்த்திய சேவையாக மின்னுகிறது. ( டெக்னோரட்டி தேடல் வசதியை கைவிட்டு, சமூக ஊடக நிர்வாக சேவையாக மாறியது)</p><ul id="1fa2ec7d-2bab-80f3-877f-d98070a0388e" class="toggle"><li><details open=""><summary><strong>ஏன்</strong>?    </summary><p id="1fa2ec7d-2bab-80ee-8377-e03ec4edd470" class="">கூகுளுக்கே சவால் விட்ட வலைப்பதிவு தேடியந்திரம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-805e-b885-fe6eb5e35adf"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8049-82fd-c30953b91c5b" class=""><strong>மாற்று</strong>: சமூக ஊடகத்தின் இன்னொரு முக்கிய கிளையான பாட்காஸ்டிங் என குறிப்பிடப்படும் வலையொலி நிகழ்ச்சிகளுக்கான பிரத்யேக தேடியந்திரம் லிஸின் நோட்ஸ். கூகுள் வலைப்பதிவு தேடல் வசதியை கோட்டை விட்டது போலவே, பாட்காஸ்டிங் தேடலையும் கோட்டை விட்டதாக கருதலாம். பாட்காஸ்டிங் நிகழ்ச்சிகள் மற்றும் ஸ்டிரீமிங் வசதி செல்வாக்கு பெற்றுள்ள சூழலில் இந்த பரப்பின் முன்னணி தேடியந்திரமாக விளங்குகிறது.</p></div></figure><p id="1fa2ec7d-2bab-8035-bf1c-f8f1dbd0a3ac" class="">
+</p><h2 id="1fa2ec7d-2bab-80f7-987b-c03688f65fa9" class="">8. <strong>விமியோ ஸ்டாப் பிக்ஸ் -</strong></h2><p id="1fa2ec7d-2bab-8014-8452-cd88b0370f9f" class="">    </p><figure id="1fa2ec7d-2bab-8014-8992-f72e1b31179f"><a href="https://vimeo.com/channels/staffpicks" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Vimeo Staff Picks</div><div class="bookmark-description">The best short films on the internet, handpicked by Vimeo staff</div></div><div class="bookmark-href"><img src="https://i.vimeocdn.com/favicon/main-touch_180" class="icon bookmark-icon"/>https://vimeo.com/channels/staffpicks</div></div><img src="https://i.vimeocdn.com/channel/578363_980?mh=250&amp;sig=6b080883995d8d77f6f439e44a649b79fc1b5f9ea53f2fcf0f93dd730566ee7c&amp;v=1" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-80e8-93a5-f28263713b33" class="">இணையத்தில் சிறந்த குறும்படங்களை கண்டறிய பலவழிகள் இருக்கின்றன. அவற்றில், ஆகச்சிறந்ததாக விமியோ ஸ்டாப் பிக்ஸ் எனப்படும் ஊழியர் பரிந்துரை அமைகிறது. விமியோ பரிந்துரைகளின் மதிப்பை உணர, விமியோ சேவையின் சிறப்பியல்புகளை அறிந்திருக்க வேண்டும். யூடியூப் போன்ற வீடியோ பகிர்வு சேவை என்றாலும் விமியோ தனித்தன்மை வாய்ந்தது. யூடியூப் வெகுமக்களுக்கான சேவையாக அமையும் நிலையில், விமியோ அதன் வீடியோ நுட்ப தரத்திலும் சரி, செயல்பாட்டிலும் சரி, தொழில்முறையினருக்கான சேவையாக அமைகிறது. பெரும்பாலும் திரைப்பட ஆர்வம் கொண்டவர்கள் மற்றும் தொழில்முறை நுட்பம் அறிந்தவர்களால் பயன்படுத்தப்படும் விமியோ, காட்சி ஊடகம் சார்ந்த நுணுக்கங்கள அறிந்தவர்களின் இணைய சமூகமாகவும் விளங்குகிறது. இங்கு பின்னுட்டமாக பகிரப்படும் கருத்துக்கள் வழிகாட்டலாக அமைவதுண்டு. விமியோ இணைய சமூகம் முன், சிறந்த குறும்படங்களை தேர்வு செய்து பரிந்துரைப்பதாக விமியோ ஸ்டாப் பிக்ஸ் அமைகிறது. யூடியூப்பில் அல்கோரிதம் ஆதிக்கம் செலுத்தும் நிலையில், மனிதர்களின் அனுபவ தேர்வு இதன் சிறப்பம்சம்.</p><ul id="1fa2ec7d-2bab-80ad-80e4-e4d64f19198c" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1fa2ec7d-2bab-80d3-b495-ef0a91e6f92e" class="">வீடியோ பகிர்வு சேவைகளில் தனித்தன்மை வாய்ந்தது,</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-806d-b200-dbce8c1a7ef7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80ad-a453-cc3f3cf6d6a1" class=""><strong>மாற்று:</strong> <a href="https://www.dailymotion.com/in">டெய்லி மோஷன்</a></p></div></figure><p id="1fa2ec7d-2bab-8007-ac35-eecbf30b5d40" class="">
+</p><h2 id="1fa2ec7d-2bab-809f-a29d-d1f428d5d109" class="">9. <strong>பாட்நியூஸ்.நெட் -</strong></h2><p id="1fa2ec7d-2bab-8082-8ac0-e81c63b6e602" class="">   </p><figure id="1fa2ec7d-2bab-8092-b2ae-d83acfefac45"><a href="https://podnews.net/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Podnews podcasting news</div><div class="bookmark-description">Daily news for the podcast and on-demand audio industry - from Apple Podcasts to Spotify, YouTube Music to Joe Rogan. Podnews also covers the latest jobs and events and trending shows in a short update every weekday. editor@podnews.net</div></div><div class="bookmark-href"><img src="https://podnews.net/static/_favicons/apple-icon.png" class="icon bookmark-icon"/>https://podnews.net/</div></div><img src="https://podnews.net/static/main_social.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-8026-8a51-f3240e041d91" class="">பாட்காஸ்டிங் என குறிப்பிடப்படும் வலையொலி சார்ந்த செய்திகளை வெளியிடுவதற்காக என்றே செயல்பட்டு வரும் தளமாக பாட்நியூஸ் விளங்குகிறது. வானொலியின் இணைய தன்மை கொண்ட நீட்சியாக கருதப்படும் பாட்காஸ்டிங் சேவைக்கான இந்த தளத்தை நடத்தி வருபவர் வானொலி துறையில் நீண்ட அனுபவம் கொண்ட பத்திரிகையாளரான ஜேம்ஸ் கிரிட்லாண்ட். செய்தி சேவை என்றாலும், இதன் முகப்பு பக்கத்தை எளிமையாகவே வைத்திருக்கும் கிரிட்லாண்ட், பாட்காஸ்டிங் தொடர்பான செய்திமடல் சேவையில் தான் முக்கிய கவனம் செலுத்தி வருகிறார். பாட்காஸ்டிங் உலக நிகழ்வுகளை பின் தொடர விரும்புகிறவர்களுக்கான சேவை.</p><ul id="1fa2ec7d-2bab-80b1-b76b-c5b8df43ebe4" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8057-ae96-df52c2fab29d" class="">பாட்காஸ்டிங் துறை செய்திகளுக்கான தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8099-ab5c-dcabb2cc9296"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-806d-a673-d6b7b3de362e" class=""><strong>மாற்று</strong>: <a href="https://www.podcastnewsdaily.com/">பாட்காஸ்ட்நியூஸ் டெய்லி</a></p></div></figure><p id="1fa2ec7d-2bab-8060-aedd-e5d5e3c91495" class="">
+</p><h2 id="1fa2ec7d-2bab-8040-b8b7-f4e6966675d3" class="">10. <strong>வாட்ஸ் அப் பீட்டா</strong> -</h2><p id="1fa2ec7d-2bab-806f-bfdd-ee3dee97a764" class="">  </p><figure id="1fa2ec7d-2bab-8066-891e-d774739b9682"><a href="https://wabetainfo.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">WABetaInfo</div><div class="bookmark-description">WABetaInfo is the main source where you can discover news and real-time updates about WhatsApp beta for Android, iOS, and Desktop.</div></div><div class="bookmark-href"><img src="https://wabetainfo.com/wp-content/uploads/2023/12/cropped-WBI_WABETAINFO_BLUE_LOGO-192x192.png" class="icon bookmark-icon"/>https://wabetainfo.com/</div></div><img src="https://wabetainfo.com/wp-content/uploads/2024/04/WA_WBI_LOGO.jpg" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-800c-a919-ff550d740f07" class="">சமூக ஊடக பரப்பின் கிளைகளில் ஒன்றான மேசேஜிங் சேவைகளில் ஒன்றான வாட்ஸ் அப், இந்தியா உள்ளிட்ட பல நாடுகளில் அதிகம் பயன்படுத்தப்படும் சேவையாக இருக்கிறது. புதிய புதிய அம்சங்களோடு வளர்ந்து கொண்டிருக்கும் வாட்ஸ் அப் தொடர்பான புதிய நிகழ்வுகள், செய்திகளை வெளியிடும் தளமாக வாட்ஸ் அப் பீட்டா விளங்குகிறது. வாட்ஸ் அப் புதிய அம்சங்களை முன்னதாக வெளியிடும் தளமாகவும் சில நேரங்களில் விளங்குகிறது.</p><ul id="1fa2ec7d-2bab-80c0-bd97-c823e831a2cb" class="toggle"><li><details open=""><summary><strong>ஏன்</strong>?    </summary><p id="1fa2ec7d-2bab-8047-9175-ef75c3887ce4" class="">வாட்ஸ் அப் செய்திகளுக்கான சேவை. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1ff2ec7d-2bab-80a5-805d-f571bafd01fb"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1ff2ec7d-2bab-8025-b96b-c2dc457a7d84" class=""><strong>மாற்று</strong>: ——</p></div></figure><p id="1fa2ec7d-2bab-80bf-8bb6-da837f452e51" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

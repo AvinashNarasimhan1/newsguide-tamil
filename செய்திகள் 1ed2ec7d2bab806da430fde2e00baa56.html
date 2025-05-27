@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>செய்திகள்</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-806d-a430-fde2e00baa56" class="page sans"><header><h1 class="page-title"><strong>செய்திகள்</strong></h1><p class="page-description"></p></header><div class="page-body"><p id="1fa2ec7d-2bab-8089-8bf1-d4250fc92ffa" class="">
+</p><p id="1fa2ec7d-2bab-8010-947a-f83ae02a0519" class="">இணையத்தில் செய்திகளை தெரிந்து கொள்ள பல வழிகள் இருந்தாலும், செய்தி தளங்களே அவற்றுக்கு அடிப்படையாக அமைகின்றன. செய்தி தளங்களில், உள்ளூர் தளங்கள் முதல் உலக தளங்கள் வரை எண்ணற்றவை இருக்கின்றன. இவற்றில் தரமானவையும் உண்டு, தவறாமப் பின்பற்ற வேண்டிய தளங்களும் உண்டு. எந்த செய்தி தளங்களை பின்பற்றுவது என்பது, அவரவர் செய்தி தேவை மற்றும் நோக்கத்திற்கு உட்பட்டது என்றாலும், இதழாளர்கள் பொதுவாக அறிந்திருக்க வேண்டிய முக்கிய செய்தி தளங்கள் இவை: </p><p id="1fa2ec7d-2bab-80f6-845f-ea16f87620a9" class="">
+</p><h2 id="1fa2ec7d-2bab-806a-913e-f741c04a040e" class="">1. <strong>யாஹு -</strong></h2><p id="1fa2ec7d-2bab-8074-bc90-d4a3fee198cc" class="">  </p><figure id="1fa2ec7d-2bab-805e-a4b2-e3c792bfda82"><a href="https://www.yahoo.com/news/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Yahoo News: Latest and Breaking News, Headlines, Live Updates, and More</div><div class="bookmark-description">The latest news and headlines from Yahoo News. Get breaking news stories and in-depth coverage with videos and photos.</div></div><div class="bookmark-href"><img src="https://s.yimg.com/rz/l/favicon.ico" class="icon bookmark-icon"/>https://www.yahoo.com/news/</div></div><img src="https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo.png" class="bookmark-image"/></a></figure><p id="1ed2ec7d-2bab-80ce-99c4-e583324632b7" class="">செய்திகளை தெரிந்து கொள்ள தனிப்பட்ட செய்தி தளங்கள் பல இருந்தாலும், திரட்டி வகை தளங்கள் ஒரே இடத்தில் பலவித செய்திகளை அணுக வழி செய்கின்றன. ஒரு நூலகத்தில் பல்வேறு நாளிதழ்களை படிப்பது போல, இணையத்தில் பல்வேறு செய்தி தளங்களை செய்தி திரட்டி தளங்கள் மூலம் வாசிக்கலாம். இணையத்தின் ஆதார தன்மையை அடிப்படையாக கொண்டவை. அரசியல், அறிவியல், தொழில்நுட்பம், விளையாட்டு, பொழுதுபோக்கு, இசை, வாழ்வியல் என பல்வேறு தலைப்புகளில் செய்திகளை, பல ஊடகங்களில் இருந்து பட்டியலிடப்பட்டிருக்கும். சிறிது நேரத்திலேயே பறவை பார்வையாக பலவித செய்திகளை, பலவித ஊடகங்களில் இருந்து தெரிந்து கொள்ளலாம். கூடுதல் தகவல்கள், மாற்று கோணங்களில் செய்திகளை அணுகுவதும் எளிது. இப்போது கூகுள் நியூஸ் இந்த வகை தளத்தில் முன்னணியில் விளங்கினாலும், இந்த வகை தளங்களுக்கு முன்னோடி யாஹு நியூஸ் தான். கூகுள் வருவதற்கு முன் இணையத்தின் நுழைவு வாயில் என கருதப்பட்ட யாஹு அதன் பழைய செல்வாக்கை இழந்து விட்டாலும், செய்திகளை தொகுத்தளிக்கும் அதன் எளிய தன்மை பயனுள்ளதாக இருக்கிறது. வேறு நிறுவனத்திற்கு கைமாறிய நிலையிலும், யாஹு நியூஸ் இன்றளவும் சிறப்பாகவே இருக்கிறது. இந்திய பதிப்பையும் அணுகலாம். </p><ul id="1fa2ec7d-2bab-8087-9673-eb5c560f61a9" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>   </summary><p id="1fa2ec7d-2bab-80f6-9b8d-f8b85f78922d" class="">திரட்டி தளங்கள் இணையத்தின் தனித்தன்மையை பிரதிபலிப்பவை. பல செய்திகளை, பல நோக்குகளில் தெரிந்து கொள்ள முடியும் என்பதால், செய்தியாளர்களுக்கு இன்றியமையாதது. நாளிதழ்கள் துவங்கி செய்தி நிறுவனங்கள் வரை பல இடங்களில் இருந்து செய்திகளையை அறியலாம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8007-b710-efe7a930bebd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8045-be25-e2485090beaf" class=""><strong>மாற்று:</strong> <a href="https://news.google.com/home?hl=en-IN&amp;gl=IN&amp;ceid=IN:en">கூகுள் நியூஸ்</a></p></div></figure><p id="1fa2ec7d-2bab-8014-89ec-ee057090ed5b" class="">
+</p><h2 id="1fa2ec7d-2bab-8071-95aa-f9a215dd4770" class="">2. <strong>பிபிசி</strong> -</h2><p id="1fa2ec7d-2bab-8019-9ed5-ef172df8ce37" class="">  </p><figure id="1fa2ec7d-2bab-80df-b25b-d06fe4cf5a70"><a href="https://www.bbc.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BBC Home - Breaking News, World News, US News, Sports, Business, Innovation, Climate, Culture, Travel, Video &amp; Audio</div><div class="bookmark-description">Visit BBC for trusted reporting on the latest world and US news, sports, business, climate, innovation, culture and much more.</div></div><div class="bookmark-href"><img src="https://static.files.bbci.co.uk/bbcdotcom/web/20250508-105310-2a3fc0651-web-2.21.1-1/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.bbc.com/</div></div></a></figure><p id="1fa2ec7d-2bab-804d-8470-dd3102783e39" class="">செய்தி உலகில் பிபிசி நம்பகமான பெயர். செய்திகளை வெளியிடுவதில், நுணுக்கத்திற்கும், நேர்த்திக்கும் சர்வதேச அளவில் அறியப்படும் ஊடகம். பிரிட்டனில் தனிச்சட்டம் மூலம் சார்பில்லா ஊடகமாக உருவாக்கப்பட்ட பிரிட்டிஷ் பிராட்காஸ்டிங் கார்ப்பரேஷன் தொலைக்காட்சி வடிவில் துவங்கி, வானொலி ஒலிபரப்பை கொண்டிருப்பதோடு, டிஜிட்டல் யுகத்தில் இணைய பதிப்பு, செயலி வடிவம், வலையொலி உள்ளிட்டவற்றில் செயல்பட்டு வருகிறது. அச்சு வடிவம் மட்டுமே இல்லை. செய்திகளுக்கான தகவல் சேகரிப்பில் துவங்கி, அவற்றின் உண்மைத்தன்மையை சரி பார்க்கும் தீவிரம், வெளியிடுவதில் சார்பற்ற தன்மை, பார்வையாளர்களை கவரும் நேர்த்தி ஆகியவை பிபிசி செய்திகளின் அடையாளம். சர்வதேச அளவிலான செய்தி சேகரிப்பில் இந்த வீச்சும், பரந்த தன்மையும் நிகரில்லாதது. உடனடி செய்திகளை விரிவாக தெரிந்து கொள்ள ஏற்றது. தொழில்நுட்ப பயன்பாட்டில் எப்போதும் முன்னணியில் இருப்பது என்றாலும், இணையத்தின் தன்மையையும், ஆற்றலையும் சிறப்பாக பயன்படுத்தும் வகையில் அமைந்திருந்த இதன் செயல்பாடு மற்ற ஊடகங்களுக்கான வழிகாட்டி. இணையத்தில் முதலில் நுழைய ஊடகங்களில் ஒன்று என்பதோடு, காணொலி வடிவில் செய்திகளை பார்ப்பதற்கு தனியே சொந்த மீடியா பிளேயர் சாதனத்தை அறிமுகம் செய்தது உள்பட பல முன்னோடி சேவைகளுக்கு உரிய செய்தி நிறுவனம். செய்தி தளங்களில் இணைப்புகளை வழங்குவதன் முக்கியத்துவத்தை முதலில் உணர்ந்து செயல்படுத்தியது. சமூக ஊடக யுகத்திற்கு ஏற்பவும் இந்த செய்திகள் இளம் தலைமுறையை கவரும் வடிவங்களில் வெளியாகின்றன. செய்திகள் மட்டும் அல்ல, இதில் வெளியாகும் அறிவியல், தொழில்நுட்பம், வாழ்வியல் உள்ளிட்டவை சார்ந்த ஆழமான சுவாஸ்யமான கட்டுரைகள் தகவல் சுரங்கங்களாக அமைபவை. அருமையான ஆவணப்படங்களும் இதன் சிறப்பு. இதழியல் அறத்தையும் முக்கியமாக கருதும் ஊடகம் என்றாலும், இதன் மீதும் நுட்பமான விமர்சனங்கள் உண்டு. இணைய வசதி வருவதற்கு முன்பே சர்வதேச அளவில் அறியப்பட்ட ஊடகம். இணைய யுகத்திற்கு ஏற்ப ஈடுகொடுத்து புதுயுக ஊடகமாகவும் கவர்ந்திழுக்கிறது.</p><ul id="1fa2ec7d-2bab-80ef-a009-d62d78078216" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8002-9d6c-da156a96b3be" class="">செய்தி வெளியீட்டின் தரம், நேர்த்தி, உலகலாவிய தன்மை, ஆழமான அணுகுமுறை உள்ளிட்டவற்றுக்காக அணுக வேண்டிய சேவை. பிபிசி, செய்திகளுக்கான பல்கலைக்கழகம் என கருதப்படக்கூடியது. இதழியலின் பல்வேறு நுட்பங்களுக்கான செயல்முறை வெளிப்பாடு. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-803f-85a8-e498eb291139"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-802a-88c8-e940e659c4a4" class=""><strong>மாற்று</strong>: <a href="https://www.aljazeera.com/">அல்ஜஸிரா</a> , <a href="https://edition.cnn.com/">சிஎன்.என்</a></p></div></figure><p id="1fa2ec7d-2bab-80d6-8f40-e9a94b7aabb1" class="">
+</p><h2 id="1fa2ec7d-2bab-80b4-b306-e6f158294a2d" class="">3. <strong>நியூயார்க் டைம்ஸ் -</strong></h2><p id="1fa2ec7d-2bab-80be-9c89-ebd53900c402" class="">
+</p><figure id="1fa2ec7d-2bab-80f5-9646-dd167f8468ca"><a href="https://www.nytimes.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The New York Times - Breaking News, US News, World News and Videos</div><div class="bookmark-description">Live news, investigations, opinion, photos and video by the journalists of The New York Times from more than 150 countries around the world. Subscribe for coverage of U.S. and international news, politics, business, technology, science, health, arts, sports and more.</div></div><div class="bookmark-href"><img src="https://www.nytimes.com/vi-assets/static-assets/apple-touch-icon-28865b72953380a40aa43318108876cb.png" class="icon bookmark-icon"/>https://www.nytimes.com/</div></div><img src="https://static01.nyt.com/newsgraphics/images/icons/defaultPromoCrop.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-8081-9576-eb763b78ef0c" class="">ஒரு காலத்தில் நாளிதழ்கள் செய்திகளை தெரிந்து கொள்வதற்கான முதன்மை வழியாக இருந்தன. செயற்கைகோள் தொலைக்காட்சி வருகைக்கு பின் இந்த நிலை மாறி, டிஜிட்டல், அதைத்தொடர்ந்து செயலிகள் யுகத்தில் செய்திகளை தெரிந்து கொள்வதற்கான வழிகள் அதிகரித்திருந்தாலும், நாளிதழ்களின் தேவையை குறைந்து விடவில்லை. நாளிதழ்களின் தன்மையும், வடிவமைப்பும் தெரிந்து கொள்ள வேண்டிய செய்திகளை அவற்றின் தன்மைக்கேற்ப வழங்க வழி செய்கின்றன. நாளிதழ்களின் ஆசிரியர் குழு மேற்பார்வையை செய்தி தேர்விலும், வெளியீட்டு முறையிலும் உணரலாம். செய்திகளை சரி பார்க்கும் தன்மையும் நாளிதழ்களின் ஆதார அம்சம். மின் பதிப்பாகவும் வாசிக்கலாம். உலக நாளிதழ் முதல் உள்ளூர் நாளிதழ் வரை தேர்வு செய்து கொள்ளலாம். </p><ul id="1fa2ec7d-2bab-8090-baaa-cd26f121147a" class="toggle"><li><details open=""><summary><strong>ஏன்? </strong>   </summary><p id="1fa2ec7d-2bab-803f-9c6e-f9b3404c5ff6" class="">அமெரிக்காவின் பாரம்பரியம் மிக்க நாளிதழான நியூயார்க் டைம்ஸ் அல்லது அதற்கு நிகரான இங்கிலாந்து நாளிதழ் கார்டியனை இணைய யுகத்தில் இணைய பதிப்பாக வாசிக்கலாம் என்பது அணுகூலம் அல்லவா! </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8058-8a04-de7d1c6e6b9e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80df-810d-c37e7de163da" class=""><strong>மாற்று:</strong> தி இந்து, இந்துஸ்தான் டைம்ஸ், தினத்தந்தி, தினமலர்,  தினமணி </p></div></figure><p id="1fa2ec7d-2bab-800d-94fc-d1ed79393101" class="">
+</p><h2 id="1fa2ec7d-2bab-80e0-9275-d36cc8bf4623" class="">4. <strong>பஸ்ஃபீட் -</strong></h2><p id="1fa2ec7d-2bab-804d-905a-feec30cd9e48" class=""><strong> </strong>   </p><figure id="1fa2ec7d-2bab-80f0-90c0-e1ce26c88ee4"><a href="https://www.buzzfeed.com/in" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">BuzzFeed</div><div class="bookmark-description">BuzzFeed has breaking news, vital journalism, quizzes, videos, celeb news, Tasty food videos, recipes, DIY hacks, and all the trending buzz you’ll want to share with your friends. Copyright BuzzFeed, Inc. All rights reserved.</div></div><div class="bookmark-href"><img src="https://www.buzzfeed.com/static-assets/img/touch-icon-android.6f90f349a263fafae3843e9decf2812a.png" class="icon bookmark-icon"/>https://www.buzzfeed.com/in</div></div><img src="https://www.buzzfeed.com/static-assets/img/buzzfeed_arrow.e86a786d9e5e2250e1ed3e0ec95ba42d.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-8011-b41c-ccebba082456" class="">சமூக ஊடக யுகத்திற்கான செய்தி தளம் எனும் ஒரு வரி பஸ்ஃபீடு தளத்தை புரிந்து கொள்ள போதுமானது. பயனாளிகள் செய்திகளை தெரிந்து கொள்ளும் விதம் வேகமாக மாறிவரும் சூழலில், செய்திதளங்களை விட சமூக ஊடகங்களிலேயே பெரும்பாலானோர் செய்திகளை அறிந்து கொள்ளும் நிலையில், செய்தி உள்ளடக்கம், வெளியீடு எல்லாவற்றையும் சமூக ஊடக யுகத்தின் தன்மையோடு அளிக்கிறது இந்த தளம். முக்கியமாக, வைரலாக பரவும் தன்மை மற்றும் பகிர்வு அம்சத்தை அடிப்படையாக கொண்டு செய்திகளை வழங்குகிறது. பஸ்ஃபீடு செயல்முறை மீது விமர்சனங்கள் உண்டு. ஆனால், செய்தி உருவாக்க வரலாற்றில் முக்கிய மாற்றத்தை கொண்டு வந்தது என்பதால் புறக்கணிக்க முடியாதது. </p><ul id="1fa2ec7d-2bab-80a1-bd1b-fa0ff1ef83c0" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-80ee-a7e7-eddbb852c77b" class="">இன்றைய தலைமுறைக்கு ஏற்றவாறு செய்திகளை உருவாக்கி பகிரும் முறையை உருவாக்கிய தளம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8072-800a-cf1101ed9597"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8024-8f73-e2356d85d63e" class=""><strong>மாற்று</strong>:  <a href="https://www.scoopwhoop.com/">ஸ்கூப் வூப்</a> , <a href="https://www.upworthy.com/">அப்வொர்த்தி</a></p></div></figure><p id="1fa2ec7d-2bab-80d0-9e85-dd7ce3cf8bb1" class="">
+</p><h2 id="1fa2ec7d-2bab-804a-a4ef-cf87d7a1d9b7" class="">5. <strong>ஏபிநியூஸ் -</strong></h2><p id="1fa2ec7d-2bab-8058-b67d-c6f929f4f549" class="">   </p><figure id="1fa2ec7d-2bab-804d-a4ac-fc45fa411a11"><a href="https://apnews.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Associated Press News: Breaking News | Latest News Today</div><div class="bookmark-description">Stay informed and read the latest news today from The Associated Press, the definitive source for independent journalism from every corner of the globe.</div></div><div class="bookmark-href"><img src="https://apnews.com/apple-touch-icon.png" class="icon bookmark-icon"/>https://apnews.com/</div></div><img src="https://dims.apnews.com/dims4/default/dcac1a4/2147483647/strip/true/crop/700x394+0+28/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F90%2F29%2F4e3c1cc7446089a9101a7bdff4c8%2Fdefaultshareimage-copy.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-80d5-bd6f-f15c983f5722" class="">பஸ்ஃபீட் போன்ற தளங்கள் நவீன காலத்திற்கானவை என்றால், எப்போதும் மாறாத தன்மை கொண்ட பாரம்பரிய சேவைகளும் தேவை என்பதால், செய்தி நிறுவன தளங்களை நாம் கவனத்தில் கொள்ள வேண்டும். செய்தி தளங்களை, இணைய யுகத்தின் திரட்டிகளோடு ஒப்பிட்டு புரிந்து கொள்ளலாம். செய்திகளை இவை தொகுத்தளிப்பதில்லை என்றாலும், இவை வழங்கும் செய்திகள் பல்வேறு ஊடகங்களில் பயன்படுத்தப்படுகின்றன. செய்தி நிறுவனங்கள் தாமான செய்தி வெளியிடாமல், ஊடகங்கள் சார்பாக செய்தி சேகரித்து அவற்றை விநியோகிக்கின்றன. அந்த வகையில் இவற்றின் செயல்பாடு பரந்து விரிந்தது. செய்தி நிறுவனங்கள் இல்லை எனில் வெளிநாட்டு செய்திகளை தெரிந்து கொள்வது கடினம். செய்தி நிறுவன தளங்களை அறிந்திருப்பது நம்பகமான முறையில் செய்திகளை தெரிந்து கொள்வதற்கான வழி. ராய்டர்ஸ் மற்றும் ஏபி பாரம்பரிய சர்வதேச செய்தி நிறுவனங்கள். </p><ul id="1fa2ec7d-2bab-8094-a5ec-c040452aea4a" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-804f-859c-e2efa2277991" class="">செய்தி நிறுவன சேவை சந்தா அடிப்படையிலானது. கடந்த காலங்களிள் ஊடகங்கள் மட்டுமே செய்தி நிறுவன செய்திகளை நேரடியாக பெற முடியும். இணைய யுகத்தில், செய்தி நிறுவனங்களை பொதுமக்களும் அணுகும் வாய்ப்பு உள்ளது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-80f7-8b45-e7bc06b3b9cc"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8066-ab8b-e6b0eddc2828" class=""><strong>மாற்று:</strong> <a href="https://www.ptinews.com/">பிடிஐ</a> , <a href="https://www.ians.in/english-wire/all/">ஐஏஎன்.எஸ்</a></p></div></figure><p id="1fa2ec7d-2bab-8096-91a7-d03da4ead6ed" class="">
+</p><h2 id="1fa2ec7d-2bab-8045-b27f-f5d1e8316f4d" class="">6. <strong>ரேப்ளர் -</strong></h2><p id="1fa2ec7d-2bab-8065-97d7-d07d5529f2a5" class=""><strong> </strong>   </p><figure id="1fa2ec7d-2bab-8068-9c8a-cff501ffeac3"><a href="https://www.rappler.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">RAPPLER | Philippine &amp; World News | Investigative Journalism | Data | Civic Engagement | Public Interest</div><div class="bookmark-description">Rappler is the Philippines&#x27; leading digital media company that&#x27;s driven by uncompromising journalism, enabled by technology, and enriched by communities of action.</div></div><div class="bookmark-href"><img src="https://www.rappler.com/tachyon/2022/11/cropped-Piano-Small.png" class="icon bookmark-icon"/>https://www.rappler.com/</div></div><img src="https://www.rappler.com/tachyon/2023/03/Rappler-logo-1080.png" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-80b7-9d29-cd53820243a2" class="">செய்தி தளங்கள் எனும் போது பெரும்பாலானோர் உள்ளூர் தளங்களை தவறாமல் பின் தொடர்கின்றனர். ஆர்வம் உள்ளவர்கள் சர்வதேச முன்னணி தளங்களையும் அறிந்துள்ளனர். ஆனால், இவற்றுக்கு இடையே உள்ள பிற பகுதிகளின் செய்தி தளங்களை பெரும்பாலானோர் கருத்தில் கொள்வதில்லை. மார்ஷல் மெக்லூஹன் கணித்தது போன்ற உலக கிராமமாக, இணையம் உலகை இணைத்து சுருக்கியுள்ள நிலையில், உலகின் வெவ்வேறு பகுதிகள் சார்ந்த செய்திகளை தெரிந்து கொள்வது அவசியம். அந்த வகையில், பிலிப்பைன்சின் முன்னணி செய்தி தளமான ரேப்ளர் முக்கியத்துவம் பெறுகிறது. டிஜிட்டல் உலகின் முன்னோடி சேவையாகவும் விளங்கும் ரேப்ளர், அதன் ஜனநாயக போராட்டத்திற்காக நோபல் பரிசு வென்ற தளம். அதற்கு முன்பாகவே அதன் சர்வதேச தரத்திலான செய்தி வெளியீட்டிற்காக அறியப்பட்டது.</p><ul id="1fa2ec7d-2bab-8009-be2c-e72ea6d98a8a" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-80b1-9d66-ffa24b8d6dd4" class="">செய்தியாளர்களுக்கு எப்போதும் பரந்த உலக பார்வை அவசியம். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-803f-8ee2-d6182aa26c6d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80ca-9e8b-d77e61b9fb49" class=""><strong>மாற்று: </strong> <a href="https://www.france24.com/en/">பிரான்ஸ் 24</a> , <a href="https://www.euronews.com/">யூரோநியூஸ்</a> , <a href="https://allafrica.com/">ஆல் ஆப்பிரிக்கா</a> , <a href="https://eastmojo.com/">ஈஸ்ட் மோஜோ</a></p></div></figure><p id="1fa2ec7d-2bab-80ab-8c5b-e091077cdada" class="">
+</p><h2 id="1fa2ec7d-2bab-80b3-bf04-c27f85ad7ce1" class="">7. <strong>என்பிஆர் -</strong></h2><p id="1fa2ec7d-2bab-8027-b339-e1770363ec8e" class="">   </p><figure id="1fa2ec7d-2bab-8026-b408-c411624c3edd"><a href="https://www.npr.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">NPR - Breaking News, Analysis, Music, Arts &amp; Podcasts</div><div class="bookmark-description">Top stories in the U.S. and world news, politics, health, science, business, music, arts and culture. Nonprofit journalism with a mission. This is NPR.</div></div><div class="bookmark-href"><img src="https://media.npr.org/chrome/favicon/favicon-180x180.png" class="icon bookmark-icon"/>https://www.npr.org/</div></div><img src="https://media.npr.org/include/images/facebook-default-wide-s1400-c100.jpg" class="bookmark-image"/></a></figure><p id="1fa2ec7d-2bab-8062-8daf-daff6d97b369" class="">இணைய யுகத்தில் நாளிதழ்களை புறந்தள்ள முடியாது என்பது போலவே, வானொலியின் இடத்தையும் மறந்துவிடக்கூடாது. பாரம்பரிய ஊடகங்கள் செல்ல முடியாத இடத்திலும் வானொலி செய்திகளை கொண்டு சேர்க்க கூடியது. ஒலி வடிவில் செய்திகளையும், தகவல்களையும் வழங்குவது அதற்கே உரிய தன்மையையும், தாக்கத்தையும் கொண்டது. வலையொலி எனும் பாட்காஸ்டிங் வடிவம் ஒலிக்கான இடத்தை மீண்டும் நிருபித்துள்ள நிலையில், வானொலி மூலம் செய்திகளை அறிந்து கொள்வது அவசியம். அமெரிக்காவின் நேஷனல் பப்ளிக் ரேடியோவை நவீன வானொலி நிலையங்களுக்கான அடையாளமாக கருதலாம். சமூக நோக்கில் மக்கள் நலன் சார்ந்த இதன் சுவாஸ்யமான செய்தி வழங்கல் கவர்ந்திழுக்க கூடியது.</p><ul id="1fa2ec7d-2bab-8015-b78c-ea3ff869f2d4" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8079-bce8-ce1bb757ee12" class="">என்.பி.ஆர்., வானொலி சேவை என்றாலும், அதன் இணையதளம் எழுத்து வடிவிலும் செய்திகள், ஒலிபரப்பு செய்திகளை கொண்டிருக்கும் விதம் குறிப்பிடத்தக்கது. ஒருங்கிணைப்பு யுகத்தில் ஒரு நவீன ஊடகம் எப்படி இருக்க வேண்டும் என்பதற்கு இந்த தளம் நல்ல உதாரணம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8090-98a5-e5e41d306895"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-80c7-943e-cab2ddcf45a9" class=""><strong>மாற்று:</strong>  <a href="https://www.internetpublicradio.live/">இன்நெட்ர்நெட் பப்ளிக் ரேடியோ</a> , <a href="https://www.newsonair.gov.in/">ஆல் இந்தியா ரேடியா</a></p></div></figure><p id="1fa2ec7d-2bab-80f8-940b-f756dca8f0b8" class="">
+</p><h2 id="1fa2ec7d-2bab-80c3-b156-e9c787012c23" class="">8. <strong>மார்னிங்நியூஸ் -</strong></h2><p id="1fa2ec7d-2bab-8081-9f29-d25560d4b2f1" class="">    </p><figure id="1fa2ec7d-2bab-80d0-af0d-cf4147a054f9"><a href="https://themorningnews.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The Morning News</div><div class="bookmark-description">Newsy, artsy, bloggy since 1999</div></div><div class="bookmark-href"><img src="https://themorningnews.org/content/images/size/w256h256/2024/08/TMN-2.png" class="icon bookmark-icon"/>https://themorningnews.org/</div></div></a></figure><p id="1fa2ec7d-2bab-8034-8370-c43e26cb61bf" class="">செய்திகளை முழுவதும் வாசிக்க நேரம் இல்லாதவர்களுக்காக செய்தி சுருக்கங்களை அளிக்கும் சேவையாக இன்ஷார்ட்ஸ் விளங்குகிறது.</p><ul id="1fa2ec7d-2bab-801e-8ff3-c02a249db3e2" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8029-87e9-e20e4a5cf2cb" class="">செய்திகள் உங்களைத்தேடி வருகின்றன. செய்தி சுருக்கங்களை வாசித்து, விரும்பினால் மூல முழு வடிவை நாடலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-8052-844f-c4fda9abe6b1"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8010-9f53-f92fa642baec" class=""><strong>மாற்று:</strong>  <a href="https://m.dailyhunt.in/">டெய்லிஹண்ட்</a> </p></div></figure><p id="1fa2ec7d-2bab-807e-8a7a-dcf17af9793c" class="">
+</p><h2 id="1fa2ec7d-2bab-8055-837c-f7fdd43ed72a" class="">9. <strong>கெட்டிமேஜ்ஸ் -</strong></h2><p id="1fa2ec7d-2bab-80c3-9f4b-c896e160726f" class="">   </p><figure id="1fa2ec7d-2bab-8020-8fbf-eca0354e70f6"><a href="https://www.gettyimages.in/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Royalty-Free Stock Photos, Creative Images &amp; Vectors | News, Fashion, and Entertainment imagery - Getty Images</div><div class="bookmark-description">Discover Getty Images&#x27; unrivalled collection of royalty-free images to find the perfect stock photo, vector or illustration that resonates with your customers.</div></div><div class="bookmark-href"><img src="https://www.gettyimages.in/favicon.ico" class="icon bookmark-icon"/>https://www.gettyimages.in/</div></div></a></figure><p id="1fa2ec7d-2bab-80e4-8f54-c2dbe2a8eef8" class="">சமூக ஊடகத்தின் தாக்கத்தால், எழுத்து வடிவில் நீள் வாசிப்பு குறைந்து, குறைவான அளவில் உள்ள செய்திகளையே மக்கள் விரும்புவதாக கருதப்படுகிறது. குறும் வீடியோக்களின் தாக்கமும் இதற்கு வலு சேர்க்கிறது. ஆனால் ஊடகம் என்பது எழுத்து வடிவலானது மட்டும் அல்லவே. நாளிதழ் பரப்பில் எப்போதுமே புகைப்படங்களுக்கு முக்கிய இடம் உண்டு. காணொலி யுகத்திலும் புகைப்படங்கள் முக்கியமானவை. அந்த வகையில் புகைப்படங்கள் மூலம் செய்திகளை தெரிந்து கொள்வதற்கான அல்லது செய்தி சார்ந்த புகைப்படங்களை பெற வழிகாட்டும் இணையதளங்கள் தேவை. இந்த பிரிவில் கெட்டி இமேஸ் முன்னோடி தளம். கார்ட்டூன் தளங்களையும் இந்த பிரிவில் பரிசீலிக்கலாம். </p><ul id="1fa2ec7d-2bab-8005-bedf-c7337ec354f3" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-8021-9187-d56d538c0703" class="">ஆயிரம் வார்த்தைகளை சொல்வதை ஒரு புகைப்படம் சொல்லிவிடும் அல்லவா? </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-80dc-93f8-fa7ba6773dc7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8012-95df-e2a322b1a458" class=""><strong>மாற்று:</strong> —</p></div></figure><p id="1fa2ec7d-2bab-802d-8916-f74619544c37" class="">
+</p><h2 id="1fa2ec7d-2bab-8055-a0db-c27bf08ce63e" class="">10. <strong>பிரெஷ்நியூஸ் -</strong></h2><p id="1fa2ec7d-2bab-8009-95dd-e07f2176f6e6" class="">    </p><figure id="1fa2ec7d-2bab-8062-8af3-c017d432e860"><a href="https://www.freshnews.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">freshnews - fresh tech news from around the web</div><div class="bookmark-description">Fresh tech news gathered from around the web. Sites such as slashdot, gizmodo, engadget and hacker news are represented.</div></div><div class="bookmark-href"><img src="https://www.freshnews.org/assets/favicon-ba0ad67609ca2bc4b54dc3fcf20afe2cd4f0d99d4a29ca41a1c9902506f853b4.ico" class="icon bookmark-icon"/>https://www.freshnews.org/</div></div></a></figure><p id="1fa2ec7d-2bab-8071-b814-d7ee199cdc52" class="">செய்தி திரட்டிகள் இணைய யுகத்தில் முக்கியமானவை. இந்த செய்தி திரட்டிகளை தனிப்பட்ட தன்மையோடு, பயனாளிகளே தங்களுக்கான செய்தி திரட்டிகளை உருவாக்கி கொள்வது சாத்தியம். இத்தகைய சேவையாக பிரெஷ்நியூஸ் மற்றும் டெய்லி ரொடேஷன் அமைகிறது. இதில் விரும்பிய செய்தி தளங்களில் இருந்து செய்திகளை பல்வேறு தலைப்புகளில் அணுகலாம். ஸ்லேஷ்டாட் மற்றும் ஹேக்கர்நியூஸ் போன்ற பயனாளிகள் செய்தி இணைப்புகளை தேர்வு செய்து, அது தொடர்பாக விவாதிக்கும் தளங்களையும் இப்பிரிவில் பரிசீலிக்கலாம்.</p><ul id="1fa2ec7d-2bab-8009-81aa-e5f6f77d9592" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fa2ec7d-2bab-80cf-9355-e7d784dfc69b" class="">இணையம் என்பதே பயனாளிகள் ராஜ்ஜியம் தானே.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fa2ec7d-2bab-805d-b400-d41e098c631d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fa2ec7d-2bab-8084-a713-de2272cfd73f" class=""><strong>மாற்று:</strong>  <a href="https://news.ycombinator.com/">ஹேக்கர் நியூஸ்</a> , <a href="https://slashdot.org/">ஸ்லேஷ்டாட்</a></p></div></figure><p id="1ff2ec7d-2bab-80f6-81cd-f392bd9aa883" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

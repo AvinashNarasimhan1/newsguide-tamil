@@ -1,0 +1,698 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>வலைப்பதிவு</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ed2ec7d-2bab-80bd-8407-e8602178a2d3" class="page sans"><header><h1 class="page-title">வலைப்பதிவு</h1><p class="page-description"></p></header><div class="page-body"><p id="1ff2ec7d-2bab-8099-9f46-db678ea04c19" class="">
+</p><p id="1ff2ec7d-2bab-8012-bbec-cf7f31acf26e" class="">சமூக ஊடகத்தின் முக்கிய கிளைகளில் ஒன்றான வலைப்பதிவுகள் பதிப்பு வசதியையும், வெளியீட்டையும் ஜனநாயகமாக்கியது. இதனால் எல்லோரும் இணையத்தில் கருத்துக்களை பதிவிடுவது சாத்தியமானது. இணைய நாட்குறிப்பாகவும் கருதப்படும் வலைப்பதிவுகள் பெரும்பாலும் தனிப்பட்ட தன்மை கொண்டவை என்றாலும், தொழில்முறை தன்மையோடு, தகவல் மற்றும் செய்தி நோக்கில் ஈர்க்கும் எண்ணற்ற வலைப்பதிவுகளும் இருக்கின்றன. அவற்றில் முக்கியமானவை</p><p id="1fb2ec7d-2bab-8023-8396-c1749c2eeeb6" class="">
+</p><h2 id="1fb2ec7d-2bab-8034-9992-fb18dd678e05" class="">1. <strong>கோட்டகே -</strong>   </h2><p id="1fb2ec7d-2bab-806a-8ece-c32c28623b6b" class="">
+</p><figure id="1fb2ec7d-2bab-8052-ba5b-ce7b2485176a"><a href="https://kottke.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">kottke.org</div><div class="bookmark-description">home of fine hypertext products</div></div><div class="bookmark-href"><img src="https://kottke.org/images/2024/icons/256x256.png" class="icon bookmark-icon"/>https://kottke.org/</div></div><img src="https://kottke.org/images/2016/ios/180x180.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8020-9e93-e9e0f048f9f8" class="">இணையத்தின் தகவல் சுரங்கமாக விளங்கும் ஒரு வலைப்பதிவை ஒரு தனிநபர் நடத்துகிறார் என்பதும், அதையும் 25 ஆண்டுகளுக்கு மேலாக நடத்தி வருகிறார் என்பதும் வியப்பளிக்கலாம். 1998 ல் துவக்கப்பட்ட இந்த வலைப்பதிவு இணையத்தின் பழமையான வலைப்பதிவுகளில் ஒன்றாக கருதப்படுகிறது. இத்தனை காலமாக தொடர்ந்து நடத்தப்படும் வெகு சில அபூர்வமான வலைப்பதிவுகளில் ஒன்றாகவும் திகழ்கிறது. ஜேசன் கோட்டகேவின் வலைப்பதிவும், அதன் தகவல் செறிவும் இன்னும் வியப்பை அளிக்க கூடியவை. அதோடு சுவாரஸ்யத்தையும், ஈர்ப்பையும் அளிக்க வல்லவை. வலைப்பதிவு முன்னோடிகளில் ஒருவராக கருதப்படும் கோட்டகே, இணையத்தின் ஆகச்சிறந்த தகவல்களை வெவ்வேறு இடங்களில் இருந்து தேடி கண்டறிந்து தொகுத்தளிக்கிறார். ஆகச்சிறந்த மீத்தொடுப்பு பொருட்கள் (fine hypertext products) என்று இவற்றை குறிப்பிடுகிறார். இணைய கடலில் முத்து குளிப்பது போன்ற தன்மையை வெளிப்படுத்தும் தகவல்களை குறிப்பிட்டு, அவற்றுக்கான மூல இணைப்பை குறிப்பிடுவது இந்த வலைப்பதிவின் தன்மை. யாரோ நமக்காக இணையத்தில் உலாவி தகவல்களை அளித்திருப்பது போன்ற தன்மைய ஒவ்வொருவரும் உணரலாம். பல ஆண்டுகளுக்கு முன்பே வலைப்பதிவுக்காக உறுப்பினர்களை சேர்த்து, பயனாளிகள் அளிக்கும் நன்கொடையை சார்ந்து இயங்குகிறார். </p><ul id="1fb2ec7d-2bab-80d9-a867-ed1014cefdef" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8047-a859-e173d1fa7130" class="">கோட்டகே வலைப்பதிவை வாசித்துப்பார்த்தால், அதன் இணைப்புகள் அளிக்கும், சுவாரஸ்யத்தில் மூழ்கி திளைக்கலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-805f-9fff-ec5732afa9f5"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-801d-b4ae-e63d998eae63" class=""><strong>மாற்று</strong>: முதல் வலைப்பதிவராக கருதப்படும் ஜஸ்டின் ஹால் இணையதளத்தை ஒப்பிட்டு பார்ப்பதன் மூலம் இருவரின் சாதனையையும், வலைப்பதிவின் முக்கியத்துவத்தையும் உணரலாம். - <a href="https://www.links.net/">https://www.links.net/</a></p></div></figure><p id="1fb2ec7d-2bab-80ac-8678-efc2eac551d2" class="">
+</p><h2 id="1fb2ec7d-2bab-8074-ac0f-d05357aa1acc" class="">2. <strong>போயிங்போயிங் -</strong></h2><p id="1fb2ec7d-2bab-8053-be74-ec763ae3aa19" class="">   </p><figure id="1fb2ec7d-2bab-80df-a563-cb9a54599d1c"><a href="https://boingboing.net/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Boing Boing - A Directory of Mostly Wonderful Things</div><div class="bookmark-description">Boing Boing is the Web&#x27;s favorite site devoted to technology, entertainment, and culture. Launched in 1989 as a print &#x27;zine and still...</div></div><div class="bookmark-href"><img src="https://i0.wp.com/boingboing.net/wp-content/uploads/2018/04/apple-touch-icon-1.png?fit=158%2C158&amp;quality=55&amp;ssl=1" class="icon bookmark-icon"/>https://boingboing.net/</div></div><img src="https://boingboing.net/wp-content/uploads/2022/06/bbstacked.jpg" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80f4-8209-cd8d9a4779bb" class="">வலைக்கும் முந்தைய வலைப்பதிவு இது. 1988 ல் இணைய சஞ்சிகையாக துவங்கப்பட்ட ’போயிங் போயிங்’, பின்னர் குழு வலைப்பதிவாக மாறியது. 1995 முதல் இணையதள வடிவில் செயல்பட்டு வருகிறது. தொழில்நுட்பம் சார்ந்த வலைப்பதிவு என்றாலும், அதிலும் வழக்கமான தன்மையில் இருந்து விலகி, எதிர்காலவியல், கேட்ஜெட்கள், அறிவுசார் சொத்துரிமை, இடது சாரி அரசியல் உள்ளிட்ட விஷயங்களில் கவனம் செலுத்தி வருகிறது. இதன் தேர்வும், நடையும் வியப்பை ஏற்படுத்தும். நான்கு வரி விவரிப்புடன் அமைந்துள்ள பதிவுகள், இணைய உலகில் பெரும்பாலும் நம் கண்ணில் படாத விஷயங்களை சுட்டிக்காட்டுவதாக அமையும்.</p><ul id="1fb2ec7d-2bab-8063-a76f-d5d4ee105f8b" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-802e-ac00-e0c0424e2ff6" class="">இணையத்தின் ஆற்றலை உணர்த்தும் அருமையான, புதுமையான தன்மை கொண்ட வலைப்பதிவு .</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8027-aabc-fbb8b310857a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-808e-9a82-e29d35fcbda5" class=""><strong>மாற்று:</strong> தனித்தன்மை மிக்க வலைப்பதிவு. </p></div></figure><p id="1fb2ec7d-2bab-805d-8764-c85ac4207646" class="">
+</p><h2 id="1fb2ec7d-2bab-8072-8d64-c121883b0555" class="">3. <strong>மேப்ஸ் மேனியா -</strong></h2><p id="1fb2ec7d-2bab-80bd-baf7-d815c2607f1a" class="">   </p><figure id="1fb2ec7d-2bab-800f-a864-ea28a1e7d27d"><a href="https://googlemapsmania.blogspot.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Maps Mania</div><div class="bookmark-description">Maps Mania is a blog dedicated to tracking the very best digital interactive maps on the internet and the tools used to create them.</div></div><div class="bookmark-href"><img src="https://googlemapsmania.blogspot.com/favicon.ico" class="icon bookmark-icon"/>https://googlemapsmania.blogspot.com/</div></div></a></figure><p id="1fb2ec7d-2bab-80b4-8283-f843ae22b1a1" class="">வரைபடம் சார்ந்த தகவல்களும், செய்திகளும் எத்தனை சுவாரஸ்யமானவை என்பதை உணர வேண்டும் என்றால், மேப்ஸ்மேனியா வலைப்பதிவை வாசித்துப்பார்க்க வேண்டும். வரைபடம் தானே என்று தோன்றக்கூடிய அலட்சியத்தை மீறி இந்த வலைப்பதிவு உங்களை கவர்ந்திழுத்துவிடும். அநேகமாக அடிக்கடி அல்லது தினந்தோறும் பார்க்கும் ஆர்வத்தை உண்டாக்கும். ஒவ்வொரு முறை வரும் போதும்,புதுமையான, பயனுள்ள, சுவாரஸ்மான பதிவை வாசிக்கலாம். இதில் வெளியாகும் எல்லா பதிவுகளுமே வரைப்படத்தை அடிப்படையாக கொண்டு மேற்கொள்ளப்படும் முயற்சிகள் அல்லது திட்டங்கள் சார்ந்தவை. சில செய்தி நோக்கில் இருக்கலாம், சில சமூக நோக்கில் இருக்கலாம். பல ஆய்வு நோக்கில் அமைந்திருக்கும். இந்த வலைப்பதிவு வியக்க வைப்பதோடு, வரைபடம் கொண்டு இத்தனை விஷயங்களை செய்ய முடியுமா என ஆச்சர்யத்தில் ஆழ்த்தும் விதவிதமான வரைபட ஆக்கங்களை அறிமுகம் செய்து கொள்ளலாம். எல்லா வரைப்படங்களுமே அவற்றின் டிஜிட்டல் வடிவின் மீது பலவிதமான தகவல்களும், விவரங்களும் ஒட்ட வைக்கப்பட்டவை என்பதால் புதிய பரினாமம் அளிப்பவை. 2005 ம் ஆண்டு முதல் இந்த வலைப்பதிவை கெயர் கிளார்க் நடத்தி வருகிறார். </p><ul id="1fb2ec7d-2bab-80b5-b4ef-e98075153b3f" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80bf-b520-ed92e1ba462b" class="">டிஜிட்டல் வசதியோடு வரைபடங்கள் உணர்த்தும் செய்திகளும், அளிக்கும் சுவார்ஸ்யமும் அளவில்லாதவை. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-808d-9690-ec0713b410e3"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80dd-a5c9-c34727f91069" class=""><strong>மாற்று:</strong> தனித்துவமானது. ஆனால் வரைபடமாக்கலில் உதவும் சேவைகள் பல உள்ளன.</p></div></figure><p id="1fb2ec7d-2bab-80c7-a020-f2bb80b65fac" class="">
+</p><h2 id="1fb2ec7d-2bab-80da-8449-c68906f5e1f5" class="">4. <strong>பைவ் புக்ஸ்</strong> -</h2><p id="1fb2ec7d-2bab-809d-bb0c-e300fd904d1b" class="">  </p><figure id="1fb2ec7d-2bab-80f1-8589-d5d5d4e13c51"><a href="https://fivebooks.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Five Books</div><div class="bookmark-description">If you&#x27;re looking for the best books on any topic, Five Books has the world&#x27;s largest collection of expert book recommendations.</div></div><div class="bookmark-href"><img src="https://fivebooks.com/favicon.ico" class="icon bookmark-icon"/>https://fivebooks.com/</div></div><img src="https://fivebooks.com/images/S3_ftF9IJB_Y-AHz/plain/fb/2021/03/five-books-homepage-best-books-on-everything-share-image-8.jpg" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8015-8e85-f2289bc566fd" class="">புத்தகங்கள் சார்ந்த எத்தனையோ இணையதளங்கள் இருந்தாலும், தனிப்பட்ட தன்மை கொண்ட புத்தக வலைப்பதிவுகளும் பல இருந்தாலும், பைபுக்ஸ் தளம் போல புத்தக அறிமுகத்தில் சிறந்து விளங்க கூடிய தளத்தை பார்ப்பது அரிது. வலைப்பதிவாக இருந்தாலும், ஒரு முன்னணி ஊடகத்தின் நேர்த்தியையும், இலக்கிய இதழின் தீவிரத்தையும் இதன் பதிவுகளில் காணலாம். இதன் மையக்கருத்து மிக எளிமையானது. குறிப்பிட்ட தலைப்புகளில் ஐந்து புத்தகங்களை அறிமுகம் செய்யும் வகையில் பதிவுகள் அமைந்திருக்கும். ஏதோ ஐந்து புத்தகங்கள் அல்ல, தொடர்புடைய துறை சார் வல்லுனர்களால் பரிந்துரைக்கப்படும் புத்தகங்கள். வல்லுனர்களிடம் நேர்காணல் செய்து கேள்வி பதில் வடிவில் அவர்கள் புத்தக பரிந்துரை விரிவாக அமைந்திருக்கும். புத்தகங்களை விமர்சன கோணம் இல்லாமல் புதிய கோணங்களில் அறிமுகம் செய்து கொள்ள இந்த பதிவுகள் உதவுகின்றன. இத்தனை செறிவான புத்தக அறிமுகங்களை காண்பது அரிது என உணர வைக்கும். இதில் பரிந்துரைக்கப்பட்ட புத்தகங்களே ஒரு தனி நூலகம் போல் ஈர்ப்பதை உணரலாம்.</p><ul id="1fb2ec7d-2bab-80d0-9280-d603e6175526" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-8060-aec6-f7a7cb2f04dd" class="">அருமையான புத்தகங்களை வல்லுனர்கள் அனுபவ பார்வையோடு பரிந்துரைப்பதை அவர்கள் குரலில் நெருக்கமாக உணரலாம்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8051-9c5b-c30704c17d68"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8011-9c47-ea10a530fc40" class=""><strong>மாற்று:</strong> புத்தக அறிமுகம் சார்ந்து இப்படி ஒரு வலைப்பதிவா என வியக்க வைக்கும் மார்ஜினாலியன் வலைப்பதிவு: <a href="https://www.themarginalian.org/">தி மாஜினிலியின்</a></p></div></figure><p id="1fb2ec7d-2bab-8051-9e18-d5a261461049" class="">
+</p><h2 id="1fb2ec7d-2bab-8080-8971-ff9e7c2788cb" class="">5. <strong>மாஷபில் - </strong>   </h2><p id="1fb2ec7d-2bab-8004-be49-d8a17ed09757" class="">
+</p><figure id="1fb2ec7d-2bab-80d8-b620-c6ea0517fe20"><a href="https://in.mashable.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mashable India</div><div class="bookmark-description">Mashable is a global, multi-platform media and entertainment company.</div></div><div class="bookmark-href"><img src="https://mashable.com/favicons/android-chrome-512x512.png" class="icon bookmark-icon"/>https://in.mashable.com/</div></div><img src="https://in.mashable.com/s/mashable/social_logo.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-8029-bed7-d1b944f6767c" class="">தொழில்நுட்ப செய்திகளை தெரிந்து கொள்ள வேண்டும் எனில், மாஷபில் தளத்தை பின் தொடர்வது அவசியம். சிலிக்கான் வேலி செய்திகள் தவிர, தொழில்நுட்ப உலகின் முக்கிய போக்குகள், சமூக ஊடக நிகழ்வுகள் உள்ளிட்டவற்றை இந்த தளம் சுவாரஸ்யமான முறையில் வழங்குகிறது. இதன் இந்திய பதிப்பும் இருக்கிறது. ஆனால், இந்த தளம் ஒரு வலைப்பதிவாக துவங்கியது என்பது தான் விஷயம். 2005 ம் ஆண்டில், பீட் கேஷ்மோர் எனும் இளைஞர் பிரிட்டனில் உள்ள தனது வீட்டின் படுகையறையில் இருந்து இந்த வலைப்பதிவை துவக்கினார். தொழில்நுட்ப நிகழ்வுகளை அவர் துடிப்புடன் படம் பிடித்து காட்டிய விதம் பயனாளிகளை ஈர்த்தது. அடுத்த சில ஆண்டுகளில் வரவேற்பு அதிகமாகி, 2008 ம் ஆண்டு டைம் பத்திரிகை சிறந்த வலைப்பதிவாக அடையாளம் காட்டியது.<br/>ஆனால், பின்னர் மாஷபில் வர்த்தக நிறுவனத்தால் கையகப்படுத்தப்பட்டு டிஜிட்டல் ஊடகமாக வளர்ந்து நிற்கிறது. முன்னோடி தொழில்நுட்ப வலைப்பதிவாக கருதப்படும் மைக்கேல் ஆரிங்டன்னால் துவக்கப்பட டெக்கிரஞ்ச் மற்றும் தொழில்நுட்ப வலைப்பதிவாக துவங்கிய மேக் யூஸ் ஆப் ஆகியவையும் இதே போலவே கையகப்படுத்தப்பட்டு வலுவான டிஜிட்டல் ஊடகங்களாக விளங்குகின்றன. டெக்கிரஞ்ச் போன்றவற்றை இப்போது வலைப்பதிவுகளாக கருத முடியுமா என்று தெரியவில்லை, ஆனால் இவை வலைப்பதிவாக துவங்கி செல்வாக்கு பெற்றவை.<br/></p><ul id="1fb2ec7d-2bab-80ab-8e79-c90a2c8755e8" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>     </summary><p id="1fb2ec7d-2bab-80fa-a42a-d7a6b5cab348" class="">வலைப்பதிவின் ஆற்றலை உணர்த்தும் சேவைகள்.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80ea-b62e-d1b50d2d3e7c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8089-a800-d50682c712f5" class=""><strong>மாற்று</strong>:<a href="https://lifehacker.com/">லைப்ஹேக்கர்/</a>,  <a href="https://www.engadget.com/">என்கேட்ஜெட்</a></p></div></figure><p id="1fb2ec7d-2bab-80c9-b216-fcd15b9e1113" class="">
+</p><h2 id="1fb2ec7d-2bab-8026-86b1-d92b48edae13" class="">6. <strong>ஸ்விஸ் மிஸ் -</strong></h2><p id="1fb2ec7d-2bab-803e-9da0-c171641ca12b" class="">
+</p><figure id="1fb2ec7d-2bab-8049-9d43-cf75b11e3365"><a href="https://www.swiss-miss.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">swissmiss</div><div class="bookmark-description">swissmiss is an online garden (aka design blog) run by Tina Roth Eisenberg, a Swiss designer gone NYC.</div></div><div class="bookmark-href"><img src="https://www.swiss-miss.com/wp-content/themes/swissmiss/images/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.swiss-miss.com/</div></div><img src="https://s0.wp.com/i/blank.jpg" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80f5-abb1-eb81d042d868" class="">உலக அளவில் பார்வையாளர்களை கொண்ட வடிவமைப்பு சார்ந்த வலைப்பதிவு. சுவிட்சர்லாந்து நாட்டைச் சேர்ந்த வடிவமைப்பாளர் டினா ரூத் நடத்தி வருகிறார். டினா வடிவமைப்பு சார்ந்த தனது தனிப்பட்ட காட்சி பதிவுகளுக்காக துவங்கிய இந்த தளம் பல்லாயிரக்கணக்கான வாசகர்களை தனக்கென பெற்றுள்ளது. காட்சி நோக்கிலானது என்பதால் எழுத்துக்களின் ஆதிக்கம் குறைவு. வடிவமைப்பு சார்ந்து இத்தனை நுணுக்கங்களா என வியக்க வைக்கும் பதிவுகள்.இணைய நுட்பங்கள் குறித்தும் அவ்வப்போது குறிப்புகளை காணலாம். </p><ul id="1fb2ec7d-2bab-8026-9acd-c95ab6fea3ec" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80dd-a983-f2be9d6d81b6" class="">வலைப்பதிவின் தன்மையை உணர்த்துகிறது. உங்களுக்கும் ஊக்கம் அளிக்கும். </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-80ea-8daa-cc189e2e5403"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80f0-9493-ea29ca04220c" class=""><strong>மாற்று:</strong> எண்ணற்றவை இருக்கின்றன.</p></div></figure><p id="1fb2ec7d-2bab-80b7-992a-d5b317a51182" class="">
+</p><h2 id="1fb2ec7d-2bab-809a-983c-d596937968c6" class="">7. <strong>மீடியாநாமா -</strong></h2><p id="1fb2ec7d-2bab-808e-846e-e79ea8258bd6" class="">    </p><figure id="1fb2ec7d-2bab-8068-af6e-da4c6c4c6a57"><a href="https://www.medianama.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">MEDIANAMA</div><div class="bookmark-description">Technology and policy in India</div></div><div class="bookmark-href"><img src="https://www.medianama.com/wp-content/uploads/2024/04/cropped-favicon-192x192.png" class="icon bookmark-icon"/>https://www.medianama.com/</div></div></a></figure><p id="1fb2ec7d-2bab-8096-844b-ec64b68aeb8b" class="">இந்திய நோக்கில் தொழில்நுட்ப பரப்பில் தவறவிடக்கூடாத தளம். பத்திரிகையாளர், டிஜிட்டல் செயல்பாட்டாளர், இணைய சுதந்திர ஆர்வலர் நிகில் பவாவால் வலைப்பதிவாக துவங்கி இன்று முக்கிய டிஜிட்டல் ஊடகமாக வளர்ந்திருக்கிறது. தொழில்நுட்ப நிறுவனங்களின் புகழ் பாடாமல், டிஜிட்டல் நுட்பங்களில் தாக்கம், அரசின் பொறுப்பு, சட்ட நுணுக்கங்கள் உள்ளிட்டவற்றில் கவனம் செலுத்தி வருகிறது. முக்கிய பதிவுகளை படிக்க வேண்டும் என்றால் கட்டணம் செலுத்த வேண்டும். இணைய சமநிலை தொடர்பான போராட்டத்தில் இதன் பதிவுகள் முக்கிய பங்கு வகித்தன. டிஜிட்டல் நுட்பங்கள் தொடர்பான சர்ச்சைகள், விவாதங்களில் ஆழமான புரிதலை ஏற்படுத்தக்கூடிய பதிவுகளை வாசிக்கலாம். குறிப்பாக மக்கள் நலன் சார்ந்த மாற்று பார்வை இதன் பலம்.</p><ul id="1fb2ec7d-2bab-80e0-a46b-dea033858623" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-805e-bc80-e0d5f286f03d" class="">டிஜிட்டல் நுட்பங்கள் தொடர்பான விழிப்புணர்வை ஏற்படுத்தும் வலைப்பதிவு. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8086-8ce3-c362c7d9549d"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-803c-87a0-e3d7b03ad5b0" class=""><strong>மாற்று:</strong> சட்ட செய்திகளுக்கான வலைப்பதிவு லைவ்லா –<a href="https://www.livelaw.in/">https://www.livelaw.in/</a></p></div></figure><p id="1fb2ec7d-2bab-809d-a15d-d1dfab15501f" class="">
+</p><h2 id="1fb2ec7d-2bab-8006-a269-e39d1aca2a02" class="">8. <strong>டெக் இன் ஆசியா -</strong></h2><p id="1fb2ec7d-2bab-8055-8859-fd7f681351f4" class="">   </p><figure id="1fb2ec7d-2bab-8065-81c1-e8858a1a122e"><a href="https://www.techinasia.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Tech in Asia - Connecting Asia&#x27;s startup ecosystem</div><div class="bookmark-description">Tech in Asia (YC W15) is a media, events, and jobs platform for Asia&#x27;s tech communities.</div></div><div class="bookmark-href"><img src="https://static.techinasia.com/assets/apple-touch-icon.png" class="icon bookmark-icon"/>https://www.techinasia.com/</div></div><img src="https://static.techinasia.com/assets/tia-ogimage.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80fa-bd3e-c6f41aa7c12e" class="">தொழில்நுட்பம் மற்றும் ஸ்டார்ட் அப் செய்திகள் என்றாலே பெரும்பாலும் அமெரிக்கா மற்றும் அதன் சிலிக்கான் வேலியை மையமாக கொண்டவையாக தான் இருக்கும் எனும் நிலையில், ஆசிய ஸ்டார்ட் அப்களில் கவனத்தை திருப்பும் வகையில் டெக் இன் ஆசியா செயல்பட்டு வருகிறது. இந்திய ஸ்டார்ட் அப், இந்தோனேசிய ஸ்டார்ட் அப், சிங்கப்பூர் ஸ்டார்ட் அப் என ஆசிய நாடுகளின் ஸ்டார்ட் அப் வெற்றிக்கதைகள், அலசல்களை இந்த தளத்தில் வாசிக்கலாம். ஆசிய ஸ்டார்ட் அப்களுக்கு ஒரு இணைய மேடை வேண்டும் எனும் எண்ணத்துடன் சிங்கப்பூரின் வில்லீஸ் வீயால் துவக்கப்பட்ட இந்த வலைப்பதிவு ஒன்று முன்னணி செய்தி தளமாக உருவெடுத்துள்ளது. </p><ul id="1fb2ec7d-2bab-8032-b8a5-f6b0d9b1fcc5" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-80d2-8166-cfffe86365bf" class="">தொழில்நுட்ப உலகில் ஆசியத்தன்மையை உணர்த்தும் சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-800b-8b0b-ec60b3a8f122"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-800f-b658-dd9019182250" class=""><strong>மாற்று:</strong> <a href="https://www.techinafrica.com/">டெக் இன் ஆபிரிக்கா</a></p></div></figure><p id="1fb2ec7d-2bab-80dd-a966-df10dfac1c25" class="">
+</p><h2 id="1fb2ec7d-2bab-8050-91df-cd0c542289a5" class="">9. <strong>9டு5 மேக் -</strong></h2><p id="1fb2ec7d-2bab-8059-9115-ddf9a4e7468d" class="">    </p><figure id="1fb2ec7d-2bab-804f-9bf6-f850508abdc0"><a href="https://9to5mac.com/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">9to5Mac</div><div class="bookmark-description">Apple News &amp; Mac Rumors Breaking All Day</div></div><div class="bookmark-href"><img src="https://9to5mac.com/wp-content/uploads/sites/6/2019/10/cropped-cropped-mac1-1.png?w=192" class="icon bookmark-icon"/>https://9to5mac.com/</div></div></a></figure><p id="1fb2ec7d-2bab-80cd-b8cc-e61b46d6a89f" class="">கூகுள் தொடர்பான செய்திகளை தெரிந்து கொள்ள இரண்டு வழிகள் இருக்கின்றன. ஒன்று கூகுள் அதிகாரப்பூர்வ வலைப்பதிவை பின் தொடர்வது. ஆனால், கூகுள் பகிர விரும்பும் தகவல்கள் மட்டுமே இதில் இடம்பெறும். இராண்டாவது வழி ’9டு5’ கூகுள் தளத்தை பின் தொடர்வது. கூகுள் தொடர்பான நிகழ்வுகளையும், செய்திகளையும் வளைத்து வளைத்து வெளியிடும் வலைப்பதிவாக இந்த தளம் செயல்பட்டு வருகிறது. வழக்கமான செய்தி வெளியீடு வகை அல்லாத தகவல்களையும், முன் செய்திகளையும் இந்த தளத்தில் தெரிந்து கொள்ளலாம். ஆப்பிள் நிறுவனம் தொடர்பான நிகழ்வுகளை பின் தொடரும் 9டு5மேக் தளத்தை நிறுவிய வலைப்பதிவாளர் செத் வெயிண்டிராப் இந்த தளத்தையும் நடத்தி வருகிறார். இதே பாணியில் மேலும் சில தொழில்நுட்ப தளங்களை நடத்தி வருகிறார்.</p><ul id="1fb2ec7d-2bab-80b2-82e9-cd07dc75dc2e" class="toggle"><li><details open=""><summary> <strong>ஏன்?</strong>    </summary><p id="1fb2ec7d-2bab-809e-a6c9-fb93c16960a1" class="">கூகுள் தொடர்பான செய்திகளை தெரிந்து கொள்ள ஏற்ற சேவை.</p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8086-a7fd-c3f9e79c6d88"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-80cb-9654-c302003d976c" class=""><strong>மாற்று</strong>: <a href="https://www.androidcentral.com/">ஆண்ட்ராய்டு செண்டரல்</a> , <a href="https://www.androidpolice.com/">ஆண்ட்ராய்டு போலிஸ்</a></p></div></figure><p id="1fb2ec7d-2bab-80eb-8123-c286ad727c2e" class="">
+</p><h2 id="1fb2ec7d-2bab-80de-a294-f33da35723e4" class="">10. <strong>குலோபல்வாய்சஸ் -</strong></h2><p id="1fb2ec7d-2bab-80ac-b3cd-f69acdd58fcf" class="">    </p><figure id="1fb2ec7d-2bab-80f5-b83c-f3f90f4a704d"><a href="https://globalvoices.org/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Global Voices · Local perspectives for a global audience</div><div class="bookmark-description">Global Voices is an international, multilingual community of writers, translators, academics, and digital rights activists.</div></div><div class="bookmark-href"><img src="https://globalvoices.org/wp-content/gv-static/img/tmpl/favicon-forestgreen/favicon-196x196.png" class="icon bookmark-icon"/>https://globalvoices.org/</div></div><img src="https://globalvoices.org/wp-content/gv-static/img/tmpl/gv-logo-2014-facebook-og-1200x631.png" class="bookmark-image"/></a></figure><p id="1fb2ec7d-2bab-80d8-b884-d14b0673b0db" class="">வலைப்பதிவுகளின் வலைப்பதிவு என இந்த தளத்தை வர்ணிக்கலாம். அதே நேரத்தில் உலகின் மாற்று பார்வைகள் மற்றும் மாற்று குரல்களுக்கான தளம் என்றும் கொள்ளலாம். சர்வதேச நோக்கில் உள்நாட்டு நிகழ்வுகளை பதிவு செய்யும் தளமாக இது விளங்குகிறது. அந்த வகையில் சர்வதேச செய்திகளுக்கான வலைப்பதிவு என்றும் புரிந்து கொள்ளலாம். ஊடக நிறுவனங்கள் பல நாடுகளின் செய்திகளை தொகுத்தளிப்பது போல, இந்த தளம் சாமானிய பார்வையில் உலக நாடுகளின் நிகழ்வுகளை பதிவு செய்கிறது. பல நாடுகளைச் சேர்ந்த வலைப்பதிவாளர்கள், எழுத்தாளர்கள், டிஜிட்டல் செயல்பாட்டாளர்களின் பங்களிப்பால் வளர்ந்திருக்கிறது. உலகில் உண்மையில் என்ன நடக்கிறது என்பதை தெரிந்து கொள்ளவும், விமர்சன நோக்கில் மாற்று பார்வைகளை தெரிந்து கொள்ளவும் வழி செய்கிறது. செய்தி ஊடகங்களால் அதிகம் கண்டு கொள்ளப்படாத நாடுகளில் இருந்து சுயேட்சையான பதிவுகளை அணுகலாம். முன்னோடி வலைப்பதிவாளரும், தொழில்நுட்ப வல்லுனருமான ஈத்தன் ஜர்க்கர்மேன் துவக்கியது. </p><ul id="1fb2ec7d-2bab-8091-ad32-e00e35b1b969" class="toggle"><li><details open=""><summary><strong>ஏன்?</strong></summary><p id="1fb2ec7d-2bab-80da-a404-c8b90a73498c" class="">இணைய யுகத்தில் உலக நாடுகளுக்கான கலாச்சார கண்ணாடி. குடிமக்கள் செய்தியாளர்களின் சர்வதேச குரலாக விளங்குகிறது. </p></details></li></ul><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="1fb2ec7d-2bab-8036-a7c3-dcf8f558c12a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="1fb2ec7d-2bab-8084-ab39-fdf4ec5ba4cb" class=""><strong>மாற்று:</strong> தனித்தன்மை வாய்ந்தது.</p></div></figure><p id="1fb2ec7d-2bab-80c0-92c6-c87c340c116e" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
